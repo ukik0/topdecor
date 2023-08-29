@@ -1,0 +1,60 @@
+@import 'vars';
+@import 'mixins';
+
+.section-title {
+    color: $black;
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 7.2rem;
+
+    @include small-tablet {
+        font-size: 4.8rem;
+        font-style: normal;
+        line-height: 5.96rem;
+        margin-bottom: $heading-bottom-gap;
+    }
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $heading-bottom-gap;
+
+    @include small-tablet {
+        .button {
+            display: none;
+        }
+    }
+}
+
+.button {
+    @include button {
+        @include small-tablet {
+            font-size: 3rem;
+            line-height: 5.5rem;
+            border-radius: 6rem;
+        }
+    }
+}
+
+.solid {
+    color: $black;
+    border-radius: $initial-border-radius;
+    background: $white;
+}
+
+.outlined {
+    @extend .solid !optional;
+
+    border: 0.1rem solid $light;
+}
+
+.input {
+    @include input();
+}
+
+.icon-circle {
+    @include icon-circle;
+}
