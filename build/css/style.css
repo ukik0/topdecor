@@ -239,6 +239,103 @@ section {
   border-radius: 50%;
 }
 
+.header {
+  padding-top: 1.85rem;
+}
+
+.header__bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 2rem;
+  border-bottom: 0.1rem solid #fff;
+}
+
+.header__bar-contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4rem;
+}
+
+.header__bar-contacts-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.header__bar-contacts-item svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+.header__bar-contacts-item svg path {
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+.header__bar-contacts-item:focus svg path {
+  fill: #586CBE;
+}
+
+.header__bar-contacts-item:hover svg path {
+  fill: #586CBE;
+}
+
+.header__bar-contacts-item-text {
+  color: #555760;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.464rem;
+}
+
+.header__bar-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3rem;
+}
+
+.header__bar-menu-item {
+  color: #555760;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.464rem;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+.header__bar-menu-item:focus {
+  color: #586CBE;
+}
+
+.header__bar-menu-item:hover {
+  color: #586CBE;
+}
+
+.header__bar-menu-item:active {
+  color: currentColor;
+}
+
 @media (min-width: 48.01em) {
   .mobile {
     display: none;
@@ -296,5 +393,14 @@ section {
 
   .icon-circle {
     padding: 3rem;
+  }
+
+  .header {
+    padding-top: 3rem;
+  }
+
+  .header__bar-contacts-item svg {
+    width: 4.8rem;
+    height: 4.8rem;
   }
 }

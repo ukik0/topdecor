@@ -1,1 +1,64 @@
-// Header
+@import 'vars';
+@import 'mixins';
+
+.header {
+    padding-top: 1.85rem;
+
+    @include small-tablet {
+        padding-top: 3rem;
+    }
+
+    &__bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 2rem;
+        border-bottom: 0.1rem solid $white;
+
+        &-contacts {
+            display: flex;
+            align-items: center;
+            gap: $gap-l;
+
+            &-item {
+                display: flex;
+                align-items: center;
+                gap: $gap-xs;
+
+                svg {
+                    @include svgSize();
+                    transition: 0.3s all ease-in-out;
+
+                    path {
+                        transition: 0.3s all ease-in-out;
+                    }
+                }
+
+                @include svgHover($accent);
+
+                &-text {
+                    color: $black;
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    line-height: 2.464rem;
+                }
+            }
+        }
+
+        &-menu {
+            display: flex;
+            align-items: center;
+            gap: $gap-m;
+
+            &-item {
+                color: $black;
+                font-size: 1.6rem;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 2.464rem;
+
+                @include pseudo-states($accent);
+            }
+        }
+    }
+}
