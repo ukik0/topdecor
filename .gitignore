@@ -13,7 +13,12 @@ See https://help.github.com/articles/ignoring-files/ for more about ignoring fil
 /out/
 
 # production
-
+/src
+yarn.lock
+package.json
+package-lock.json
+gulpfile.js
+.prettierrc
 # misc
 .DS_Store
 *.pem
