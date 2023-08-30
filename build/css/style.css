@@ -762,7 +762,7 @@ section {
   height: 0.2rem;
   background: #fff;
   top: 65%;
-  left: 3.9rem;
+  left: 4.2rem;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -776,7 +776,7 @@ section {
   height: 0.2rem;
   background: #fff;
   top: 40%;
-  left: 3.9rem;
+  left: 4.2rem;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -792,7 +792,7 @@ section {
   height: 0.2rem;
   background: #fff;
   top: 51%;
-  left: 3.9rem;
+  left: 4.2rem;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -2091,6 +2091,9 @@ button.swiper-pagination-bullet {
   .header__bar-contacts-item {
     gap: 2rem;
     margin-bottom: 4rem;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
   }
 
   .header__bar-contacts-item svg {

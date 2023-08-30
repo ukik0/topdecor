@@ -51,6 +51,7 @@
                 @include small-tablet {
                     gap: $gap-s;
                     margin-bottom: 4rem;
+                    display: inline-flex;
                 }
 
                 svg {
@@ -185,7 +186,7 @@
                         height: 0.2rem;
                         background: $white;
                         top: 65%;
-                        left: 3.9rem;
+                        left: 4.2rem;
                         transform: translate(-50%, -50%);
                     }
                 }
@@ -197,7 +198,7 @@
                         height: 0.2rem;
                         background: $white;
                         top: 40%;
-                        left: 3.9rem;
+                        left: 4.2rem;
                         transform: translate(-50%, -50%);
                     }
                 }
@@ -211,7 +212,7 @@
                         height: 0.2rem;
                         background: $white;
                         top: 51%;
-                        left: 3.9rem;
+                        left: 4.2rem;
                         transform: translate(-50%, -50%);
 
                         @include small-tablet {
