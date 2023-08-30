@@ -303,12 +303,11 @@
                 }
 
                 &:active {
-                    background: $white;
-                    border: 0.1rem solid $accent;
+                    background: $accent;
 
                     svg {
                         path {
-                            fill: $accent;
+                            fill: $white;
                         }
                     }
                 }
@@ -332,6 +331,23 @@
             font-size: 1.6rem;
             font-weight: 400;
             line-height: 2.464rem;
+            transition: 0.3s all ease-in-out;
+
+            &:focus {
+                outline: 0.1rem solid $accent;
+                outline-offset: 0.3rem;
+            }
+
+            &:hover {
+                color: $white;
+                background-color: $accent;
+            }
+
+            &:active {
+                color: $white;
+                outline: 0;
+                outline-offset: 0;
+            }
         }
 
         &-button {
@@ -339,7 +355,17 @@
             align-items: center;
             gap: $gap-xs;
             padding: 1.75rem 2.6rem;
-            margin-top: -.85rem;
+            margin-top: -0.85rem;
+            transition: 0.3s all;
+
+            &:hover {
+                opacity: 0.75;
+            }
+
+            &:active {
+                transform: scale(0.97);
+                opacity: 1;
+            }
 
             svg {
                 @include svgSize;

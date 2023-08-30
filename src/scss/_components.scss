@@ -62,3 +62,31 @@
 .icon-circle-blue {
     @include icon-circle-blue(1.3rem);
 }
+
+.pagination-current-slide {
+    color: $accent;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.8rem;
+
+    @include small-tablet{
+        font-size: 3.4rem;
+        font-weight: 600;
+        line-height: 4.8rem;
+    }
+}
+
+.pagination-length-slides {
+    color: $grey;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.8rem;
+
+    @include small-tablet{
+        font-size: 3.4rem;
+        font-weight: 600;
+        line-height: 4.8rem;
+    }
+}

@@ -1,4 +1,5 @@
-@import "vars";
+@import 'vars';
+@import 'mixins';
 
 body {
     &.locked {
@@ -28,4 +29,87 @@ section {
     @media (max-width: 48rem) {
         margin-bottom: calc($section-gap + 4rem);
     }
+}
+
+.--wrap-inner {
+    background: linear-gradient(148deg, #f0f1fa 0%, #dcdff5 39.19%, #fcfcfc 69.27%, #f0f1fa 100%);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    border-radius: $initial-border-radius;
+    border: 0.1rem solid $grey;
+    background: $white;
+    width: 7.6rem !important;
+    height: 3.4rem !important;
+    transition: .3s all ease-in-out;
+
+    @include small-tablet{
+        width: 12rem !important;
+        height: 6rem !important;
+    }
+
+    &::after {
+        display: none;
+        visibility: hidden;
+    }
+
+    svg {
+        width: 2.4rem;
+        height: 2.4rem;
+
+        path {
+            transition: .3s all ease-in-out;
+        }
+
+        @include small-tablet{
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+
+    &:hover{
+        background: $accent;
+
+        svg {
+            path {
+                fill: $white;
+            }
+        }
+    }
+}
+
+.pagination-info {
+    display: flex;
+    align-items: center;
+    gap: $gap-xs;
+}
+
+.swiper-pagination {
+    position: initial !important;
+    width: auto;
+
+    &-bullet {
+        margin: 0 !important;
+        width: 3rem !important;
+        height: 0.2rem !important;
+        background: $white !important;
+        border-radius: 0 !important;
+        opacity: 1 !important;
+        transition: .3s all ease-in-out;
+
+        @include small-tablet{
+            height: .4rem !important;
+            width: 5rem !important;
+        }
+
+        &-active {
+            background: $accent !important;
+            transition: .3s all ease-in-out;
+        }
+    }
+}
+
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+    opacity: .5 !important;
 }

@@ -1,0 +1,28 @@
+.modal__wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    z-index: 2;
+
+    .modal {
+        background: white;
+        padding: 25px;
+        border-radius: 5px;
+        height: 350px;
+        width: 300px;
+
+        &__title {
+            text-align: center;
+        }
+
+        &__close {
+            cursor: pointer;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
