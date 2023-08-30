@@ -91,6 +91,15 @@
     }
 }
 
+@mixin icon-circle-blue($padding) {
+    background-color: #586CBE;
+    filter: drop-shadow(5px 13px 50px rgba(57, 56, 113, 0.15));
+    border-radius: 50%;
+    padding: $padding;
+
+    @content;
+}
+
 @mixin svgSize() {
     width: 2.4rem;
     height: 2.4rem;
@@ -137,3 +146,4 @@
         }
     }
 }
+

@@ -8,12 +8,35 @@
         padding-top: 3rem;
     }
 
+    &__logo {
+        max-width: 18.7rem;
+        width: 100%;
+        height: 3rem;
+        display: block;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @include small-tablet {
+            height: 100%;
+            max-width: 28rem;
+        }
+    }
+
     &__bar {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding-bottom: 2rem;
         border-bottom: 0.1rem solid $white;
+        margin-bottom: 2.4rem;
+
+        @include small-tablet {
+            margin-bottom: 0;
+        }
 
         &-contacts {
             display: flex;
@@ -25,12 +48,22 @@
                 align-items: center;
                 gap: $gap-xs;
 
+                @include small-tablet {
+                    gap: $gap-s;
+                    margin-bottom: 4rem;
+                }
+
                 svg {
                     @include svgSize();
                     transition: 0.3s all ease-in-out;
 
                     path {
                         transition: 0.3s all ease-in-out;
+                    }
+
+                    @include small-tablet {
+                        width: 4.2rem;
+                        height: 4.4rem;
                     }
                 }
 
@@ -41,6 +74,12 @@
                     font-size: 1.6rem;
                     font-weight: 500;
                     line-height: 2.464rem;
+
+                    @include small-tablet {
+                        font-size: 3rem;
+                        font-weight: 500;
+                        line-height: 4.5rem;
+                    }
                 }
             }
         }
@@ -58,6 +97,252 @@
                 line-height: 2.464rem;
 
                 @include pseudo-states($accent);
+            }
+        }
+    }
+
+    &__mobile-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include small-tablet {
+            margin-bottom: 4rem;
+        }
+
+        &-list {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: $gap-m;
+        }
+
+        &-item {
+            svg {
+                width: 4rem;
+                height: 4rem;
+
+                path {
+                    transition: 0.3s all ease-in-out;
+                }
+            }
+
+            @include svgHover($accent);
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $gap-l;
+        margin-bottom: 2.85rem;
+
+        @include small-tablet {
+            margin-bottom: 0;
+        }
+
+        &-searchbar {
+            display: flex;
+            align-items: center;
+            gap: $gap-s;
+            width: 100%;
+
+            &-button {
+                padding: 1.2rem 2.6rem 1.2rem 5.5rem;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                text-align: right;
+
+                span {
+                    display: block;
+                }
+
+                @include small-tablet {
+                    width: 8.4rem;
+                    height: 8.4rem;
+
+                    &::after,
+                    &::before {
+                        width: 3.5rem;
+                        height: 0.4rem;
+                    }
+
+                    &::after {
+                        top: 66%;
+                    }
+
+                    &::before {
+                        top: 39%;
+                    }
+                }
+
+                &::after {
+                    @include pseudo {
+                        position: absolute;
+                        width: 1.8rem;
+                        height: 0.2rem;
+                        background: $white;
+                        top: 65%;
+                        left: 3.9rem;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                &::before {
+                    @include pseudo {
+                        position: absolute;
+                        width: 1.8rem;
+                        height: 0.2rem;
+                        background: $white;
+                        top: 40%;
+                        left: 3.9rem;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                &-wrapper {
+                    position: relative;
+
+                    span {
+                        position: absolute;
+                        width: 1.8rem;
+                        height: 0.2rem;
+                        background: $white;
+                        top: 51%;
+                        left: 3.9rem;
+                        transform: translate(-50%, -50%);
+
+                        @include small-tablet {
+                            width: 3.5rem;
+                            height: 0.4rem;
+                            top: 52%;
+                        }
+                    }
+                }
+            }
+
+            &-form {
+                width: 100%;
+                position: relative;
+
+                label {
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            &-input {
+                width: 100%;
+                height: 5rem;
+
+                @include small-tablet {
+                    height: initial;
+                }
+            }
+
+            &-icon {
+                position: absolute;
+                right: 1.6rem;
+                top: 2.6rem;
+                transform: translate(-50%, -50%);
+
+                svg {
+                    @include svgSize;
+                }
+
+                @include small-tablet {
+                    top: 4.6rem;
+                }
+            }
+        }
+
+        &-links {
+            display: flex;
+            align-items: center;
+            gap: $gap-xs;
+
+            a {
+                width: 5rem;
+                height: 5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: 0.3s all ease-in-out;
+                border: 0.1rem solid transparent;
+
+                svg {
+                    @include svgSize;
+
+                    path {
+                        transition: 0.3s all ease-in-out;
+                    }
+                }
+
+                &:focus {
+                    background: $white;
+                    border: 0.1rem solid $accent;
+
+                    svg {
+                        path {
+                            fill: $accent;
+                        }
+                    }
+                }
+
+                &:hover {
+                    background: $white;
+                    border: 0.1rem solid $accent;
+
+                    svg {
+                        path {
+                            fill: $accent;
+                        }
+                    }
+                }
+
+                &:active {
+                    background: $white;
+                    border: 0.1rem solid $accent;
+
+                    svg {
+                        path {
+                            fill: $accent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__subheader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-list {
+            display: flex;
+            align-items: center;
+        }
+
+        &-item {
+            padding: 1.4rem 2.6rem;
+            color: $black;
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 2.464rem;
+        }
+
+        &-button {
+            display: flex;
+            align-items: center;
+            gap: $gap-xs;
+            padding: 1.75rem 2.6rem;
+            margin-top: -.85rem;
+
+            svg {
+                @include svgSize;
             }
         }
     }

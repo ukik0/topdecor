@@ -58,3 +58,7 @@
 .icon-circle {
     @include icon-circle;
 }
+
+.icon-circle-blue {
+    @include icon-circle-blue(1.3rem);
+}
