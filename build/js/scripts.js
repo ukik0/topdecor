@@ -65,21 +65,25 @@ function bindModal(trigger, modal, close) {
         (close = document.querySelector(close));
 
     const body = document.body;
+    const modalBody = modal.querySelector('.modal');
 
-    if (!trigger || !modal || !close) return
+    if (!trigger || !modal || !close || !modalBody) return
 
     trigger.addEventListener('click', (e) => {
         e.preventDefault();
-        modal.style.display = 'flex';
+        modal.classList.add('--active')
+        modalBody.classList.add('--active');
         body.classList.add('locked');
     });
     close.addEventListener('click', () => {
-        modal.style.display = 'none';
+        modalBody.classList.remove('--active');
+        modal.classList.remove('--active');
         body.classList.remove('locked');
     });
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
-            modal.style.display = 'none';
+            modalBody.classList.remove('--active');
+            modal.classList.remove('--active');
             body.classList.remove('locked');
         }
     });
@@ -89,4 +93,8 @@ function bindModal(trigger, modal, close) {
 // ВТОРОЙ аргумент - класс самого модального окна.
 // ТРЕТИЙ аргумент - класс кнопки, при клике на которую будет закрываться модальное окно.
 bindModal('.request-button', '#request-modal', '#request-modal .modal__close');
-
+bindModal('.request-success-button', '#request-modal-success', '#request-modal-success .modal__close');
+$('.request-success-button').on('click', () => {
+    $('#request-modal').removeClass('--active')
+    $('#request-modal .modal').removeClass('--active')
+})

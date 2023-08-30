@@ -30,12 +30,25 @@
 }
 
 .button {
+    transition: transform .2s;
+    will-change: transform;
+    
+    &:disabled{
+        opacity: .5;
+        user-select: none;
+        pointer-events: none;
+    }
+
     @include button {
         @include small-tablet {
             font-size: 3rem;
             line-height: 5.5rem;
             border-radius: 6rem;
         }
+    }
+
+    &:active{
+        transform: scale(.95);
     }
 }
 

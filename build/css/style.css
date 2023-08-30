@@ -14,6 +14,7 @@ html {
   line-height: 1.2;
   margin: 0;
   padding: 0;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -25,6 +26,9 @@ body {
   padding: 0;
   color: #555760;
   background-color: #fff;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+  overflow-anchor: none;
 }
 
 input,
@@ -278,6 +282,11 @@ section {
 }
 
 .button {
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+  will-change: transform;
   color: #fff;
   font-size: 1.6rem;
   font-style: normal;
@@ -285,6 +294,21 @@ section {
   line-height: 2.464rem;
   border-radius: 3rem;
   background: #586CBE;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.button:active {
+  -webkit-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+          transform: scale(0.95);
 }
 
 .solid,
@@ -345,25 +369,71 @@ section {
 
 .modal__wrapper {
   position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.8);
-  display: none;
+  inset: 0;
+  background: rgba(85, 87, 96, 0.5);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.3s opacity ease-in;
+  transition: 0.3s opacity ease-in;
+}
+
+.modal__wrapper.--active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .modal__wrapper .modal {
-  background: white;
-  padding: 25px;
-  border-radius: 5px;
-  height: 350px;
-  width: 300px;
+  position: relative;
+  padding: 6rem 10rem;
+  border-radius: 5rem;
+  background: #fff;
+  -webkit-box-shadow: 10px 20px 94px 0px rgba(125, 128, 161, 0.2);
+          box-shadow: 10px 20px 94px 0px rgba(125, 128, 161, 0.2);
+  -webkit-transform: scale(1.15);
+      -ms-transform: scale(1.15);
+          transform: scale(1.15);
+  will-change: transform;
+  -webkit-transition: 0.2s -webkit-transform ease-in;
+  transition: 0.2s -webkit-transform ease-in;
+  transition: 0.2s transform ease-in;
+  transition: 0.2s transform ease-in, 0.2s -webkit-transform ease-in;
+}
+
+.modal__wrapper .modal.--active {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
 }
 
 .modal__wrapper .modal__title {
   text-align: center;
+  color: var(--black, var(--black, #555760));
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 7.2rem;
+  margin-bottom: 3rem;
+}
+
+.modal__wrapper .modal__subtitle {
+  color: #555760;
+  text-align: center;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2.8rem;
+  margin-bottom: 4rem;
 }
 
 .modal__wrapper .modal__close {
@@ -374,6 +444,122 @@ section {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  position: absolute;
+  right: 4rem;
+  top: 4rem;
+}
+
+.modal__wrapper .modal__close svg {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+#request-modal .modal {
+  width: 107.4rem;
+}
+
+.request__modal-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+
+.request__modal-form label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.request__modal-form label span {
+  color: #555760;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.464rem;
+  margin-left: 2rem;
+}
+
+.request__modal-fields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  width: 100%;
+}
+
+.request__modal-input {
+  padding: 1.3rem 2.6rem;
+  width: 100%;
+  border: 0.1rem solid #F1F2FA;
+  background: #FCFAFA;
+}
+
+.request__modal-input::-webkit-input-placeholder {
+  color: #A8A7CA;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.464rem;
+}
+
+.request__modal-input::-moz-placeholder {
+  color: #A8A7CA;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.464rem;
+}
+
+.request__modal-input:-ms-input-placeholder {
+  color: #A8A7CA;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.464rem;
+}
+
+.request__modal-input::-ms-input-placeholder {
+  color: #A8A7CA;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.464rem;
+}
+
+.request__modal-input::placeholder {
+  color: #A8A7CA;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.464rem;
+}
+
+.request__modal-button,
+.request__modal-button-success {
+  padding: 1.9rem 2.6rem;
+  margin: 0 auto;
+  display: block;
 }
 
 .header {
@@ -1882,6 +2068,11 @@ button.swiper-pagination-bullet {
     font-size: 3.4rem;
     font-weight: 600;
     line-height: 4.8rem;
+  }
+
+  .modal__wrapper .modal__close svg {
+    width: 4.8rem;
+    height: 4.8rem;
   }
 
   .header {
