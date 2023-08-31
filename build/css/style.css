@@ -335,8 +335,8 @@ section {
 .icon-circle {
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.29)), color-stop(99.99%, rgba(224, 228, 255, 0.58)), to(rgba(255, 255, 255, 0.58)));
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.29) 0%, rgba(224, 228, 255, 0.58) 99.99%, rgba(255, 255, 255, 0.58) 100%);
-  -webkit-box-shadow: 1.8975001574px -2.213750124px 3.4787504673px 0px #fff inset, -3.1625001431px 8.5387506485px 6.6412506104px 0px rgba(0, 0, 0, 0.49) inset;
-          box-shadow: 1.8975001574px -2.213750124px 3.4787504673px 0px #fff inset, -3.1625001431px 8.5387506485px 6.6412506104px 0px rgba(0, 0, 0, 0.49) inset;
+  -webkit-box-shadow: 1.8975001574px -2.213750124px 3.4787504673px 0px #fff inset, -3.1625001431px 8.5387506485px 6.6412506104px 0px rgba(0, 0, 0, 0.02) inset;
+          box-shadow: 1.8975001574px -2.213750124px 3.4787504673px 0px #fff inset, -3.1625001431px 8.5387506485px 6.6412506104px 0px rgba(0, 0, 0, 0.02) inset;
   -webkit-backdrop-filter: blur(3.0043752193px);
           backdrop-filter: blur(3.0043752193px);
   padding: 2.4rem;
@@ -972,6 +972,7 @@ section {
 .hero {
   overflow: hidden;
   position: relative;
+  margin-bottom: 14rem;
 }
 
 .hero__content {
@@ -1043,8 +1044,8 @@ section {
 
 .hero-pagination-info {
   position: absolute;
-  right: 45.5%;
-  bottom: 6.7rem;
+  right: 46.5%;
+  bottom: 7.7rem;
   -webkit-transform: translateX(50%);
       -ms-transform: translateX(50%);
           transform: translateX(50%);
@@ -1052,24 +1053,87 @@ section {
 }
 
 .hero-swiper-slide {
-  padding: 13.3rem 12rem 17rem 0;
+  padding: 13.3rem 12rem 18rem 0;
 }
 
 .hero-next {
   top: auto !important;
-  bottom: 6.5rem !important;
+  bottom: 7.7rem !important;
   right: 18rem !important;
 }
 
 .hero-prev {
   left: auto !important;
   right: 28rem !important;
-  bottom: 6.5rem !important;
+  bottom: 7.7rem !important;
   top: auto !important;
 }
 
 .hero__swiper {
   overflow: initial !important;
+}
+
+.benefits__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.benefits__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.benefits__item-circle {
+  width: 8rem;
+  height: 8rem;
+  margin-bottom: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.benefits__item-circle svg {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.benefits__item-title {
+  color: #555760;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.benefits__item-description {
+  color: #A8A7CA;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.464rem;
 }
 
 @font-face {
@@ -1990,6 +2054,38 @@ button.swiper-pagination-bullet {
   }
 }
 
+@media (min-width: 48rem) {
+  .benefits__item:nth-child(1) {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 28.7rem;
+            flex: 0 1 28.7rem;
+  }
+
+  .benefits__item:nth-child(2) {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 30.1rem;
+            flex: 0 1 30.1rem;
+  }
+
+  .benefits__item:nth-child(3) {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 28.7rem;
+            flex: 0 1 28.7rem;
+  }
+
+  .benefits__item:nth-child(4) {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 24.4rem;
+            flex: 0 1 24.4rem;
+  }
+
+  .benefits__item:nth-child(5) {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 24.1rem;
+            flex: 0 1 24.1rem;
+  }
+}
+
 @media (max-width: 48em) {
   html {
     font-size: 1.3333333333vw;
@@ -2170,6 +2266,10 @@ button.swiper-pagination-bullet {
     height: 4.8rem;
   }
 
+  .hero {
+    margin-bottom: 10rem;
+  }
+
   .hero__banner {
     position: absolute;
     width: 45rem;
@@ -2227,5 +2327,39 @@ button.swiper-pagination-bullet {
   .hero-prev {
     right: 60.5rem !important;
     bottom: 20.5rem !important;
+  }
+
+  .benefits__content {
+    overflow-x: auto;
+  }
+
+  .benefits__list {
+    gap: 8rem;
+  }
+
+  .benefits__item {
+    min-width: 36rem;
+  }
+
+  .benefits__item-circle {
+    margin-bottom: 3rem;
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .benefits__item-circle svg {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .benefits__item-title {
+    font-size: 3.4rem;
+    line-height: 4.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .benefits__item-description {
+    font-size: 3rem;
+    line-height: 4.5rem;
   }
 }
