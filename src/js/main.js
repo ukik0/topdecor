@@ -84,6 +84,16 @@ if (categoriesSwiper) {
     });
 }
 
+$('.burger-entry').on('click', function () {
+    $('.header__burger-menu').addClass('--active');
+    $('body').addClass('locked');
+});
+
+$('.header__burger-close').on('click', function () {
+    $('.header__burger-menu').removeClass('--active');
+    $('body').removeClass('locked');
+});
+
 function bindModal(trigger, modal, close) {
     (trigger = document.querySelector(trigger)),
         (modal = document.querySelector(modal)),
@@ -92,11 +102,11 @@ function bindModal(trigger, modal, close) {
     const body = document.body;
     const modalBody = modal.querySelector('.modal');
 
-    if (!trigger || !modal || !close || !modalBody) return
+    if (!trigger || !modal || !close || !modalBody) return;
 
     trigger.addEventListener('click', (e) => {
         e.preventDefault();
-        modal.classList.add('--active')
+        modal.classList.add('--active');
         modalBody.classList.add('--active');
         body.classList.add('locked');
     });
@@ -120,6 +130,6 @@ function bindModal(trigger, modal, close) {
 bindModal('.request-button', '#request-modal', '#request-modal .modal__close');
 bindModal('.request-success-button', '#request-modal-success', '#request-modal-success .modal__close');
 $('.request-success-button').on('click', () => {
-    $('#request-modal').removeClass('--active')
-    $('#request-modal .modal').removeClass('--active')
-})
+    $('#request-modal').removeClass('--active');
+    $('#request-modal .modal').removeClass('--active');
+});

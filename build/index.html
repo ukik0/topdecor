@@ -171,9 +171,15 @@
             </a>
 
             <div class="header__content-searchbar">
-                <div class="header__content-searchbar-button-wrapper">
+                <div class="header__content-searchbar-button-wrapper catalog-entry desktop">
                     <button class="button header__content-searchbar-button">
                         <strong class="desktop">Каталог</strong>
+                    </button>
+                    <span></span>
+                </div>
+
+                <div class="header__content-searchbar-button-wrapper burger-entry mobile">
+                    <button class="button header__content-searchbar-button">
                     </button>
                     <span></span>
                 </div>
@@ -239,33 +245,95 @@
 
         <div class="header__subheader desktop">
             <ul class="header__subheader-list">
-                <a href="#" class="header__subheader-item solid">
-                    Бренды
-                </a>
-                <a href="#" class="header__subheader-item solid">
-                    Обои
-                </a>
-                <a href="#" class="header__subheader-item solid">
-                    Лепнина
-                </a>
-                <a href="#" class="header__subheader-item solid">
-                    Декоративная штукатурка
-                </a>
-                <a href="#" class="header__subheader-item solid">
-                    Стеновые панели
-                </a>
-                <a href="#" class="header__subheader-item solid">
-                    Краска
-                </a>
+                <a href="#" class="header__subheader-item solid"> Бренды </a>
+                <a href="#" class="header__subheader-item solid"> Обои </a>
+                <a href="#" class="header__subheader-item solid"> Лепнина </a>
+                <a href="#" class="header__subheader-item solid"> Декоративная штукатурка </a>
+                <a href="#" class="header__subheader-item solid"> Стеновые панели </a>
+                <a href="#" class="header__subheader-item solid"> Краска </a>
             </ul>
 
             <button class="button header__subheader-button request-button">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21.7388 17.1636C21.5716 18.4339 20.9477 19.6 19.9837 20.4439C19.0196 21.2879 17.7813 21.7521 16.5 21.7498C9.05626 21.7498 3.00001 15.6936 3.00001 8.24981C2.99771 6.96852 3.4619 5.73021 4.30588 4.76615C5.14986 3.80209 6.31592 3.17822 7.58626 3.01106C7.9075 2.97184 8.2328 3.03756 8.51362 3.19841C8.79444 3.35926 9.0157 3.60662 9.14438 3.90356L11.1244 8.32387V8.33512C11.2229 8.56242 11.2636 8.81059 11.2428 9.05744C11.222 9.3043 11.1404 9.54217 11.0053 9.74981C10.9884 9.77512 10.9706 9.79856 10.9519 9.822L9.00001 12.1357C9.7022 13.5626 11.1947 15.042 12.6403 15.7461L14.9222 13.8045C14.9446 13.7857 14.9681 13.7681 14.9925 13.752C15.2 13.6136 15.4387 13.5292 15.687 13.5062C15.9353 13.4833 16.1854 13.5227 16.4147 13.6207L16.4269 13.6264L20.8434 15.6054C21.1409 15.7337 21.3889 15.9547 21.5503 16.2356C21.7116 16.5164 21.7778 16.842 21.7388 17.1636Z" fill="white"/>
+                <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M21.7388 17.1636C21.5716 18.4339 20.9477 19.6 19.9837 20.4439C19.0196 21.2879 17.7813 21.7521 16.5 21.7498C9.05626 21.7498 3.00001 15.6936 3.00001 8.24981C2.99771 6.96852 3.4619 5.73021 4.30588 4.76615C5.14986 3.80209 6.31592 3.17822 7.58626 3.01106C7.9075 2.97184 8.2328 3.03756 8.51362 3.19841C8.79444 3.35926 9.0157 3.60662 9.14438 3.90356L11.1244 8.32387V8.33512C11.2229 8.56242 11.2636 8.81059 11.2428 9.05744C11.222 9.3043 11.1404 9.54217 11.0053 9.74981C10.9884 9.77512 10.9706 9.79856 10.9519 9.822L9.00001 12.1357C9.7022 13.5626 11.1947 15.042 12.6403 15.7461L14.9222 13.8045C14.9446 13.7857 14.9681 13.7681 14.9925 13.752C15.2 13.6136 15.4387 13.5292 15.687 13.5062C15.9353 13.4833 16.1854 13.5227 16.4147 13.6207L16.4269 13.6264L20.8434 15.6054C21.1409 15.7337 21.3889 15.9547 21.5503 16.2356C21.7116 16.5164 21.7778 16.842 21.7388 17.1636Z"
+                        fill="white"
+                    />
                 </svg>
 
                 Заказать звонок
             </button>
+        </div>
+
+        <div class="header__burger-menu">
+            <img src="../img/close.svg" alt="close" class="header__burger-close" />
+
+            <a href="#" class="header__burger-catalog">
+                <svg
+                    width="20"
+                    height="21"
+                    viewBox="0 0 20 21"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M14.375 4.25H5.625C5.45924 4.25 5.30027 4.18415 5.18306 4.06694C5.06585 3.94973 5 3.79076 5 3.625C5 3.45924 5.06585 3.30027 5.18306 3.18306C5.30027 3.06585 5.45924 3 5.625 3H14.375C14.5408 3 14.6997 3.06585 14.8169 3.18306C14.9342 3.30027 15 3.45924 15 3.625C15 3.79076 14.9342 3.94973 14.8169 4.06694C14.6997 4.18415 14.5408 4.25 14.375 4.25ZM15.625 6.125H4.375C4.20924 6.125 4.05027 6.05915 3.93306 5.94194C3.81585 5.82473 3.75 5.66576 3.75 5.5C3.75 5.33424 3.81585 5.17527 3.93306 5.05806C4.05027 4.94085 4.20924 4.875 4.375 4.875H15.625C15.7908 4.875 15.9497 4.94085 16.0669 5.05806C16.1842 5.17527 16.25 5.33424 16.25 5.5C16.25 5.66576 16.1842 5.82473 16.0669 5.94194C15.9497 6.05915 15.7908 6.125 15.625 6.125ZM16.3723 18H3.62773C3.16304 17.9995 2.71752 17.8147 2.38893 17.4861C2.06035 17.1575 1.87552 16.712 1.875 16.2473V8.50273C1.87552 8.03804 2.06035 7.59252 2.38893 7.26394C2.71752 6.93535 3.16304 6.75052 3.62773 6.75H16.3723C16.837 6.75052 17.2825 6.93535 17.6111 7.26394C17.9397 7.59252 18.1245 8.03804 18.125 8.50273V16.2473C18.1245 16.712 17.9397 17.1575 17.6111 17.4861C17.2825 17.8147 16.837 17.9995 16.3723 18Z"
+                        fill="#555760"
+                    />
+                </svg>
+
+                Каталог
+            </a>
+
+            <ul class="header__burger-list">
+                <li>
+                    <a href="#" class="header__burger-item">Дизайнерам</a>
+                <li>
+                    <a href="#" class="header__burger-item">Подбор материалов</a>
+                </li>
+                <li>
+                    <a href="#" class="header__burger-item">Услуги</a>
+                </li>
+                <li>
+                    <a href="#" class="header__burger-item">Клиентам</a>
+                </li>
+                <li>
+                    <a href="#" class="header__burger-item">Контакты</a>
+                </li>
+            </ul>
+
+            <ul class="header__burger-contacts-list">
+                <li class="header__burger-contacts-item">
+                    <a href="mailto:info@topdecorgroup.ru" class="header__burger-contacts-item">
+                        <img src="../img/header/mail.svg" alt="mail">
+                        info@topdecorgroup.ru
+                    </a>
+                </li>
+                <li class="header__burger-contacts-item">
+                    <a href="tel:+7 (912) 912 91-12" class="header__burger-contacts-item">
+                        <img src="../img/header/phone.svg" alt="phone">
+                        +7 (912) 912 91-12
+                    </a>
+                </li>
+                <li class="header__burger-contacts-item">
+                    <a href="#" class="header__burger-contacts-item">
+                        <img src="../img/header/location.svg" alt="location">
+                        Варшавское ш., 36с2, Москва
+                    </a>
+                </li>
+            </ul>
+
+            <div class="header__burger-social">
+                <img src="../img/header/viber.svg" alt="viber">
+                <img src="../img/header/telegram.svg" alt="telegram">
+                <img src="../img/header/whatsapp.svg" alt="whatsapp">
+            </div>
         </div>
     </div>
 </header>
@@ -659,8 +727,8 @@
                             <li class="categories__item">
                                 <div class="categories__item-background">
                                     <img
-                                            src="../img/categories/categories-bg-4.webp"
-                                            alt="background-image"
+                                        src="../img/categories/categories-bg-4.webp"
+                                        alt="background-image"
                                     />
                                 </div>
 
@@ -680,8 +748,8 @@
                             <li class="categories__item">
                                 <div class="categories__item-background">
                                     <img
-                                            src="../img/categories/categories-bg-5.webp"
-                                            alt="background-image"
+                                        src="../img/categories/categories-bg-5.webp"
+                                        alt="background-image"
                                     />
                                 </div>
 
@@ -701,8 +769,8 @@
                             <li class="categories__item">
                                 <div class="categories__item-background">
                                     <img
-                                            src="../img/categories/categories-bg-6.webp"
-                                            alt="background-image"
+                                        src="../img/categories/categories-bg-6.webp"
+                                        alt="background-image"
                                     />
                                 </div>
 
@@ -726,8 +794,8 @@
                             <li class="categories__item">
                                 <div class="categories__item-background">
                                     <img
-                                            src="../img/categories/categories-bg-1.webp"
-                                            alt="background-image"
+                                        src="../img/categories/categories-bg-1.webp"
+                                        alt="background-image"
                                     />
                                 </div>
 
@@ -747,8 +815,8 @@
                             <li class="categories__item">
                                 <div class="categories__item-background">
                                     <img
-                                            src="../img/categories/categories-bg-2.webp"
-                                            alt="background-image"
+                                        src="../img/categories/categories-bg-2.webp"
+                                        alt="background-image"
                                     />
                                 </div>
 
@@ -768,8 +836,8 @@
                             <li class="categories__item">
                                 <div class="categories__item-background">
                                     <img
-                                            src="../img/categories/categories-bg-3.webp"
-                                            alt="background-image"
+                                        src="../img/categories/categories-bg-3.webp"
+                                        alt="background-image"
                                     />
                                 </div>
 
@@ -789,8 +857,8 @@
                             <li class="categories__item">
                                 <div class="categories__item-background">
                                     <img
-                                            src="../img/categories/categories-bg-4.webp"
-                                            alt="background-image"
+                                        src="../img/categories/categories-bg-4.webp"
+                                        alt="background-image"
                                     />
                                 </div>
 
@@ -810,8 +878,8 @@
                             <li class="categories__item">
                                 <div class="categories__item-background">
                                     <img
-                                            src="../img/categories/categories-bg-5.webp"
-                                            alt="background-image"
+                                        src="../img/categories/categories-bg-5.webp"
+                                        alt="background-image"
                                     />
                                 </div>
 
@@ -831,8 +899,8 @@
                             <li class="categories__item">
                                 <div class="categories__item-background">
                                     <img
-                                            src="../img/categories/categories-bg-6.webp"
-                                            alt="background-image"
+                                        src="../img/categories/categories-bg-6.webp"
+                                        alt="background-image"
                                     />
                                 </div>
 
@@ -856,8 +924,8 @@
                             <li class="categories__item">
                                 <div class="categories__item-background">
                                     <img
-                                            src="../img/categories/categories-bg-1.webp"
-                                            alt="background-image"
+                                        src="../img/categories/categories-bg-1.webp"
+                                        alt="background-image"
                                     />
                                 </div>
 
@@ -877,8 +945,8 @@
                             <li class="categories__item">
                                 <div class="categories__item-background">
                                     <img
-                                            src="../img/categories/categories-bg-2.webp"
-                                            alt="background-image"
+                                        src="../img/categories/categories-bg-2.webp"
+                                        alt="background-image"
                                     />
                                 </div>
 
@@ -898,8 +966,8 @@
                             <li class="categories__item">
                                 <div class="categories__item-background">
                                     <img
-                                            src="../img/categories/categories-bg-3.webp"
-                                            alt="background-image"
+                                        src="../img/categories/categories-bg-3.webp"
+                                        alt="background-image"
                                     />
                                 </div>
 
@@ -919,8 +987,8 @@
                             <li class="categories__item">
                                 <div class="categories__item-background">
                                     <img
-                                            src="../img/categories/categories-bg-4.webp"
-                                            alt="background-image"
+                                        src="../img/categories/categories-bg-4.webp"
+                                        alt="background-image"
                                     />
                                 </div>
 
@@ -940,8 +1008,8 @@
                             <li class="categories__item">
                                 <div class="categories__item-background">
                                     <img
-                                            src="../img/categories/categories-bg-5.webp"
-                                            alt="background-image"
+                                        src="../img/categories/categories-bg-5.webp"
+                                        alt="background-image"
                                     />
                                 </div>
 
@@ -961,8 +1029,8 @@
                             <li class="categories__item">
                                 <div class="categories__item-background">
                                     <img
-                                            src="../img/categories/categories-bg-6.webp"
-                                            alt="background-image"
+                                        src="../img/categories/categories-bg-6.webp"
+                                        alt="background-image"
                                     />
                                 </div>
 
@@ -981,7 +1049,6 @@
                             </li>
                         </ul>
                     </div>
-
                 </div>
             </div>
 
