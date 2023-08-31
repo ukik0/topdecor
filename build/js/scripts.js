@@ -15,7 +15,6 @@ const rem = function (rem) {
 };
 
 const heroSwiper = document.querySelector('.hero__swiper');
-
 if (heroSwiper) {
     const swiper = new Swiper('.hero__swiper', {
         pagination: {
@@ -48,7 +47,6 @@ if (heroSwiper) {
 }
 
 const categoriesSwiper = document.querySelector('.categories__swiper');
-
 if (categoriesSwiper) {
     const swiper = new Swiper('.categories__swiper', {
         pagination: {
@@ -84,6 +82,46 @@ if (categoriesSwiper) {
             },
             slideChange: ({ realIndex, slides }) => {
                 $('.categories-current-slide').text(String(realIndex + 1).padStart(2, '0'));
+            }
+        }
+    });
+}
+
+const brandsSwiper = document.querySelector('.brands__swiper');
+if (brandsSwiper) {
+    const swiper = new Swiper('.brands__swiper', {
+        pagination: {
+            el: '.brands-pagination',
+            clickable: true
+        },
+        slidesPerView: 5,
+        autoplay: true,
+        grabCursor: true,
+        speed: 700,
+        centeredSlides: true,
+        loop: true,
+        keyboard: {
+            enabled: true
+        },
+        navigation: {
+            nextEl: '.brands-next',
+            prevEl: '.brands-prev'
+        },
+        breakpoints: {
+            1: {
+                slidesPerView: 3,
+            },
+            768: {
+                slidesPerView: 5,
+            },
+        },
+        on: {
+            init: ({ slides }) => {
+                const selector = document.querySelector('.brands-length-slides');
+                selector.textContent = `${slides[0].ariaLabel.split('/')[1].toString().trim().padStart(2, '0')}`;
+            },
+            slideChange: ({realIndex}) => {
+                $('.brands-current-slide').text(String(realIndex + 1).padStart(2, '0'));
             }
         }
     });

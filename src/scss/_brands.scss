@@ -1,0 +1,103 @@
+@import 'mixins';
+@import 'vars';
+
+.brands {
+    @include swiper-controls;
+
+    &__heading {
+        @include small-tablet{
+            margin-bottom: 3rem;
+        }
+    }
+    
+    &__swiper {
+        position: relative;
+        width: 90%;
+
+        @include small-tablet{
+            width: 97%;
+        }
+    }
+
+    &__swiper-decor-line {
+        background: #CABDF1;
+        height: .1rem;
+        width: 100%;
+        position: relative;
+        top: 14rem;
+        transform: translateY(50%);
+
+        @include small-tablet{
+            top: 15rem;
+        }
+
+        &::after, &::before{
+            @include pseudo{
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 50%;
+                background: $accent;
+                top: -.6rem;
+
+                @include small-tablet{
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+        }
+
+        &::after{
+            right: 0;
+        }
+
+        &::before{
+            left: 0;
+        }
+    }
+
+    &-slide {
+        padding: 4rem 0;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+
+        @include small-tablet{
+            padding: 8rem 0;
+        }
+
+        svg {
+            width: 20rem;
+            height: 20rem;
+
+            @include small-tablet{
+                width: 14rem;
+                height: 14rem;
+            }
+
+            circle {
+                fill: $light-blue;
+                transition: 0.3s all ease-in;
+            }
+        }
+
+        &.swiper-slide-active {
+            svg {
+                transform: scale(1.2);
+                filter: drop-shadow(1rem 1rem 4rem rgba(128, 131, 181, 0.08));
+                circle {
+                    fill: $white;
+                }
+
+                @include small-tablet{
+                    transform: scale(1.7);
+                }
+            }
+        }
+    }
+
+    &-pagination-info {
+        .swiper-pagination-bullet {
+            width: 1.6rem !important;
+        }
+    }
+}
