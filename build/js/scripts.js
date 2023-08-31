@@ -31,6 +31,36 @@ if (heroSwiper) {
         keyboard: {
             enabled: true
         },
+        navigation: {
+            nextEl: '.hero-next',
+            prevEl: '.hero-prev'
+        },
+        on: {
+            init: ({ slides }) => {
+                const selector = document.querySelector('.hero-length-slides');
+                selector.textContent = `${slides.length.toString().padStart(2, '0')}`;
+            },
+            slideChange: ({ realIndex, slides }) => {
+                $('.hero-current-slide').text(String(realIndex + 1).padStart(2, '0'));
+            }
+        }
+    });
+}
+
+const categoriesSwiper = document.querySelector('.categories__swiper');
+
+if (categoriesSwiper) {
+    const swiper = new Swiper('.categories__swiper', {
+        pagination: {
+            el: '.categories-pagination',
+            clickable: true
+        },
+        spaceBetween: 30,
+        slidesPerView: 1,
+        keyboard: {
+            enabled: true
+        },
+        effect: 'creative',
         creativeEffect: {
             prev: {
                 opacity: 0,
@@ -44,16 +74,16 @@ if (heroSwiper) {
             }
         },
         navigation: {
-            nextEl: '.hero-next',
-            prevEl: '.hero-prev'
+            nextEl: '.categories-next',
+            prevEl: '.categories-prev'
         },
         on: {
             init: ({ slides }) => {
-                const selector = document.querySelector('.hero-length-slides');
+                const selector = document.querySelector('.categories-length-slides');
                 selector.textContent = `${slides.length.toString().padStart(2, '0')}`;
             },
             slideChange: ({ realIndex, slides }) => {
-                $('.hero-current-slide').text(String(realIndex + 1).padStart(2, '0'));
+                $('.categories-current-slide').text(String(realIndex + 1).padStart(2, '0'));
             }
         }
     });

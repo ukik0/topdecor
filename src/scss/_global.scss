@@ -88,6 +88,7 @@ section {
 .swiper-pagination {
     position: initial !important;
     width: auto;
+    display: inline-flex;
 
     &-bullet {
         margin: 0 !important;

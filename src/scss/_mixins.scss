@@ -92,7 +92,7 @@
 }
 
 @mixin icon-circle-blue($padding) {
-    background-color: #586CBE;
+    background-color: #586cbe;
     filter: drop-shadow(5px 13px 50px rgba(57, 56, 113, 0.15));
     border-radius: 50%;
     padding: $padding;
@@ -107,9 +107,9 @@
     @include small-tablet {
         width: 4.8rem;
         height: 4.8rem;
-
-        @content;
     }
+
+    @content;
 }
 
 @mixin pseudo-states($color) {
@@ -147,3 +147,31 @@
     }
 }
 
+@mixin swiper-controls {
+    &-pagination-info {
+        margin-top: 4.3rem;
+        display: inline-flex;
+    }
+
+    &-prev,
+    &-next {
+        position: initial !important;
+        margin-top: 0 !important;
+    }
+
+    &-controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $gap-xs;
+    }
+
+    &-buttons {
+        display: flex;
+        align-items: center;
+        gap: $gap-s;
+        margin-top: 4rem;
+    }
+
+    @content;
+}
