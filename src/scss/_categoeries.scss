@@ -133,4 +133,12 @@
     }
 
     @include swiper-controls;
+
+    &__link {
+        @include small-tablet{
+            margin-top: 6rem;
+            padding: 1.9rem 4rem;
+            display: inline-block;
+        }
+    }
 }

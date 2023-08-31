@@ -2545,4 +2545,10 @@ button.swiper-pagination-bullet {
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+  .categories__link {
+    margin-top: 6rem;
+    padding: 1.9rem 4rem;
+    display: inline-block;
+  }
 }
