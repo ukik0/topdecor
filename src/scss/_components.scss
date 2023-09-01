@@ -67,6 +67,10 @@
     @include input();
 }
 
+.label {
+    @include label();
+}
+
 .icon-circle {
     @include icon-circle;
 }

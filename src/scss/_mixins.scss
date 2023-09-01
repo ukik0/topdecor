@@ -276,8 +276,49 @@
         line-height: 4.5rem;
     }
 
+    &::placeholder{
+        color: $grey;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 2.464rem;
+
+        @include small-tablet{
+            font-size: 3rem;
+            line-height: 4.5;
+        }
+    }
+
     @content;
 
+}
+
+@mixin label() {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .6rem;
+    width: 100%;
+
+    @include small-tablet{
+        gap: $gap-s;
+    }
+
+    span {
+        color: $black;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 2.464rem;
+        margin-left: 2.6rem;
+
+        @include small-tablet{
+            font-size: 3rem;
+            line-height: 4.5rem;
+        }
+    }
+
+    @content;
 }
 
 @mixin vertical-row {
