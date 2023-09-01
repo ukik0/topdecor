@@ -1,0 +1,70 @@
+@import "vars";
+@import "mixins";
+
+
+.banner {
+    &__content {
+        position: relative;
+        padding: 9rem 8rem;
+
+        @include small-tablet{
+            padding: 3rem 2.1rem;
+            height: 85rem;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        border-radius: 2.5rem;
+
+        img {
+            border-radius: inherit;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        color: $black;
+        font-size: 6rem;
+        font-weight: 600;
+        line-height: 7.2rem;
+        margin-bottom: 3rem;
+        max-width: 51rem;
+        width: 100%;
+
+        @include small-tablet{
+            font-size: 4.8rem;
+            line-height: 5.8rem;
+            margin-bottom: 2rem;
+            max-width: 100%;
+        }
+    }
+
+    &__description {
+        color: $grey;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 2.8rem;
+        margin-bottom: 4rem;
+        max-width: 32.3rem;
+        width: 100%;
+
+        @include small-tablet{
+            font-size: 3.4rem;
+            line-height: 4.8rem;
+            margin-bottom: 4rem;
+            max-width: 50rem;
+        }
+    }
+
+    &__button {
+        padding: 1.75rem 2.6rem;
+
+        @include small-tablet{
+            padding: 1.9rem 4rem;
+        }
+    }
+}
