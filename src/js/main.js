@@ -151,6 +151,35 @@ if (sharesSlider) {
     });
 }
 
+const leadersSlider = document.querySelector('.leaders__swiper');
+if (leadersSlider) {
+    const swiper = new Swiper('.leaders__swiper', {
+        pagination: {
+            el: '.leaders-pagination',
+            clickable: true
+        },
+        slidesPerView: 1,
+        grabCursor: true,
+        speed: 700,
+        keyboard: {
+            enabled: true
+        },
+        navigation: {
+            nextEl: '.leaders-next',
+            prevEl: '.leaders-prev'
+        },
+        on: {
+            init: ({ slides }) => {
+                const selector = document.querySelector('.leaders-length-slides');
+                selector.textContent = `${slides[0].ariaLabel.split('/')[1].toString().trim().padStart(2, '0')}`;
+            },
+            slideChange: ({realIndex}) => {
+                $('.leaders-current-slide').text(String(realIndex + 1).padStart(2, '0'));
+            }
+        }
+    });
+}
+
 $('.burger-entry').on('click', function () {
     $('.header__burger-menu').addClass('--active');
     $('body').addClass('locked');
