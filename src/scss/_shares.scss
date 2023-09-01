@@ -13,6 +13,24 @@
         &-list {
             display: flex;
             align-items: center;
+            max-width: 90%;
+            overflow-x: scroll;
+            cursor: grab;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                display: none; /* for Chrome, Safari, and Opera */
+            }
+
+            &.dragging {
+                user-select: none;
+
+                a {
+                    user-select: none;
+                    pointer-events: none;
+                }
+            }
         }
 
         &-item {
@@ -42,6 +60,7 @@
         &-icon {
             width: 2.8rem;
             height: 2.8rem;
+            cursor: pointer;
 
             @include small-tablet{
                 display: none;

@@ -190,6 +190,7 @@
         @include small-tablet{
             flex-direction: column;
             gap: $gap-m;
+            align-items: flex-start;
         }
 
         &-price {
@@ -252,6 +253,8 @@
             }
         }
     }
+
+    @content;
 }
 
 @mixin project-card {
