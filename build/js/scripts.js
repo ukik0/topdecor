@@ -127,6 +127,35 @@ if (brandsSwiper) {
     });
 }
 
+const sharesSlider = document.querySelector('.shares__swiper');
+if (sharesSlider) {
+    const swiper = new Swiper('.shares__swiper', {
+        pagination: {
+            el: '.shares-pagination',
+            clickable: true
+        },
+        slidesPerView: 1,
+        grabCursor: true,
+        speed: 700,
+        keyboard: {
+            enabled: true
+        },
+        navigation: {
+            nextEl: '.shares-next',
+            prevEl: '.shares-prev'
+        },
+        on: {
+            init: ({ slides }) => {
+                const selector = document.querySelector('.shares-length-slides');
+                selector.textContent = `${slides[0].ariaLabel.split('/')[1].toString().trim().padStart(2, '0')}`;
+            },
+            slideChange: ({realIndex}) => {
+                $('.shares-current-slide').text(String(realIndex + 1).padStart(2, '0'));
+            }
+        }
+    });
+}
+
 $('.burger-entry').on('click', function () {
     $('.header__burger-menu').addClass('--active');
     $('body').addClass('locked');

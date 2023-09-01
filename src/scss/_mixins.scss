@@ -44,14 +44,15 @@
     background: $accent-white;
     padding: $padding-y 2.6rem;
 
-    @content;
-
     @include small-tablet {
         padding: 2.1rem 4rem;
         font-size: 3rem;
         font-style: normal;
         line-height: 4.5rem;
     }
+
+    @content;
+
 }
 
 @mixin vertical-row {
