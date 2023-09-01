@@ -8,7 +8,7 @@
     backdrop-filter: blur(5px);
     align-items: center;
     justify-content: center;
-    z-index: 2;
+    z-index: 1000;
     opacity: 0;
     pointer-events: none;
     will-change: opacity;
@@ -31,6 +31,12 @@
         will-change: transform;
         transition: .2s transform ease-in;
 
+        @include small-tablet{
+            padding: 4rem 4rem 8rem 4rem;
+            max-width: 70rem;
+            width: 100%;
+        }
+
         &.--active {
             transform: scale(1);
         }
@@ -43,6 +49,13 @@
             font-weight: 600;
             line-height: 7.2rem;
             margin-bottom: 3rem;
+
+            @include small-tablet{
+                font-size: 4.8rem;
+                line-height: 5.8rem;
+                margin-bottom: 4rem;
+                margin-top: 2rem;
+            }
         }
 
         &__subtitle {
@@ -53,18 +66,28 @@
             font-weight: 600;
             line-height: 2.8rem;
             margin-bottom: 4rem;
+
+            @include small-tablet{
+                text-align: center;
+                font-size: 3.4rem;
+                line-height: 4.8rem;
+                margin-bottom: 8rem;
+            }
         }
 
         &__close {
             cursor: pointer;
-            display: flex;
-            justify-content: flex-end;
             position: absolute;
             right: 4rem;
             top: 4rem;
 
             svg {
                 @include svgSize;
+
+                @include small-tablet{
+                    width: 4.4rem;
+                    height: 4.4rem;
+                }
             }
         }
     }
@@ -75,6 +98,13 @@
 }
 
 .request__modal {
+
+    &-title {
+        max-width: 32rem;
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+    }
 
     &-form {
         display: flex;
@@ -110,6 +140,10 @@
         padding: 1.9rem 2.6rem;
         margin: 0 auto;
         display: block;
+
+        @include small-tablet{
+            padding: 2.1rem 4rem;
+        }
 
         &-success {
             @extend .request__modal-button !optional;

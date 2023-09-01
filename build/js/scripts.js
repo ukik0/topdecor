@@ -195,7 +195,7 @@ $('.header__burger-close').on('click', function () {
     $('body').removeClass('locked');
 });
 
-function bindModal(trigger, modal, close) {
+function bindModal(trigger, modal, close, callback = () => null) {
     (trigger = document.querySelector(trigger)),
         (modal = document.querySelector(modal)),
         (close = document.querySelector(close));
@@ -205,33 +205,45 @@ function bindModal(trigger, modal, close) {
 
     if (!trigger || !modal || !close || !modalBody) return;
 
-    trigger.addEventListener('click', (e) => {
+    $(trigger).on('click', (e) => {
         e.preventDefault();
         modal.classList.add('--active');
         modalBody.classList.add('--active');
         body.classList.add('locked');
     });
-    close.addEventListener('click', () => {
+    $(close).on('click', () => {
         modalBody.classList.remove('--active');
         modal.classList.remove('--active');
         body.classList.remove('locked');
     });
-    modal.addEventListener('click', (e) => {
+    $(modal).on('click', (e) => {
         if (e.target === modal) {
             modalBody.classList.remove('--active');
             modal.classList.remove('--active');
             body.classList.remove('locked');
         }
     });
+
+    callback()
 }
 
 // ПЕРВЫЙ аргумент - класс кнопки, при клике на которую будет открываться модальное окно.
 // ВТОРОЙ аргумент - класс самого модального окна.
 // ТРЕТИЙ аргумент - класс кнопки, при клике на которую будет закрываться модальное окно.
 bindModal('.request-button', '#request-modal', '#request-modal .modal__close');
-bindModal('.request-success-button', '#request-modal-success', '#request-modal-success .modal__close');
-$('.request-success-button').on('click', () => {
-    $('#request-modal').removeClass('--active');
-    $('#request-modal .modal').removeClass('--active');
-});
+bindModal('.request-success-button', '#request-modal-success', '#request-modal-success .modal__close', bindSuccessModal);
+
+function bindSuccessModal() {
+    $('.request-success-button').on('click', () => {
+        $('.modal__wrapper').each(function() {
+            $(this).removeClass('--active')
+            $(this).find('.modal').removeClass('--active')
+        })
+
+        $('#request-modal-success').addClass('--active');
+        $('#request-modal-success .modal').addClass('--active');
+    });
+}
+
+
 

@@ -450,7 +450,7 @@ section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  z-index: 2;
+  z-index: 1000;
   opacity: 0;
   pointer-events: none;
   will-change: opacity;
@@ -511,12 +511,6 @@ section {
 
 .modal__wrapper .modal__close {
   cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
   position: absolute;
   right: 4rem;
   top: 4rem;
@@ -529,6 +523,13 @@ section {
 
 #request-modal .modal {
   width: 107.4rem;
+}
+
+.request__modal-title {
+  max-width: 32rem;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 4rem;
 }
 
 .request__modal-form {
@@ -3461,9 +3462,39 @@ button.swiper-pagination-bullet {
     display: inline-block;
   }
 
+  .modal__wrapper .modal {
+    padding: 4rem 4rem 8rem 4rem;
+    max-width: 70rem;
+    width: 100%;
+  }
+
+  .modal__wrapper .modal__title {
+    font-size: 4.8rem;
+    line-height: 5.8rem;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+  }
+
+  .modal__wrapper .modal__subtitle {
+    text-align: center;
+    font-size: 3.4rem;
+    line-height: 4.8rem;
+    margin-bottom: 8rem;
+  }
+
   .modal__wrapper .modal__close svg {
     width: 4.8rem;
     height: 4.8rem;
+  }
+
+  .modal__wrapper .modal__close svg {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+
+  .request__modal-button,
+  .request__modal-button-success {
+    padding: 2.1rem 4rem;
   }
 
   .header {
