@@ -1,4 +1,239 @@
-// Footer
-footer {
-    display: block;
+@import 'mixins';
+@import 'vars';
+
+.footer {
+    position: relative;
+
+    .decor-circles-1 {
+        position: absolute;
+        left: -5rem;
+        top: 22%;
+        width: 17.4195rem;
+        height: 17.3156rem;
+    }
+
+    .decor-circles-2 {
+        position: absolute;
+        right: 9rem;
+        top: 32%;
+        width: 20rem;
+        height: 18.1707rem;
+
+        @include small-tablet{
+            right: 4rem;
+            top: 26%;
+        }
+    }
+
+    .decor-circles-3 {
+        position: absolute;
+        top: -8rem;
+        left: 8rem;
+        width: 6.165rem;
+        height: 6.1282rem;
+    }
+
+    .decor-circles-1, .decor-circles-3{
+        @include small-tablet{
+            display: none;
+        }
+    }
+    
+    &__content {
+        position: relative;
+        display: flex;
+        gap: 23rem;
+        margin-bottom: 2.3rem;
+
+        @include small-tablet{
+            flex-direction: column;
+            gap: 6rem;
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__logo {
+        width: 18.8rem;
+
+        @include small-tablet{
+            width: 27.3rem;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 5.3rem;
+
+        @include small-tablet{
+            gap: 6rem;
+        }
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: $gap-s;
+
+            @include small-tablet{
+                gap: $gap-l;
+            }
+        }
+
+        &-item {
+            img {
+                width: 2.4rem;
+                height: 2.4rem;
+
+                @include small-tablet{
+                    width: 4rem;
+                    height: 4rem;
+                }
+            }
+
+            &-text {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                color: $black;
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: 2.464rem;
+                font-style: normal;
+
+                @include small-tablet{
+                    gap: $gap-xs;
+                    font-size: 3rem;
+                    line-height: 4.5rem;
+                }
+            }
+
+            a {
+                transition: .3s color ease-in;
+
+                &:hover{
+                    color: $accent;
+                }
+            }
+        }
+
+        &-contacts {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+
+            @include small-tablet{
+                gap: $gap-m;
+            }
+        }
+
+        &-contact {
+            width: 6rem;
+            height: 6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+
+            @include small-tablet{
+                width: 10rem;
+                height: 10rem;
+            }
+
+            &:hover{
+                @include svgHover($accent);
+            }
+
+            svg {
+                width: 2.4rem;
+                height: 2.4rem;
+
+                @include small-tablet{
+                    width: 4rem;
+                    height: 4rem;
+                }
+
+                path {
+                    transition: .3s all ease-in;
+                }
+            }
+        }
+    }
+
+    &__nav {
+        display: flex;
+        gap: 10rem;
+
+        @include small-tablet{
+            gap: 3.2rem;
+        }
+
+        &-item {
+
+            @include small-tablet{
+                &:nth-child(2) {
+                    display: none;
+                }
+
+                flex: 1;
+            }
+
+            &-title {
+                display: block;
+                color: $black;
+                font-size: 2rem;
+                font-weight: 600;
+                line-height: 2.8rem;
+                margin-bottom: 2rem;
+
+                @include small-tablet{
+                    font-size: 3.4rem;
+                    line-height: 4.8rem;
+                    margin-bottom: 3rem;
+                }
+            }
+        }
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            @include small-tablet{
+                gap: $gap-s;
+            }
+
+            &-item {
+                color: $grey;
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: 2.464rem;
+                transition: .3s color ease-in;
+
+                @include small-tablet{
+                    font-size: 3rem;
+                    line-height: 4.5rem;
+                }
+
+                &:hover{
+                    color: $accent;
+                }
+            }
+        }
+    }
+
+    &__copyright {
+        display: block;
+        color: $grey;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.96rem;
+        padding: 3rem 0;
+        border-top: .1rem solid $light-blue;
+
+        @include small-tablet{
+            font-size: 2.4rem;
+            line-height: 3.6rem;
+        }
+    }
 }

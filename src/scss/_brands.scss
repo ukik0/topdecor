@@ -68,6 +68,7 @@
         svg {
             width: 20rem;
             height: 20rem;
+            transition: .3s all ease-in;
 
             @include small-tablet{
                 width: 14rem;
