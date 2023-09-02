@@ -214,6 +214,66 @@ if (noveltiesSlider) {
     });
 }
 
+const ourServicesSlider = document.querySelector('.our-services__swiper');
+if (ourServicesSlider) {
+    const swiper = new Swiper('.our-services__swiper', {
+        pagination: {
+            el: '.our-services-pagination',
+            clickable: true
+        },
+        spaceBetween: rem(4),
+        slidesPerView: 1,
+        grabCursor: true,
+        speed: 700,
+        keyboard: {
+            enabled: true
+        },
+        navigation: {
+            nextEl: '.our-services-next',
+            prevEl: '.our-services-prev'
+        },
+        on: {
+            init: ({ slides }) => {
+                const selector = document.querySelector('.our-services-length-slides');
+                selector.textContent = `${slides[0].ariaLabel.split('/')[1].toString().trim().padStart(2, '0')}`;
+            },
+            slideChange: ({realIndex}) => {
+                $('.our-services-current-slide').text(String(realIndex + 1).padStart(2, '0'));
+            }
+        }
+    });
+}
+
+const showroomSlider = document.querySelector('.showroom__swiper');
+if (showroomSlider) {
+    const swiper = new Swiper('.showroom__swiper', {
+        pagination: {
+            el: '.showroom-pagination',
+            clickable: true
+        },
+        spaceBetween: rem(4),
+        slidesPerView: 1,
+        grabCursor: true,
+        speed: 700,
+        keyboard: {
+            enabled: true
+        },
+        navigation: {
+            nextEl: '.showroom-next',
+            prevEl: '.showroom-prev'
+        },
+        on: {
+            init: ({ slides }) => {
+                const selector = document.querySelector('.showroom-length-slides');
+                selector.textContent = `${slides[0].ariaLabel.split('/')[1].toString().trim().padStart(2, '0')}`;
+            },
+            slideChange: ({realIndex}) => {
+                $('.showroom-current-slide').text(String(realIndex + 1).padStart(2, '0'));
+            }
+        }
+    });
+}
+
 $('.burger-entry').on('click', function () {
     $('.header__burger-menu').addClass('--active');
     $('body').addClass('locked');
@@ -319,3 +379,29 @@ if (document.querySelector('.shares__categories')) {
         container.scrollBy({ left: 150, behavior: 'smooth' })
     })
 }
+
+ymaps.ready(init);
+function init() {
+    let map = new ymaps.Map('map', {
+        center: [55.57164454207913,37.585655000000024],
+        zoom: 10.5
+    });
+
+    let placemark = new ymaps.Placemark(map.getCenter(), {}, {
+        iconLayout: 'default#image',
+        iconImageHref: '../img/yMap-icon.svg',
+        iconImageSize: [rem(7), rem(7)],
+    })
+
+    map.controls.remove('geolocationControl'); // удаляем геолокацию
+    map.controls.remove('searchControl'); // удаляем поиск
+    map.controls.remove('trafficControl'); // удаляем контроль трафика
+    map.controls.remove('typeSelector'); // удаляем тип
+    map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+    map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+    map.controls.remove('rulerControl'); // удаляем контрол правил
+
+    map.geoObjects.add(placemark);
+}
+
+

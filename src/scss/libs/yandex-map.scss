@@ -1,0 +1,36 @@
+@import '../vars';
+@import '../mixins';
+
+.map {
+    max-width: 89.7rem;
+    width: 100% !important;
+    height: 70.5rem !important;
+    background: $light -4.315px -178.784px / 132.175% 168.171%;
+    border-radius: 5rem !important;
+
+    @include small-tablet{
+        max-width: 69rem !important;
+        height: 38rem !important;
+    }
+}
+
+.map [class*="copyrights-pane"] {
+    display: none !important;
+}
+
+.map [class*="ground-pane"] {
+    filter: grayscale(1);
+}
+
+.map [class*="inner-panes"] {
+    border-radius: 5rem;
+
+    @include small-tablet{
+        border-radius: 1rem;
+    }
+}
+
+.map .ymaps-2-1-79-map {
+    width: 100%;
+    border-radius: inherit;
+}

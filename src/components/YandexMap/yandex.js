@@ -1,4 +1,4 @@
-function init() {
+function initYmaps() {
     let map = new ymaps.Map('map-test', {
         center: center,
         zoom: 17
@@ -14,4 +14,4 @@ function init() {
     map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
 }
 
-ymaps.ready(init);
+ymaps.ready(initYmaps);
