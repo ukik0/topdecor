@@ -261,6 +261,7 @@ function bindModal(trigger, modal, close, callback = () => null) {
 // ТРЕТИЙ аргумент - класс кнопки, при клике на которую будет закрываться модальное окно.
 bindModal('.request-button', '#request-modal', '#request-modal .modal__close');
 bindModal('.request-success-button', '#request-modal-success', '#request-modal-success .modal__close', bindSuccessModal);
+bindModal('.room-setup__form-button', '#request-modal-success', '#request-modal-success .modal__close');
 
 function bindSuccessModal() {
     $('.request-success-button').on('click', () => {
@@ -275,42 +276,42 @@ function bindSuccessModal() {
 }
 
 if (document.querySelector('.shares__categories')) {
-    const COMPONENT_SELECTOR = '.shares__categories';
+    // const COMPONENT_SELECTOR = '.shares__categories';
     const CONTENT_SELECTOR = '.shares__categories-list';
-
-    const components = document.querySelectorAll(COMPONENT_SELECTOR);
-
-    for (let i = 0; i < components.length; i++) {
-        let mx = 0;
-
-        const component = components[i];
-        const content = component.querySelector(CONTENT_SELECTOR);
-
-        const mousemoveHandler = (e) => {
-            const mx2 = e.pageX - content.offsetLeft;
-            if (mx) {
-                content.scrollLeft = content.sx + mx - mx2;
-            }
-        };
-
-        const mousedownHandler = (e) => {
-            content.sx = content.scrollLeft;
-            mx = e.pageX - content.offsetLeft;
-            content.classList.add('dragging');
-        };
-
-        const mouseupHandler = () => {
-            mx = 0;
-            content.classList.remove('dragging');
-        };
-
-        content.addEventListener('mousemove', mousemoveHandler);
-        content.addEventListener('mousedown', mousedownHandler);
-
-        content.addEventListener('mouseup', mouseupHandler);
-        content.addEventListener('mouseleave', mouseupHandler);
-    }
-
+    //
+    // const components = document.querySelectorAll(COMPONENT_SELECTOR);
+    //
+    // for (let i = 0; i < components.length; i++) {
+    //     let mx = 0;
+    //
+    //     const component = components[i];
+    //     const content = component.querySelector(CONTENT_SELECTOR);
+    //
+    //     const mousemoveHandler = (e) => {
+    //         const mx2 = e.pageX - content.offsetLeft;
+    //         if (mx) {
+    //             content.scrollLeft = content.sx + mx - mx2;
+    //         }
+    //     };
+    //
+    //     const mousedownHandler = (e) => {
+    //         content.sx = content.scrollLeft;
+    //         mx = e.pageX - content.offsetLeft;
+    //         content.classList.add('dragging');
+    //     };
+    //
+    //     const mouseupHandler = () => {
+    //         mx = 0;
+    //         content.classList.remove('dragging');
+    //     };
+    //
+    //     content.addEventListener('mousemove', mousemoveHandler);
+    //     content.addEventListener('mousedown', mousedownHandler);
+    //
+    //     content.addEventListener('mouseup', mouseupHandler);
+    //     content.addEventListener('mouseleave', mouseupHandler);
+    // }
+    //
     const arrow = document.querySelector('.shares__categories-icon');
     const container = document.querySelector(CONTENT_SELECTOR);
 

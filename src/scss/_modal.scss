@@ -100,10 +100,12 @@
 .request__modal {
 
     &-title {
-        max-width: 32rem;
-        width: 100%;
-        margin: 0 auto;
-        margin-bottom: 4rem;
+        @include small-tablet{
+            max-width: 32rem;
+            width: 100%;
+            margin: 0 auto;
+            margin-bottom: 4rem;
+        }
     }
 
     &-form {
