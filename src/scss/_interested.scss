@@ -1,0 +1,48 @@
+@import "mixins";
+@import "vars";
+
+.interested {
+    @include swiper-controls();
+
+    &__list {
+        display: flex;
+        gap: $gap-m;
+
+        @include small-tablet{
+            display: grid;
+            grid-template-columns: repeat(2, 33.6rem);
+            gap: $gap-s;
+        }
+    }
+
+    &__item {
+        max-width: 36.8rem;
+        width: 100%;
+
+        @include product-card;
+
+        @include small-tablet{
+            &-bottom {
+                align-items: flex-start;
+            }
+
+            &-title {
+                margin-bottom: 2rem;
+            }
+
+            &-info {
+                display: block;
+
+                &-counter {
+                    display: none;
+                }
+
+                &-category {
+                    font-size: 2.4rem;
+                    line-height: 3.6rem;
+                    padding: .6rem 3.2rem;
+                }
+            }
+        }
+    }
+}

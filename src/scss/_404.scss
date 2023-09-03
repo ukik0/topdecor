@@ -1,0 +1,119 @@
+@import "mixins";
+@import "vars";
+
+.error {
+    position: relative;
+    margin-bottom: 14rem;
+    padding: 19.5rem 0 18.5rem 0;
+    overflow: hidden;
+
+    @include small-tablet{
+        margin-bottom: 10rem;
+    }
+
+    &__content {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 3.5rem;
+        z-index: 2;
+    }
+
+    &__title-unwrap {
+        position: absolute;
+        z-index: 1;
+        inset: 0;
+        top: 38%;
+
+        @include small-tablet {
+            top: 45%;
+            left: -31rem;
+
+            svg {
+                width: 135rem;
+            }
+        }
+    }
+
+    &__banner {
+        width: 64.6501rem;
+        height: 64.8289rem;
+        position: absolute;
+        left: 3rem;
+        transform: scale(1.6);
+        top: -8rem;
+
+        @include small-tablet{
+            transform: scale(1.3);
+            left: -28rem;
+            top: -1rem;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: auto;
+        max-width: 80rem;
+        width: 100%;
+
+        @include small-tablet{
+            max-width: 36rem;
+            width: 100%;
+        }
+
+        &-title {
+            color: $black;
+            font-size: 8rem;
+            font-weight: 600;
+            line-height: 8.8rem;
+            margin-bottom: 4rem;
+
+            @include small-tablet{
+                font-size: 6.4rem;
+                font-weight: 600;
+                line-height: 7.3rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        &-subtitle {
+            display: block;
+            margin-bottom: 3rem;
+            color: $black;
+            font-size: 3.7rem;
+            font-weight: 600;
+            line-height: 4.44rem;
+
+            @include small-tablet{
+                font-size: 4.4rem;
+                line-height: 5.2rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        &-description {
+            color: $black;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 2.8rem;
+            margin-bottom: 4rem;
+
+            @include small-tablet{
+                font-size: 3rem;
+                font-weight: 500;
+                line-height: 4.5rem;
+                margin-bottom: 4rem;
+            }
+        }
+
+        &-button {
+            padding: 1.7rem 2.6rem;
+
+            @include small-tablet{
+                padding: 2.1rem 4rem;
+            }
+        }
+    }
+}
