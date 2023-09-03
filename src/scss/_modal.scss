@@ -26,6 +26,7 @@
         border-radius: 5rem;
         background: $white;
         box-shadow: 10px 20px 94px 0px rgba(125, 128, 161, 0.2);
+        width: 107.4rem;
 
         transform: scale(1.15);
         will-change: transform;
@@ -93,12 +94,7 @@
     }
 }
 
-#request-modal .modal {
-    width: 107.4rem;
-}
-
 .request__modal {
-
     &-title {
         @include small-tablet{
             max-width: 32rem;
@@ -121,6 +117,12 @@
         gap: $gap-s;
         margin-bottom: 4rem;
         width: 100%;
+
+        @include small-tablet{
+            flex-direction: column;
+            gap: $gap-m;
+            margin-bottom: 8rem;
+        }
     }
 
     &-input {

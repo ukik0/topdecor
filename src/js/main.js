@@ -317,6 +317,8 @@ function bindModal(trigger, modal, close, callback = () => null) {
 bindModal('.request-button', '#request-modal', '#request-modal .modal__close');
 bindModal('.request-success-button', '#request-modal-success', '#request-modal-success .modal__close', bindSuccessModal);
 bindModal('.room-setup__form-button', '#request-modal-success', '#request-modal-success .modal__close');
+bindModal('.designers-request-button', '#request-modal', '#request-modal .modal__close', bindSuccessModal);
+bindModal('.designers-request-mobile-button', '#request-modal', '#request-modal .modal__close', bindSuccessModal);
 
 function bindSuccessModal() {
     $('.request-success-button').on('click', () => {
