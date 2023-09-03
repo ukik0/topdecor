@@ -1,0 +1,27 @@
+@import "vars";
+@import "mixins";
+
+.favorites {
+    &__title {
+        margin: 4rem 0;
+    }
+
+    &__list {
+        display: flex;
+        gap: $gap-m;
+        flex-wrap: wrap;
+
+        @include small-tablet{
+            display: grid;
+            grid-template-columns: repeat(2, 33.6rem);
+            gap: $gap-s;
+        }
+    }
+
+    &__item {
+        max-width: 36.7rem;
+        width: 100%;
+
+        @include product-card;
+    }
+}

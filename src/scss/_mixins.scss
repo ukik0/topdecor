@@ -69,7 +69,19 @@
             top: 1.5rem;
             cursor: pointer;
 
+            &.--active {
+                svg {
+                    path {
+                        fill: $accent;
+                    }
+                }
+            }
+
             svg {
+                path {
+                    transition: .3s all ease-in;
+                }
+
                 @include svgSize;
 
                 @include small-tablet{
@@ -78,11 +90,7 @@
                 }
             }
 
-            &:hover{
-                svg {
-                    fill: $accent;
-                }
-            }
+            @include svgHover($accent);
         }
 
         &-image {
