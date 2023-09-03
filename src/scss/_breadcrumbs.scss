@@ -1,0 +1,48 @@
+@import 'vars';
+@import 'mixins';
+
+.breadcrumbs {
+    margin: 4rem 0 3.7rem 0;
+
+    @include small-tablet{
+        margin: 4rem 0;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        color: $grey;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 2.464rem;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+
+        @include pseudo-states($accent);
+
+        @include small-tablet{
+            font-size: 3rem;
+            line-height: 4.5rem;
+        }
+
+        &:not(:first-child) {
+            color: $black;
+
+            svg {
+                width: 1.6rem;
+                height: 1.6rem;
+
+                @include small-tablet{
+                    width: 3.2rem;
+                    height: 3.2rem;
+                }
+            }
+        }
+    }
+}

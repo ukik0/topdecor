@@ -1,0 +1,101 @@
+@import "vars";
+@import "mixins";
+
+.designers{
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 50rem);
+        gap: $gap-m;
+
+        @include small-tablet{
+            display: flex;
+            flex-direction: column;
+            gap: $gap-l;
+        }
+    }
+
+    &__item {
+        padding: 14.3rem 6.2rem;
+        display: flex;
+        flex-direction: column;
+        gap: $gap-s;
+        border-radius: 5rem;
+        background: $white;
+        box-shadow: 20px 40px 100px 0px rgba(128, 131, 181, 0.20);
+
+        @include small-tablet{
+            padding: 12.4rem 8.4rem;
+        }
+
+        &.--image {
+            padding: 3.6rem;
+            border-radius: 5rem;
+            border: .1rem solid #A5A9BC;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.29) -34.07%, rgba(224, 228, 255, 0.58) 111.47%, rgba(255, 255, 255, 0.58) 111.48%);
+
+            @include small-tablet{
+                padding: 5rem;
+            }
+        }
+
+        &.--medium {
+            grid-column: span 2;
+
+            @include small-tablet{
+                padding: 2.4rem;
+                height: 28rem;
+                order: 1;
+            }
+        }
+
+        &.--bordered-image{
+            border-radius: 50%;
+
+            .designers__item-image {
+                border-radius: inherit;
+                width: 59rem;
+                height: 59rem;
+            }
+        }
+
+        &-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 4rem;
+            box-shadow: 20px 40px 100px 0px rgba(128, 131, 181, 0.20);
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: inherit;
+            }
+        }
+
+        &-title {
+            color: $black;
+            font-size: 3.7rem;
+            font-weight: 600;
+            line-height: 4.44rem;
+
+            @include small-tablet{
+                font-size: 4.4rem;
+                font-weight: 600;
+                line-height: 5.28rem;
+            }
+        }
+
+        &-description {
+            color: $grey-accent;
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 2.464rem;
+
+            @include small-tablet{
+                font-size: 3rem;
+                line-height: 4.5rem;
+            }
+        }
+
+    }
+}
