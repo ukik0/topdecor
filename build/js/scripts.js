@@ -356,7 +356,9 @@ bindModal('.designers-request-button', '#request-modal', '#request-modal .modal_
 bindModal('.designers-request-mobile-button', '#request-modal', '#request-modal .modal__close', bindSuccessModal);
 
 function bindSuccessModal() {
-    $('.request-success-button').on('click', () => {
+    $('.request-success-button').on('click', (event) => {
+        event.preventDefault()
+
         $('.modal__wrapper').each(function() {
             $(this).removeClass('--active')
             $(this).find('.modal').removeClass('--active')
@@ -424,6 +426,33 @@ if (document.querySelector('.map')) {
             iconLayout: 'default#image',
             iconImageHref: '../img/yMap-icon.svg',
             iconImageSize: [rem(7), rem(7)],
+        })
+
+        map.controls.remove('geolocationControl'); // удаляем геолокацию
+        map.controls.remove('searchControl'); // удаляем поиск
+        map.controls.remove('trafficControl'); // удаляем контроль трафика
+        map.controls.remove('typeSelector'); // удаляем тип
+        map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+        map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+        map.controls.remove('rulerControl'); // удаляем контрол правил
+
+        map.geoObjects.add(placemark);
+    }
+}
+
+if (document.querySelector('.contacts-map')) {
+    ymaps.ready(init);
+
+    function init() {
+        let map = new ymaps.Map('contacts-map', {
+            center: [55.708436655963034,37.4071362641405],
+            zoom: 12
+        });
+
+        let placemark = new ymaps.Placemark(map.getCenter(), {}, {
+            iconLayout: 'default#image',
+            iconImageHref: '../img/yMap-icon.svg',
+            iconImageSize: [rem(6), rem(6)],
         })
 
         map.controls.remove('geolocationControl'); // удаляем геолокацию

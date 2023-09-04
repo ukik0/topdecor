@@ -14,12 +14,13 @@
 
     <body class="main__body">
         <!-- Header -->
-        <div class="--wrap-inner">
-            @@include('./html/_header.html')
-            @@include('./html/_404.html')
-        </div>
+       @@include('./html/_header.html')
 
-        <main>@@include('./html/_interested.html')</main>
+        <!-- Main Page -->
+        <main>
+            @@include('./html/_breadcrumbs.html')
+            @@include('./html/_contacts.html')
+        </main>
 
         <!-- Footer -->
         @@include('./html/_footer.html')
