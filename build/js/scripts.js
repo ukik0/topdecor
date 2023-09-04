@@ -315,20 +315,21 @@ $('.header__burger-close').on('click', function () {
 });
 
 function bindModal(trigger, modal, close, callback = () => null) {
-    (trigger = document.querySelector(trigger)),
         (modal = document.querySelector(modal)),
         (close = document.querySelector(close));
 
     const body = document.body;
     const modalBody = modal.querySelector('.modal');
 
-    if (!trigger || !modal || !close || !modalBody) return;
+    if (!$(trigger) || !modal || !close || !modalBody) return;
 
-    $(trigger).on('click', (e) => {
-        e.preventDefault();
-        modal.classList.add('--active');
-        modalBody.classList.add('--active');
-        body.classList.add('locked');
+    $(trigger).each(function () {
+        $(this).on('click', (e) => {
+            e.preventDefault();
+            modal.classList.add('--active');
+            modalBody.classList.add('--active');
+            body.classList.add('locked');
+        });
     });
     $(close).on('click', () => {
         modalBody.classList.remove('--active');
@@ -354,6 +355,7 @@ bindModal('.request-success-button', '#request-modal-success', '#request-modal-s
 bindModal('.room-setup__form-button', '#request-modal-success', '#request-modal-success .modal__close');
 bindModal('.designers-request-button', '#request-modal', '#request-modal .modal__close', bindSuccessModal);
 bindModal('.designers-request-mobile-button', '#request-modal', '#request-modal .modal__close', bindSuccessModal);
+bindModal('.our-services-request-button', '#request-modal', '#request-modal .modal__close', bindSuccessModal);
 
 function bindSuccessModal() {
     $('.request-success-button').on('click', (event) => {

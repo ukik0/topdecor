@@ -84,6 +84,13 @@
                 font-size: 1.6rem;
                 font-weight: 500;
                 line-height: 2.464rem;
+                transition: .3s all ease-in;
+
+                &:hover{
+                    background: $accent;
+                    color: $white;
+                    border: .1rem solid transparent;
+                }
 
                 @include small-tablet{
                     padding: .7rem 3.2rem;

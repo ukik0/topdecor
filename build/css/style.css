@@ -2962,6 +2962,14 @@ section {
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 2.464rem;
+  -webkit-transition: 0.3s all ease-in;
+  transition: 0.3s all ease-in;
+}
+
+.our-services__item-info-button:hover {
+  background: #586CBE;
+  color: #fff;
+  border: 0.1rem solid transparent;
 }
 
 .our-services__item-info-description {
@@ -4382,6 +4390,140 @@ section {
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 2.464rem;
+}
+
+.services-banner {
+  border-radius: 2.5rem;
+}
+
+.services-banner__content {
+  position: relative;
+  padding: 10.6rem 10rem 9.6rem 10rem;
+}
+
+.services-banner__image {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 2.5rem;
+}
+
+.services-banner__image img {
+  border-radius: inherit;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.services-banner__subtitle {
+  display: block;
+  color: #A8A7CA;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 2.24rem;
+  letter-spacing: 0.016rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.services-banner__title {
+  color: #555760;
+  font-size: 6rem;
+  font-weight: 600;
+  line-height: 7.2rem;
+  max-width: 65.1rem;
+}
+
+.services__title {
+  margin-bottom: 4rem;
+}
+
+.services__list {
+  display: grid;
+  grid-template-columns: repeat(2, 76.4rem);
+  gap: 3.2rem 3rem;
+}
+
+.services__item {
+  padding: 2.5rem;
+  border-radius: 2.5rem;
+  background: #fff;
+  -webkit-box-shadow: 20px 40px 100px 0px rgba(128, 131, 181, 0.2);
+          box-shadow: 20px 40px 100px 0px rgba(128, 131, 181, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.services__item-image {
+  width: 100%;
+  height: 26.3rem;
+  margin-bottom: 2rem;
+  border-radius: 2.5rem;
+}
+
+.services__item-image img {
+  height: 100%;
+}
+
+.services__item-title {
+  display: block;
+  color: #555760;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 2.88rem;
+  margin-bottom: 1.5rem;
+  -webkit-transition: 0.3s color ease-in;
+  transition: 0.3s color ease-in;
+}
+
+.services__item-title:hover {
+  color: #586CBE;
+}
+
+.services__item-description {
+  color: #82879c;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.464rem;
+  margin-bottom: 1.6rem;
+}
+
+.services__item-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: auto;
+}
+
+.services__item-bottom-price {
+  color: #555760;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 2.88rem;
+}
+
+.services__item-bottom-button {
+  padding: 1.9rem 2.6rem;
+  -webkit-transition: 0.3s all ease-in;
+  transition: 0.3s all ease-in;
+  border: 0.1rem solid transparent;
+}
+
+.services__item-bottom-button:hover {
+  background: transparent;
+  color: #586CBE;
+  border: 0.1rem solid #586CBE;
 }
 
 @font-face {
@@ -7032,6 +7174,71 @@ button.swiper-pagination-bullet {
   .projects-banner__item-description {
     font-size: 3rem;
     line-height: 4.5rem;
+  }
+
+  .services-banner {
+    margin-bottom: 11rem;
+  }
+
+  .services-banner__content {
+    padding: 7rem 4rem;
+    height: 99rem;
+  }
+
+  .services-banner__subtitle {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .services-banner__title {
+    font-size: 4.8rem;
+    line-height: 5.9rem;
+  }
+
+  .services__title {
+    margin-bottom: 6rem;
+  }
+
+  .services__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 2rem;
+  }
+
+  .services__item {
+    padding: 3rem;
+  }
+
+  .services__item-image {
+    height: 19rem;
+    margin-bottom: 3rem;
+  }
+
+  .services__item-title {
+    font-size: 3.4rem;
+    line-height: 4.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .services__item-description {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .services__item-bottom-price {
+    font-size: 3.4rem;
+    line-height: 4.8rem;
+  }
+
+  .services__item-bottom-button {
+    padding: 1.1rem 3.7rem;
   }
 
   .map {
