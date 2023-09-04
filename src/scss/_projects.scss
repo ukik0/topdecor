@@ -1,0 +1,14 @@
+@import "mixins";
+@import "vars";
+
+.projects {
+    @include project-cards;
+
+    &__title {
+        margin-bottom: 4rem;
+
+        @include small-tablet{
+            margin-bottom: 6rem;
+        }
+    }
+}

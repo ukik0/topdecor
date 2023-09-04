@@ -1,0 +1,101 @@
+@import "vars";
+@import "mixins";
+
+.projects-banner{
+    border-radius: 2.5rem;
+    margin-bottom: 4rem;
+
+    @include small-tablet{
+        margin-bottom: 8rem;
+    }
+
+    &__content {
+        position: relative;
+        padding: 6.6rem 8rem;
+
+        @include small-tablet{
+            padding: 8rem 4.4rem;
+            height: 130rem;
+        }
+    }
+
+    @include section-banner-image;
+
+    &__list {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        @include small-tablet{
+            flex-direction: column;
+            gap: 8rem;
+            justify-content: initial;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 30.1rem;
+        width: 100%;
+
+        @include small-tablet{
+            max-width: 100%;
+        }
+
+        &-icon {
+            width: 8rem;
+            height: 8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+
+            @include small-tablet{
+                width: 12rem;
+                height: 12rem;
+            }
+
+            svg {
+                width: 3.2rem;
+                height: 3.2rem;
+
+                @include small-tablet{
+                    width: 4.8rem;
+                    height: 4.8rem;
+                    margin-bottom: 3rem;
+                }
+            }
+        }
+
+        &-title {
+            display: block;
+            color: $black;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 2.8rem;
+            margin-bottom: 1rem;
+
+            @include small-tablet{
+                font-size: 3.4rem;
+                font-weight: 600;
+                line-height: 4.8rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        &-description {
+            color: $grey;
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 2.464rem;
+
+            @include small-tablet{
+                font-size: 3rem;
+                line-height: 4.5rem;
+            }
+        }
+    }
+}
