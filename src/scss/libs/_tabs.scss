@@ -1,0 +1,355 @@
+@import '../vars';
+@import '../mixins';
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    gap: 8.7rem;
+
+    @include small-tablet{
+        flex-direction: column;
+        gap: 6rem;
+    }
+
+    &__header {
+        max-width: 50rem;
+        width: 100%;
+        padding: 0.5rem 3rem;
+        border-radius: 2.5rem;
+        background: $white;
+        box-shadow: 20px 40px 100px 0px rgba(128, 131, 181, 0.2);
+        max-height: 40.4rem;
+
+        @include small-tablet{
+            padding: 2rem 4rem;
+            max-width: 100%;
+            max-height: 48.8rem;
+        }
+
+        &-item {
+            width: 100%;
+            cursor: pointer;
+            padding: 2.5rem 0;
+            color: $grey-accent;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 2.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include small-tablet{
+                padding: 2rem 0;
+                font-size: 3.4rem;
+                line-height: 4.8rem;
+            }
+
+            &:not(:last-child) {
+                border-bottom: 0.1rem solid #e6eaff;
+            }
+
+            &:hover {
+                svg {
+                    opacity: 1;
+                    path {
+                        fill: $accent;
+                    }
+                }
+            }
+
+            svg {
+                transition: 0.3s all;
+                opacity: 0;
+                width: 2.4rem;
+                height: 2rem;
+
+                @include small-tablet{
+                    width: 4rem;
+                    height: 3.3rem;
+                }
+
+                path {
+                    transition: 0.3s all;
+                    fill: $white;
+                }
+            }
+
+            &.active {
+                color: $accent;
+
+                svg {
+                    opacity: 1;
+
+                    path {
+                        fill: $accent;
+                    }
+                }
+            }
+        }
+    }
+    &__content {
+        max-width: 97.3rem;
+        width: 100%;
+
+        &-list {
+            &-item {
+                display: flex;
+                align-items: flex-start;
+                color: $black;
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: 2.464rem;
+                gap: $gap-xs;
+
+                @include small-tablet{
+                    font-size: 3rem;
+                    line-height: 4.5rem;
+                }
+
+                &-text {
+                    span {
+                        color: $accent;
+                    }
+                }
+            }
+        }
+
+
+        &-item {
+            will-change: opacity, transform;
+            flex-direction: column;
+            display: none;
+
+            &-list {
+                display: flex;
+                flex-direction: column;
+                gap: $gap-xs;
+
+                @include small-tablet{
+                    gap: $gap-s;
+                }
+            }
+
+            &-title {
+                color: $black;
+                font-size: 2rem;
+                font-weight: 600;
+                line-height: 2.8rem;
+                display: block;
+                margin-bottom: 1.5rem;
+
+                @include small-tablet{
+                    font-size: 3.4rem;
+                    line-height: 4.8rem;
+                    margin-bottom: 3rem;
+                }
+            }
+
+            &-description {
+                color: $black;
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: 2.464rem;
+
+                &:not(:last-child) {
+                    margin-bottom: 2.5rem;
+
+                    @include small-tablet{
+                        margin-bottom: 5rem;
+                    }
+                }
+
+                @include small-tablet{
+                    font-size: 3rem;
+                    line-height: 4.5rem;
+                }
+
+                span {
+                    color: $accent;
+                }
+            }
+
+            &.--active {
+                display: block;
+                max-height: 100%;
+                animation: fade .8s both;
+            }
+        }
+
+        &-delivery {
+            &-list {
+                display: flex;
+                flex-direction: column;
+                gap: $gap-m;
+                margin-bottom: 3rem;
+
+                @include small-tablet{
+                    gap: $gap-l;
+                    margin-bottom: 6rem;
+                }
+            }
+
+            &-item {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+
+                @include small-tablet{
+                    gap: $gap-s;
+                }
+
+                &-title {
+                    color: $black;
+                    font-size: 2rem;
+                    font-weight: 600;
+                    line-height: 2.8rem;
+
+                    @include small-tablet{
+                        font-size: 3.4rem;
+                        line-height: 4.8rem;
+                    }
+                }
+
+                &-text {
+                    color: $black;
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    line-height: 2.464rem;
+
+                    @include small-tablet{
+                        font-size: 3rem;
+                        line-height: 4.5rem;
+                    }
+                }
+            }
+
+            &-description {
+                color: $grey-accent;
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: 2.464rem;
+
+                @include small-tablet{
+                    font-size: 3rem;
+                    line-height: 4.5rem;
+                }
+            }
+        }
+
+        &-guarantee {
+            &-title {
+                margin-bottom: 1.5rem;
+                color: $black;
+                font-size: 2rem;
+                font-weight: 600;
+                line-height: 2.8rem;
+                display: block;
+
+                @include small-tablet{
+                    font-size: 3.4rem;
+                    font-weight: 600;
+                    line-height: 4.8rem;
+                    margin-bottom: 2rem;
+                }
+
+                &:not(:first-child) {
+                    margin-top: 3rem;
+
+                    @include small-tablet{
+                        margin-top: 6rem;
+                    }
+                }
+            }
+
+            &-text {
+                color: $black;
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: 2.464rem;
+                position: relative;
+                padding-left: 2.4rem;
+
+                @include small-tablet{
+                    font-size: 3rem;
+                    line-height: 4.5rem;
+                    padding-left: 5rem;
+                }
+
+                span {
+                    color: $accent;
+                }
+
+                &::after{
+                    @include pseudo{
+                        position: absolute;
+                        top: 1rem;
+                        left: 1rem;
+                        width: .5rem;
+                        height: .5rem;
+                        border-radius: 50%;
+                        background: $black;
+
+                        @include small-tablet{
+                            width: 1rem;
+                            height: 1rem;
+                            top: 2rem;
+                            left: 2rem;
+                        }
+                    }
+                }
+            }
+
+            &-strong {
+                color: $accent;
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: 2.464rem;
+                display: block;
+                margin-bottom: 1.5rem;
+                padding-left: 2.7rem;
+                position: relative;
+
+                @include small-tablet{
+                    font-size: 3rem;
+                    line-height: 4.5rem;
+                    padding-left: 4.7rem;
+                    margin-bottom: 1rem;
+                }
+
+                &:not(:first-child) {
+                    margin-top: 2rem;
+                }
+
+                &::after{
+                    @include pseudo{
+                        position: absolute;
+                        top: 1rem;
+                        left: 1rem;
+                        width: .5rem;
+                        height: .5rem;
+                        border-radius: 50%;
+                        background: $accent;
+
+                        @include small-tablet{
+                            width: 1rem;
+                            height: 1rem;
+                            top: 2rem;
+                        }
+                    }
+                }
+            }
+
+            &-description {
+                color: $black;
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: 2.464rem;
+
+                @include small-tablet{
+                    font-size: 3rem;
+                    line-height: 4.5rem;
+                }
+            }
+        }
+    }
+}
