@@ -104,18 +104,22 @@ if (brandsSwiper) {
         },
         breakpoints: {
             1: {
-                slidesPerView: 3,
+                slidesPerView: 3
             },
             768: {
-                slidesPerView: 5,
-            },
+                slidesPerView: 5
+            }
         },
         on: {
             init: ({ slides }) => {
                 const selector = document.querySelector('.brands-length-slides');
-                selector.textContent = `${slides[0].ariaLabel.split('/')[1].toString().trim().padStart(2, '0')}`;
+                selector.textContent = `${slides[0].ariaLabel
+                    .split('/')[1]
+                    .toString()
+                    .trim()
+                    .padStart(2, '0')}`;
             },
-            slideChange: ({realIndex}) => {
+            slideChange: ({ realIndex }) => {
                 $('.brands-current-slide').text(String(realIndex + 1).padStart(2, '0'));
             }
         }
@@ -142,9 +146,13 @@ if (sharesSlider) {
         on: {
             init: ({ slides }) => {
                 const selector = document.querySelector('.shares-length-slides');
-                selector.textContent = `${slides[0].ariaLabel.split('/')[1].toString().trim().padStart(2, '0')}`;
+                selector.textContent = `${slides[0].ariaLabel
+                    .split('/')[1]
+                    .toString()
+                    .trim()
+                    .padStart(2, '0')}`;
             },
-            slideChange: ({realIndex}) => {
+            slideChange: ({ realIndex }) => {
                 $('.shares-current-slide').text(String(realIndex + 1).padStart(2, '0'));
             }
         }
@@ -171,9 +179,13 @@ if (leadersSlider) {
         on: {
             init: ({ slides }) => {
                 const selector = document.querySelector('.leaders-length-slides');
-                selector.textContent = `${slides[0].ariaLabel.split('/')[1].toString().trim().padStart(2, '0')}`;
+                selector.textContent = `${slides[0].ariaLabel
+                    .split('/')[1]
+                    .toString()
+                    .trim()
+                    .padStart(2, '0')}`;
             },
-            slideChange: ({realIndex}) => {
+            slideChange: ({ realIndex }) => {
                 $('.leaders-current-slide').text(String(realIndex + 1).padStart(2, '0'));
             }
         }
@@ -200,9 +212,13 @@ if (noveltiesSlider) {
         on: {
             init: ({ slides }) => {
                 const selector = document.querySelector('.novelties-length-slides');
-                selector.textContent = `${slides[0].ariaLabel.split('/')[1].toString().trim().padStart(2, '0')}`;
+                selector.textContent = `${slides[0].ariaLabel
+                    .split('/')[1]
+                    .toString()
+                    .trim()
+                    .padStart(2, '0')}`;
             },
-            slideChange: ({realIndex}) => {
+            slideChange: ({ realIndex }) => {
                 $('.novelties-current-slide').text(String(realIndex + 1).padStart(2, '0'));
             }
         }
@@ -230,9 +246,13 @@ if (ourServicesSlider) {
         on: {
             init: ({ slides }) => {
                 const selector = document.querySelector('.our-services-length-slides');
-                selector.textContent = `${slides[0].ariaLabel.split('/')[1].toString().trim().padStart(2, '0')}`;
+                selector.textContent = `${slides[0].ariaLabel
+                    .split('/')[1]
+                    .toString()
+                    .trim()
+                    .padStart(2, '0')}`;
             },
-            slideChange: ({realIndex}) => {
+            slideChange: ({ realIndex }) => {
                 $('.our-services-current-slide').text(String(realIndex + 1).padStart(2, '0'));
             }
         }
@@ -260,9 +280,13 @@ if (showroomSlider) {
         on: {
             init: ({ slides }) => {
                 const selector = document.querySelector('.showroom-length-slides');
-                selector.textContent = `${slides[0].ariaLabel.split('/')[1].toString().trim().padStart(2, '0')}`;
+                selector.textContent = `${slides[0].ariaLabel
+                    .split('/')[1]
+                    .toString()
+                    .trim()
+                    .padStart(2, '0')}`;
             },
-            slideChange: ({realIndex}) => {
+            slideChange: ({ realIndex }) => {
                 $('.showroom-current-slide').text(String(realIndex + 1).padStart(2, '0'));
             }
         }
@@ -290,10 +314,48 @@ if (interestedSlider) {
         on: {
             init: ({ slides }) => {
                 const selector = document.querySelector('.interested-length-slides');
-                selector.textContent = `${slides[0].ariaLabel.split('/')[1].toString().trim().padStart(2, '0')}`;
+                selector.textContent = `${slides[0].ariaLabel
+                    .split('/')[1]
+                    .toString()
+                    .trim()
+                    .padStart(2, '0')}`;
             },
-            slideChange: ({realIndex}) => {
+            slideChange: ({ realIndex }) => {
                 $('.interested-current-slide').text(String(realIndex + 1).padStart(2, '0'));
+            }
+        }
+    });
+}
+
+const serviceProductsSlider = document.querySelector('.service-products__swiper');
+if (serviceProductsSlider) {
+    const swiper = new Swiper('.service-products__swiper', {
+        pagination: {
+            el: '.service-products-pagination',
+            clickable: true
+        },
+        spaceBetween: rem(4),
+        slidesPerView: 1,
+        grabCursor: true,
+        speed: 700,
+        keyboard: {
+            enabled: true
+        },
+        navigation: {
+            nextEl: '.service-products-next',
+            prevEl: '.service-products-prev'
+        },
+        on: {
+            init: ({ slides }) => {
+                const selector = document.querySelector('.service-products-length-slides');
+                selector.textContent = `${slides[0].ariaLabel
+                    .split('/')[1]
+                    .toString()
+                    .trim()
+                    .padStart(2, '0')}`;
+            },
+            slideChange: ({ realIndex }) => {
+                $('.service-products-current-slide').text(String(realIndex + 1).padStart(2, '0'));
             }
         }
     });
@@ -310,8 +372,7 @@ $('.header__burger-close').on('click', function () {
 });
 
 function bindModal(trigger, modal, close, callback = () => null) {
-        (modal = document.querySelector(modal)),
-        (close = document.querySelector(close));
+    (modal = document.querySelector(modal)), (close = document.querySelector(close));
 
     const body = document.body;
     const modalBody = modal.querySelector('.modal');
@@ -339,28 +400,43 @@ function bindModal(trigger, modal, close, callback = () => null) {
         }
     });
 
-    callback()
+    callback();
 }
 
 // ПЕРВЫЙ аргумент - класс кнопки, при клике на которую будет открываться модальное окно.
 // ВТОРОЙ аргумент - класс самого модального окна.
 // ТРЕТИЙ аргумент - класс кнопки, при клике на которую будет закрываться модальное окно.
 bindModal('.request-button', '#request-modal', '#request-modal .modal__close');
-bindModal('.request-success-button', '#request-modal-success', '#request-modal-success .modal__close', bindSuccessModal);
+bindModal(
+    '.request-success-button',
+    '#request-modal-success',
+    '#request-modal-success .modal__close',
+    bindSuccessModal
+);
 bindModal('.room-setup__form-button', '#request-modal-success', '#request-modal-success .modal__close');
 bindModal('.designers-request-button', '#request-modal', '#request-modal .modal__close', bindSuccessModal);
-bindModal('.designers-request-mobile-button', '#request-modal', '#request-modal .modal__close', bindSuccessModal);
+bindModal(
+    '.designers-request-mobile-button',
+    '#request-modal',
+    '#request-modal .modal__close',
+    bindSuccessModal
+);
 bindModal('.our-services-request-button', '#request-modal', '#request-modal .modal__close', bindSuccessModal);
-bindModal('.banner-paints-request-button', '#request-modal-paints', '#request-modal-paints .modal__close', bindSuccessModal);
+bindModal(
+    '.banner-paints-request-button',
+    '#request-modal-paints',
+    '#request-modal-paints .modal__close',
+    bindSuccessModal
+);
 
 function bindSuccessModal() {
     $('.request-success-button').on('click', (event) => {
-        event.preventDefault()
+        event.preventDefault();
 
-        $('.modal__wrapper').each(function() {
-            $(this).removeClass('--active')
-            $(this).find('.modal').removeClass('--active')
-        })
+        $('.modal__wrapper').each(function () {
+            $(this).removeClass('--active');
+            $(this).find('.modal').removeClass('--active');
+        });
 
         $('#request-modal-success').addClass('--active');
         $('#request-modal-success .modal').addClass('--active');
@@ -408,23 +484,27 @@ if (document.querySelector('.shares__categories')) {
     const container = document.querySelector(CONTENT_SELECTOR);
 
     arrow.addEventListener('click', () => {
-        container.scrollBy({ left: 150, behavior: 'smooth' })
-    })
+        container.scrollBy({ left: 150, behavior: 'smooth' });
+    });
 }
 
 if (document.querySelector('.map')) {
     ymaps.ready(init);
     function init() {
         let map = new ymaps.Map('map', {
-            center: [55.57164454207913,37.585655000000024],
+            center: [55.57164454207913, 37.585655000000024],
             zoom: 10.5
         });
 
-        let placemark = new ymaps.Placemark(map.getCenter(), {}, {
-            iconLayout: 'default#image',
-            iconImageHref: '../img/yMap-icon.svg',
-            iconImageSize: [rem(7), rem(7)],
-        })
+        let placemark = new ymaps.Placemark(
+            map.getCenter(),
+            {},
+            {
+                iconLayout: 'default#image',
+                iconImageHref: '../img/yMap-icon.svg',
+                iconImageSize: [rem(7), rem(7)]
+            }
+        );
 
         map.controls.remove('geolocationControl'); // удаляем геолокацию
         map.controls.remove('searchControl'); // удаляем поиск
@@ -443,15 +523,19 @@ if (document.querySelector('.contacts-map')) {
 
     function init() {
         let map = new ymaps.Map('contacts-map', {
-            center: [55.708436655963034,37.4071362641405],
+            center: [55.708436655963034, 37.4071362641405],
             zoom: 12
         });
 
-        let placemark = new ymaps.Placemark(map.getCenter(), {}, {
-            iconLayout: 'default#image',
-            iconImageHref: '../img/yMap-icon.svg',
-            iconImageSize: [rem(6), rem(6)],
-        })
+        let placemark = new ymaps.Placemark(
+            map.getCenter(),
+            {},
+            {
+                iconLayout: 'default#image',
+                iconImageHref: '../img/yMap-icon.svg',
+                iconImageSize: [rem(6), rem(6)]
+            }
+        );
 
         map.controls.remove('geolocationControl'); // удаляем геолокацию
         map.controls.remove('searchControl'); // удаляем поиск
@@ -465,3 +549,23 @@ if (document.querySelector('.contacts-map')) {
     }
 }
 
+function accordion() {
+    const items = document.querySelectorAll('.accordion__item-trigger');
+    items.forEach((item) => {
+        item.addEventListener('click', () => {
+            const parent = item.parentNode;
+            if (parent.classList.contains('accordion__item-active')) {
+                parent.classList.remove('accordion__item-active');
+            } else {
+                document
+                    .querySelectorAll('.accordion__item')
+                    .forEach((child) => child.classList.remove('accordion__item-active'));
+                parent.classList.add('accordion__item-active');
+            }
+        });
+    });
+}
+
+if (document.querySelector('.service')) {
+    accordion();
+}

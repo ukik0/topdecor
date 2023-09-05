@@ -1,0 +1,111 @@
+@import "../vars";
+@import "../mixins";
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-s;
+
+    .accordion__item {
+        &.accordion__item-active {
+            .accordion__item-content {
+                display: block;
+                max-height: 20rem;
+                opacity: 1;
+                pointer-events: auto;
+
+                @include small-tablet{
+                    max-height: 100%;
+                }
+            }
+
+            .trigger__icon {
+                transform: rotate(180deg);
+            }
+        }
+
+        .accordion__item-trigger {
+            display: flex;
+            align-items: center;
+            gap: $gap-s;
+            cursor: pointer;
+            max-width: 63rem;
+
+            @include small-tablet{
+                max-width: 100%;
+            }
+
+            .trigger__icon {
+                width: 4rem;
+                height: 4rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: $light-blue;
+                border-radius: 50%;
+                padding: .8rem 1.1rem 1.1rem 1.1rem;
+                transition: .3s all;
+                will-change: transform;
+
+                @include small-tablet{
+                    max-width: 6.4rem;
+                    height: 6.4rem;
+                    width: 100%;
+                }
+
+                svg {
+                    width: 4rem;
+                    height: 4rem;
+
+                    @include small-tablet{
+                        width: 3.2rem;
+                        height: 3.2rem;
+                    }
+                }
+            }
+
+            .trigger__text {
+                color: $black;
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: 2.464rem;
+
+                @include small-tablet{
+                    font-size: 3rem;
+                    line-height: 4.5rem;
+                }
+
+                span {
+                    margin-left: 1rem;
+                    color: $accent;
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    line-height: 2.464rem;
+
+                    @include small-tablet{
+                        font-size: 3rem;
+                        line-height: 4.5rem;
+                        margin-left: 6rem;
+                    }
+                }
+            }
+        }
+
+        .accordion__item-content {
+            padding-left: 6rem;
+            margin-top: 1rem;
+            max-height: 0;
+            transition: .2s;
+            opacity: 0;
+            pointer-events: none;
+
+            will-change: opacity, max-height;
+
+            @include small-tablet{
+                margin-top: 2rem;
+                padding-left: 8rem;
+            }
+        }
+    }
+
+}

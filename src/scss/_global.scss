@@ -114,3 +114,15 @@ section {
 .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
     opacity: .5 !important;
 }
+
+// Animations
+// Fade
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
