@@ -9,9 +9,10 @@
     .accordion__item {
         &.accordion__item-active {
             .accordion__item-content {
+                animation: flipdown 0.3s ease both;
                 display: block;
                 max-height: 20rem;
-                opacity: 1;
+                overflow: initial;
                 pointer-events: auto;
 
                 @include small-tablet{
@@ -95,9 +96,11 @@
             padding-left: 6rem;
             margin-top: 1rem;
             max-height: 0;
-            transition: .2s;
-            opacity: 0;
+            overflow: hidden;
+            transition: .3s min-height, opacity .1s;
             pointer-events: none;
+            animation-delay: 0.5s;
+            perspective: 900;
 
             will-change: opacity, max-height;
 

@@ -251,6 +251,78 @@ section {
   }
 }
 
+@-webkit-keyframes flipdown {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: top center;
+            transform-origin: top center;
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: rotateX(8deg);
+            transform: rotateX(8deg);
+  }
+
+  83% {
+    -webkit-transform: rotateX(6deg);
+            transform: rotateX(6deg);
+  }
+
+  92% {
+    -webkit-transform: rotateX(-3deg);
+            transform: rotateX(-3deg);
+  }
+
+  100% {
+    -webkit-transform-origin: top center;
+            transform-origin: top center;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+
+@keyframes flipdown {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: top center;
+            transform-origin: top center;
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: rotateX(8deg);
+            transform: rotateX(8deg);
+  }
+
+  83% {
+    -webkit-transform: rotateX(6deg);
+            transform: rotateX(6deg);
+  }
+
+  92% {
+    -webkit-transform: rotateX(-3deg);
+            transform: rotateX(-3deg);
+  }
+
+  100% {
+    -webkit-transform-origin: top center;
+            transform-origin: top center;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+
 @font-face {
   font-family: "Open Sans";
   src: url("../fonts/OpenSans-Regular.ttf") format("truetype");
@@ -5976,9 +6048,11 @@ button.swiper-pagination-bullet {
 }
 
 .accordion .accordion__item.accordion__item-active .accordion__item-content {
+  -webkit-animation: flipdown 0.3s ease both;
+          animation: flipdown 0.3s ease both;
   display: block;
   max-height: 20rem;
-  opacity: 1;
+  overflow: initial;
   pointer-events: auto;
 }
 
@@ -6044,10 +6118,14 @@ button.swiper-pagination-bullet {
   padding-left: 6rem;
   margin-top: 1rem;
   max-height: 0;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  opacity: 0;
+  overflow: hidden;
+  -webkit-transition: 0.3s min-height, opacity 0.1s;
+  transition: 0.3s min-height, opacity 0.1s;
   pointer-events: none;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-perspective: 900;
+          perspective: 900;
   will-change: opacity, max-height;
 }
 
