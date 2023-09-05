@@ -5,52 +5,53 @@
     @include swiper-controls;
 
     &__heading {
-        @include small-tablet{
+        @include small-tablet {
             margin-bottom: 3rem;
         }
     }
-    
+
     &__swiper {
         position: relative;
         width: 90%;
 
-        @include small-tablet{
+        @include small-tablet {
             width: 97%;
         }
     }
 
     &__swiper-decor-line {
-        background: #CABDF1;
-        height: .1rem;
+        background: #cabdf1;
+        height: 0.1rem;
         width: 100%;
         position: relative;
         top: 14rem;
         transform: translateY(50%);
 
-        @include small-tablet{
+        @include small-tablet {
             top: 15rem;
         }
 
-        &::after, &::before{
-            @include pseudo{
+        &::after,
+        &::before {
+            @include pseudo {
                 width: 1.5rem;
                 height: 1.5rem;
                 border-radius: 50%;
                 background: $accent;
-                top: -.6rem;
+                top: -0.6rem;
 
-                @include small-tablet{
+                @include small-tablet {
                     width: 2rem;
                     height: 2rem;
                 }
             }
         }
 
-        &::after{
+        &::after {
             right: 0;
         }
 
-        &::before{
+        &::before {
             left: 0;
         }
     }
@@ -61,16 +62,16 @@
         align-items: center;
         justify-content: center;
 
-        @include small-tablet{
+        @include small-tablet {
             padding: 8rem 0;
         }
 
         svg {
             width: 20rem;
             height: 20rem;
-            transition: .3s all ease-in;
+            transition: 0.3s all ease-in;
 
-            @include small-tablet{
+            @include small-tablet {
                 width: 14rem;
                 height: 14rem;
             }
@@ -84,12 +85,14 @@
         &.swiper-slide-active {
             svg {
                 transform: scale(1.2);
-                filter: drop-shadow(1rem 1rem 4rem rgba(128, 131, 181, 0.08));
+                fill: var(--white, #fff);
+                filter: drop-shadow(20px 40px 100px rgba(128, 131, 181, 0.2));
+
                 circle {
                     fill: $white;
                 }
 
-                @include small-tablet{
+                @include small-tablet {
                     transform: scale(1.7);
                 }
             }

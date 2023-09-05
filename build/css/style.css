@@ -1606,7 +1606,7 @@ section {
 }
 
 .brands__swiper-decor-line {
-  background: #CABDF1;
+  background: #cabdf1;
   height: 0.1rem;
   width: 100%;
   position: relative;
@@ -1665,8 +1665,9 @@ section {
   -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-filter: drop-shadow(1rem 1rem 4rem rgba(128, 131, 181, 0.08));
-          filter: drop-shadow(1rem 1rem 4rem rgba(128, 131, 181, 0.08));
+  fill: var(--white, #fff);
+  -webkit-filter: drop-shadow(20px 40px 100px rgba(128, 131, 181, 0.2));
+          filter: drop-shadow(20px 40px 100px rgba(128, 131, 181, 0.2));
 }
 
 .brands-slide.swiper-slide-active svg circle {

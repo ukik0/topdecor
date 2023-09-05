@@ -356,6 +356,7 @@ bindModal('.room-setup__form-button', '#request-modal-success', '#request-modal-
 bindModal('.designers-request-button', '#request-modal', '#request-modal .modal__close', bindSuccessModal);
 bindModal('.designers-request-mobile-button', '#request-modal', '#request-modal .modal__close', bindSuccessModal);
 bindModal('.our-services-request-button', '#request-modal', '#request-modal .modal__close', bindSuccessModal);
+bindModal('.banner-paints-request-button', '#request-modal-paints', '#request-modal-paints .modal__close', bindSuccessModal);
 
 function bindSuccessModal() {
     $('.request-success-button').on('click', (event) => {
