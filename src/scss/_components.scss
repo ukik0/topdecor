@@ -29,11 +29,11 @@
 }
 
 .button {
-    transition: transform .2s;
+    transition: transform 0.2s;
     will-change: transform;
-    
-    &:disabled{
-        opacity: .5;
+
+    &:disabled {
+        opacity: 0.5;
         user-select: none;
         pointer-events: none;
     }
@@ -46,8 +46,8 @@
         }
     }
 
-    &:active{
-        transform: scale(.95);
+    &:active {
+        transform: scale(0.95);
     }
 }
 
@@ -60,7 +60,8 @@
 .outlined {
     @extend .solid !optional;
 
-    border: 0.1rem solid $light;
+    background: $white;
+    border: 0.1rem solid #e6eaff;
 }
 
 .input {
@@ -86,7 +87,7 @@
     font-weight: 600;
     line-height: 2.8rem;
 
-    @include small-tablet{
+    @include small-tablet {
         font-size: 3.4rem;
         font-weight: 600;
         line-height: 4.8rem;
@@ -100,7 +101,7 @@
     font-weight: 600;
     line-height: 2.8rem;
 
-    @include small-tablet{
+    @include small-tablet {
         font-size: 3.4rem;
         font-weight: 600;
         line-height: 4.8rem;
@@ -110,7 +111,7 @@
 .link-all {
     padding: 1.7rem 2.6rem;
 
-    @include small-tablet{
+    @include small-tablet {
         margin-top: 6rem;
         padding: 1.9rem 4rem;
         display: inline-block;
@@ -125,35 +126,36 @@
     justify-content: center;
     margin-top: 4rem;
 
-    @include small-tablet{
+    @include small-tablet {
         gap: 1.5rem;
     }
 
-    &-prev-link, &-next-link {
-        padding: .75rem 1.6rem;
+    &-prev-link,
+    &-next-link {
+        padding: 0.75rem 1.6rem;
         border-radius: 2rem;
-        border: .1rem solid $grey;
+        border: 0.1rem solid $grey;
         color: $black;
         font-size: 1.6rem;
         font-weight: 500;
         line-height: 2.464rem;
-        transition: .3s all ease-in;
+        transition: 0.3s all ease-in;
 
-        @include small-tablet{
-            padding: .7rem 3.2rem;
+        @include small-tablet {
+            padding: 0.7rem 3.2rem;
             font-size: 3rem;
             border-radius: 4rem;
             line-height: 4.5rem;
         }
 
-        &.--disabled{
+        &.--disabled {
             user-select: none;
             pointer-events: none;
 
             color: $grey;
         }
 
-        &:hover{
+        &:hover {
             background: $grey;
         }
     }
@@ -167,25 +169,25 @@
     &__item {
         padding: 0.9rem 1.5rem 0.6rem 1.5rem;
         border-radius: 1.4rem;
-        border: .2rem solid $light-blue;
+        border: 0.2rem solid $light-blue;
         color: $black;
         font-size: 1.6rem;
         font-weight: 500;
         line-height: 2.464rem;
         background: transparent;
-        transition: .3s all ease-in;
+        transition: 0.3s all ease-in;
 
-        @include small-tablet{
-            padding: .8rem 2rem;
+        @include small-tablet {
+            padding: 0.8rem 2rem;
             font-size: 3rem;
             line-height: 4.5rem;
         }
 
-        &:hover{
+        &:hover {
             background: $light-blue;
         }
 
-        &.--active{
+        &.--active {
             background: $light-blue;
         }
 
@@ -194,8 +196,110 @@
             background: transparent;
             border: 0;
 
-            @include small-tablet{
+            @include small-tablet {
                 display: block;
+            }
+        }
+    }
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 1.38rem;
+    cursor: pointer;
+
+    @include small-tablet{
+        gap: $gap-xs;
+    }
+
+    span {
+        color: $black;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 2.464rem;
+
+        @include small-tablet{
+            font-size: 3rem;
+            line-height: 4.5rem;
+        }
+    }
+
+    input {
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #fff;
+        margin: 0;
+        font: inherit;
+        color: currentColor;
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 0.8rem;
+        display: grid;
+        place-content: center;
+        position: relative;
+        transition: .15s all ease-in-out;
+        border: .1rem solid $light;
+        overflow: hidden;
+
+        @include small-tablet{
+            width: 4rem;
+            height: 4rem;
+            border-radius: 1rem;
+        }
+
+        @media (min-width: 48rem) {
+            &:hover{
+                &::after{
+                    transform: scale(1);
+                }
+            }
+        }
+
+        &::before {
+            @include pseudo {
+                opacity: 0;
+                transition: .3s all ease;
+                background: $accent;
+                border-radius: inherit;
+                transform-origin: center;
+                background: url("../img/checkbox-icon.svg") no-repeat center;
+                background-size: cover;
+                width: 1.0655rem;
+                height: 0.8419rem;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+
+                @include small-tablet{
+                    width: 1.8rem;
+                    height: 1.4rem;
+                }
+            }
+        }
+
+        &::after {
+            @include pseudo {
+                width: 100%;
+                height: 100%;
+                transform: scale(0);
+                transition: .3s all ease;
+                background: $accent;
+                border-radius: inherit;
+                z-index: 1;
+            }
+        }
+
+        &:checked {
+            border: .1rem solid transparent;
+
+            &::before {
+                opacity: 1;
+            }
+
+            &::after{
+                transform: scale(1);
             }
         }
     }

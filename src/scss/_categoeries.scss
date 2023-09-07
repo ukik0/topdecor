@@ -26,7 +26,6 @@
     &__item {
         border-radius: 2.5rem;
         position: relative;
-        flex: 0 1 50rem;
 
         @include small-tablet{
             height: 24rem;
@@ -40,6 +39,8 @@
 
         &-background {
             border-radius: inherit;
+            display: block;
+            cursor: pointer;
 
             @include small-tablet{
                 width: 100%;
@@ -68,6 +69,7 @@
             width: 100%;
             transition: 0.3s max-width ease-in;
             overflow: hidden;
+            z-index: 4;
 
             @include small-tablet{
                 padding: 2rem 3rem 2rem 2rem;

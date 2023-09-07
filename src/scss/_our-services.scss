@@ -23,6 +23,14 @@
         background: $white;
         box-shadow: 2rem 4rem 10rem 0 rgba(128, 131, 181, 0.20);
 
+        &:hover{
+            .our-services__item-image{
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
         &-top {
             display: flex;
             justify-content: space-between;
@@ -43,6 +51,7 @@
             width: 100%;
             height: 21.2rem;
             border-radius: 2rem;
+            overflow: hidden;
 
             @include small-tablet{
                 max-width: 24rem;
@@ -54,6 +63,7 @@
                 height: 100%;
                 object-fit: cover;
                 border-radius: inherit;
+                transition: .3s all ease;
             }
         }
 

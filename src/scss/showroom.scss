@@ -2,6 +2,7 @@
 @import "mixins";
 
 .showroom{
+    margin-bottom: 13rem;
 
     &__content {
         position: relative;
@@ -179,6 +180,41 @@
                         font-size: 3rem;
                         line-height: 4.5rem;
                     }
+                }
+            }
+        }
+    }
+
+    &__up-button {
+        padding: 2.4rem;
+        background: $accent;
+        border-radius: 50%;
+        width: 8rem;
+        height: 8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-top: 4.4rem;
+        transition: .3s all ease;
+        border: .1rem solid transparent;
+
+        svg {
+            width: 3.2rem;
+            height: 3.2rem;
+
+            path {
+                transition: .3s all ease;
+            }
+        }
+
+        &:hover{
+            background: transparent;
+            border: .1rem solid $accent;
+
+            svg {
+                path {
+                    fill: $accent;
                 }
             }
         }

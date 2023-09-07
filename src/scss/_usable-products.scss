@@ -1,0 +1,38 @@
+@import "vars";
+@import "mixins";
+
+.usable-materials{
+    @include swiper-controls;
+
+    &__title {
+        font-size: 3.7rem;
+        font-weight: 600;
+        line-height: 4.44rem;
+        margin-bottom: 3rem;
+
+        @include small-tablet{
+            margin-bottom: 6rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 5.6rem;
+        }
+    }
+
+    &__list {
+        display: flex;
+        gap: $gap-m;
+
+        @include small-tablet{
+            display: grid;
+            grid-template-columns: repeat(2, 33.6rem);
+            gap: $gap-s;
+        }
+    }
+
+    &__item {
+        max-width: 36.8rem;
+        width: 100%;
+
+        @include product-card;
+    }
+}
