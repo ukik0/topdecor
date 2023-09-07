@@ -428,6 +428,7 @@ bindModal(
     '#request-modal-paints .modal__close',
     bindSuccessModal
 );
+bindModal('.service-request-button', '#request-modal', '#request-modal .modal__close', bindSuccessModal);
 
 function bindSuccessModal() {
     $('.request-success-button').on('click', (event) => {
@@ -608,4 +609,6 @@ function tabs(headerSelector, tabSelector, contentSelector, activeClass, display
 // ВТОРОЙ аргумент - класс конкретного элемента, при клике на который будет переключатся таб.
 // ТРЕТИЙ аргумент - класс того блока, который будет переключаться.
 // ЧЕТВЕРТЫЙ аргумент - класс активности, который будет добавлятся для таба, который сейчас активен.
-tabs('.tabs__header', '.tabs__header-item', '.tabs__content-item', 'active');
+if (document.querySelector('.tabs__header')) {
+    tabs('.tabs__header', '.tabs__header-item', '.tabs__content-item', 'active');
+}
