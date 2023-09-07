@@ -361,6 +361,44 @@ if (serviceProductsSlider) {
     });
 }
 
+const projectSlider = document.querySelector('.project__swiper');
+if (projectSlider) {
+    const swiper = new Swiper('.project__swiper', {
+        pagination: {
+            el: '.project-pagination',
+            clickable: true
+        },
+        slidesPerView: 1.5,
+        grabCursor: true,
+        speed: 700,
+        keyboard: {
+            enabled: true
+        },
+        navigation: {
+            nextEl: '.project-next',
+            prevEl: '.project-prev'
+        },
+        on: {
+            init: ({ slides }) => {
+                const selector = document.querySelector('.project-length-slides');
+                selector.textContent = `${slides.length.toString().padStart(2, '0')}`;
+            },
+            slideChange: ({ realIndex, slides }) => {
+                console.log(realIndex)
+                $('.project-current-slide').text(String(realIndex + 1).padStart(2, '0'));
+            }
+        },
+        breakpoints: {
+            1: {
+                spaceBetween: rem(1),
+            },
+            768: {
+                spaceBetween: rem(3),
+            }
+        },
+    });
+}
+
 $('.burger-entry').on('click', function () {
     $('.header__burger-menu').addClass('--active');
     $('body').addClass('locked');

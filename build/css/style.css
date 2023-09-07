@@ -5108,6 +5108,18 @@ section {
   height: 2.4rem;
 }
 
+.materials__heading {
+  position: relative;
+}
+
+.materials__heading svg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 19rem;
+  height: 18rem;
+}
+
 .materials__banner {
   max-width: 68.4rem;
   width: 100%;
@@ -5220,6 +5232,200 @@ section {
 .materials__item:nth-child(4) {
   left: 46.5rem;
   bottom: -3rem;
+}
+
+.project__title {
+  margin-bottom: 4rem;
+  max-width: 100rem;
+}
+
+.project__banner {
+  height: 70rem;
+  border-radius: 2rem;
+  margin-bottom: 6rem;
+}
+
+.project__banner img {
+  height: 100%;
+  border-radius: inherit;
+}
+
+.project__article {
+  margin-bottom: 6rem;
+}
+
+.project__article-heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+.project__article-heading-title {
+  color: #555760;
+  font-size: 3.7rem;
+  font-weight: 600;
+  line-height: 4.44rem;
+  max-width: 82.7rem;
+}
+
+.project__article-heading-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+}
+
+.project__article-heading-user-image {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+}
+
+.project__article-heading-user-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.7rem;
+}
+
+.project__article-heading-user-info span {
+  color: #586CBE;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.8rem;
+}
+
+.project__article-heading-user-info time {
+  color: #82879C;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.464rem;
+}
+
+.project__article-description {
+  color: #555760;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.464rem;
+  max-width: 94.7rem;
+}
+
+.project__benefits-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 3rem;
+  margin-top: 4rem;
+  max-width: 87rem;
+  margin-bottom: 6rem;
+}
+
+.project__benefits-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.2rem;
+  position: relative;
+}
+
+.project__benefits-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 0.1rem;
+  background: #cabdf1;
+  height: calc(100% + 3rem);
+  left: 0.7rem;
+  z-index: -1;
+}
+
+.project__benefits-item .circle {
+  max-width: 1.5rem;
+  width: 100%;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #586CBE;
+}
+
+.project__benefits-item-description {
+  color: #555760;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.464rem;
+}
+
+.project-pagination-info {
+  margin-top: 4.3rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.project-prev,
+.project-next {
+  position: initial !important;
+  margin-top: 0 !important;
+}
+
+.project-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1rem;
+}
+
+.project-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.project__swiper {
+  max-width: 175rem;
+}
+
+.project__slider {
+  margin-left: 18rem;
+  margin-bottom: 6rem;
+}
+
+.project__slider .container {
+  margin-left: 0;
+}
+
+.project-slide {
+  height: 65.9rem !important;
+  border-radius: 2rem;
+}
+
+.project-slide img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: inherit;
 }
 
 @font-face {
@@ -8460,6 +8666,13 @@ button.swiper-pagination-bullet {
     height: 4rem;
   }
 
+  .materials__heading svg {
+    right: -3rem;
+    top: 6rem;
+    width: 16rem;
+    height: 14rem;
+  }
+
   .materials__banner {
     height: 65.4rem;
     width: 65.8rem;
@@ -8566,6 +8779,91 @@ button.swiper-pagination-bullet {
 
   .materials__item:nth-child(3) .materials__item-icon {
     margin-top: 0;
+  }
+
+  .project__title {
+    margin-bottom: 6rem;
+  }
+
+  .project__banner {
+    height: 33.4rem;
+    margin-bottom: 4rem;
+  }
+
+  .project__article-heading {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    gap: 6rem;
+  }
+
+  .project__article-heading-title {
+    font-size: 3.4rem;
+    font-weight: 600;
+    line-height: 4.8rem;
+  }
+
+  .project__article-heading-user {
+    gap: 3rem;
+  }
+
+  .project__article-heading-user-image {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .project__article-heading-user-info {
+    gap: 0.6rem;
+  }
+
+  .project__article-heading-user-info span {
+    font-size: 3.4rem;
+    font-weight: 600;
+    line-height: 4.8rem;
+  }
+
+  .project__article-heading-user-info time {
+    font-size: 3rem;
+    line-height: 4.5rem;
+  }
+
+  .project__article-description {
+    font-size: 3rem;
+    line-height: 4.6rem;
+  }
+
+  .project__benefits-list {
+    max-width: 100%;
+    gap: 5rem;
+  }
+
+  .project__benefits-item:not(:last-child)::after {
+    left: 1.4rem;
+    height: calc(100% + 5rem);
+  }
+
+  .project__benefits-item .circle {
+    max-width: 3rem;
+    height: 3rem;
+  }
+
+  .project__benefits-item-description {
+    font-size: 3rem;
+    line-height: 4.5rem;
+  }
+
+  .project__slider {
+    margin-left: 3rem;
+  }
+
+  .project__slider .container {
+    margin-left: initial;
+    padding-left: 0;
+  }
+
+  .project-slide {
+    height: 26.8rem !important;
   }
 
   .map {

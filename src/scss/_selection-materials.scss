@@ -2,6 +2,26 @@
 @import 'vars';
 
 .materials {
+
+    &__heading {
+        position: relative;
+
+        svg {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 19rem;
+            height: 18rem;
+
+            @include small-tablet{
+                right: -3rem;
+                top: 6rem;
+                width: 16rem;
+                height: 14rem;
+            }
+        }
+    }
+
     &__banner {
         max-width: 68.4rem;
         width: 100%;
