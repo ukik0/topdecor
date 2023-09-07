@@ -512,18 +512,18 @@ section {
 .icon-circle {
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.29)), color-stop(99.99%, rgba(224, 228, 255, 0.58)), to(rgba(255, 255, 255, 0.58)));
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.29) 0%, rgba(224, 228, 255, 0.58) 99.99%, rgba(255, 255, 255, 0.58) 100%);
-  -webkit-box-shadow: 1.8975001574px -2.213750124px 3.4787504673px 0px #fff inset, -3.1625001431px 8.5387506485px 6.6412506104px 0px rgba(0, 0, 0, 0.02) inset;
-          box-shadow: 1.8975001574px -2.213750124px 3.4787504673px 0px #fff inset, -3.1625001431px 8.5387506485px 6.6412506104px 0px rgba(0, 0, 0, 0.02) inset;
-  -webkit-backdrop-filter: blur(3.0043752193px);
-          backdrop-filter: blur(3.0043752193px);
+  -webkit-box-shadow: 0.18rem -0.22rem 0.34rem 0 #fff inset, -0.31rem 0.85rem 0.64rem 0 rgba(0, 0, 0, 0.02) inset;
+          box-shadow: 0.18rem -0.22rem 0.34rem 0 #fff inset, -0.31rem 0.85rem 0.64rem 0 rgba(0, 0, 0, 0.02) inset;
+  -webkit-backdrop-filter: blur(0.3rem);
+          backdrop-filter: blur(0.3rem);
   padding: 2.4rem;
   border-radius: 50%;
 }
 
 .icon-circle-blue {
   background-color: #586cbe;
-  -webkit-filter: drop-shadow(5px 13px 50px rgba(57, 56, 113, 0.15));
-          filter: drop-shadow(5px 13px 50px rgba(57, 56, 113, 0.15));
+  -webkit-filter: drop-shadow(0.5rem 1.3rem 5rem rgba(57, 56, 113, 0.15));
+          filter: drop-shadow(0.5rem 1.3rem 5rem rgba(57, 56, 113, 0.15));
   border-radius: 50%;
   padding: 1.3rem;
 }
@@ -632,8 +632,8 @@ section {
   position: fixed;
   inset: 0;
   background: rgba(85, 87, 96, 0.5);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -661,8 +661,8 @@ section {
   padding: 6rem 10rem;
   border-radius: 5rem;
   background: #fff;
-  -webkit-box-shadow: 10px 20px 94px 0px rgba(125, 128, 161, 0.2);
-          box-shadow: 10px 20px 94px 0px rgba(125, 128, 161, 0.2);
+  -webkit-box-shadow: 1rem 2rem 9.4rem 0 rgba(125, 128, 161, 0.2);
+          box-shadow: 1rem 2rem 9.4rem 0 rgba(125, 128, 161, 0.2);
   width: 107.4rem;
   -webkit-transform: scale(1.15);
       -ms-transform: scale(1.15);
@@ -1527,8 +1527,8 @@ section {
   border-radius: 0rem 5rem 0rem 2rem;
   border: 0.1rem solid #fff;
   background: rgba(255, 255, 255, 0.8);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
   padding: 2.5rem;
   position: absolute;
   bottom: 0;
@@ -1776,8 +1776,8 @@ section {
       -ms-transform: scale(1.2);
           transform: scale(1.2);
   fill: var(--white, #fff);
-  -webkit-filter: drop-shadow(20px 40px 100px rgba(128, 131, 181, 0.2));
-          filter: drop-shadow(20px 40px 100px rgba(128, 131, 181, 0.2));
+  -webkit-filter: drop-shadow(2rem 4rem 10rem rgba(128, 131, 181, 0.2));
+          filter: drop-shadow(2rem 4rem 10rem rgba(128, 131, 181, 0.2));
 }
 
 .brands-slide.swiper-slide-active svg circle {
@@ -1849,8 +1849,8 @@ section {
   cursor: grab;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  -webkit-filter: drop-shadow(5px 13px 50px rgba(57, 56, 113, 0.15));
-          filter: drop-shadow(5px 13px 50px rgba(57, 56, 113, 0.15));
+  -webkit-filter: drop-shadow(0.5rem 1.3rem 5rem rgba(57, 56, 113, 0.15));
+          filter: drop-shadow(0.5rem 1.3rem 5rem rgba(57, 56, 113, 0.15));
 }
 
 .shares__categories-list::-webkit-scrollbar {
@@ -2142,8 +2142,8 @@ section {
 .our-projects__item {
   border-radius: 2.5rem;
   background: #fff;
-  -webkit-box-shadow: 20px 40px 100px 0px rgba(128, 131, 181, 0.2);
-          box-shadow: 20px 40px 100px 0px rgba(128, 131, 181, 0.2);
+  -webkit-box-shadow: 2rem 4rem 10rem 0 rgba(128, 131, 181, 0.2);
+          box-shadow: 2rem 4rem 10rem 0 rgba(128, 131, 181, 0.2);
   padding: 1.5rem 1.5rem 2.3rem 1.5rem;
   max-width: 50rem;
   width: 100%;
@@ -2168,9 +2168,9 @@ section {
   padding: 0.4rem 1.6rem;
   border-radius: 3rem;
   border: 0.1rem solid #fff;
-  background: var(--white, #fff);
-  -webkit-backdrop-filter: blur(3.0043752193px);
-          backdrop-filter: blur(3.0043752193px);
+  background: #fff;
+  -webkit-backdrop-filter: blur(0.3rem);
+          backdrop-filter: blur(0.3rem);
   position: absolute;
   top: 1.35rem;
   left: 1.5rem;
@@ -3062,8 +3062,8 @@ section {
   padding: 3rem;
   border-radius: 2.5rem;
   background: #fff;
-  -webkit-box-shadow: 20px 40px 100px 0px rgba(128, 131, 181, 0.2);
-          box-shadow: 20px 40px 100px 0px rgba(128, 131, 181, 0.2);
+  -webkit-box-shadow: 2rem 4rem 10rem 0 rgba(128, 131, 181, 0.2);
+          box-shadow: 2rem 4rem 10rem 0 rgba(128, 131, 181, 0.2);
 }
 
 .our-services__item-top {
@@ -3237,8 +3237,8 @@ section {
   padding: 4rem;
   border-radius: 2.5rem;
   background: #fff;
-  -webkit-box-shadow: 10px 20px 94px 0px rgba(125, 128, 161, 0.2);
-          box-shadow: 10px 20px 94px 0px rgba(125, 128, 161, 0.2);
+  -webkit-box-shadow: 0.1rem 0.2rem 9.4rem 0 rgba(125, 128, 161, 0.2);
+          box-shadow: 0.1rem 0.2rem 9.4rem 0 rgba(125, 128, 161, 0.2);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3776,8 +3776,8 @@ section {
   gap: 2rem;
   border-radius: 5rem;
   background: #fff;
-  -webkit-box-shadow: 20px 40px 100px 0px rgba(128, 131, 181, 0.2);
-          box-shadow: 20px 40px 100px 0px rgba(128, 131, 181, 0.2);
+  -webkit-box-shadow: 2rem 4rem 10rem 0 rgba(128, 131, 181, 0.2);
+          box-shadow: 2rem 4rem 10rem 0 rgba(128, 131, 181, 0.2);
 }
 
 .designers__item.--image {
@@ -3809,8 +3809,8 @@ section {
   width: 100%;
   height: 100%;
   border-radius: 4rem;
-  -webkit-box-shadow: 20px 40px 100px 0px rgba(128, 131, 181, 0.2);
-          box-shadow: 20px 40px 100px 0px rgba(128, 131, 181, 0.2);
+  -webkit-box-shadow: 2rem 4rem 10rem 0 rgba(128, 131, 181, 0.2);
+          box-shadow: 2rem 4rem 10rem 0 rgba(128, 131, 181, 0.2);
 }
 
 .designers__item-image img {
@@ -4360,8 +4360,8 @@ section {
 .projects__item {
   border-radius: 2.5rem;
   background: #fff;
-  -webkit-box-shadow: 20px 40px 100px 0px rgba(128, 131, 181, 0.2);
-          box-shadow: 20px 40px 100px 0px rgba(128, 131, 181, 0.2);
+  -webkit-box-shadow: 2rem 4rem 10rem 0 rgba(128, 131, 181, 0.2);
+          box-shadow: 2rem 4rem 10rem 0 rgba(128, 131, 181, 0.2);
   padding: 1.5rem 1.5rem 2.3rem 1.5rem;
   max-width: 50rem;
   width: 100%;
@@ -4386,9 +4386,9 @@ section {
   padding: 0.4rem 1.6rem;
   border-radius: 3rem;
   border: 0.1rem solid #fff;
-  background: var(--white, #fff);
-  -webkit-backdrop-filter: blur(3.0043752193px);
-          backdrop-filter: blur(3.0043752193px);
+  background: #fff;
+  -webkit-backdrop-filter: blur(0.3rem);
+          backdrop-filter: blur(0.3rem);
   position: absolute;
   top: 1.35rem;
   left: 1.5rem;
@@ -4645,8 +4645,8 @@ section {
   padding: 2.5rem;
   border-radius: 2.5rem;
   background: #fff;
-  -webkit-box-shadow: 20px 40px 100px 0px rgba(128, 131, 181, 0.2);
-          box-shadow: 20px 40px 100px 0px rgba(128, 131, 181, 0.2);
+  -webkit-box-shadow: 0.2rem 0.4rem 10rem 0 rgba(128, 131, 181, 0.2);
+          box-shadow: 0.2rem 0.4rem 10rem 0 rgba(128, 131, 181, 0.2);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

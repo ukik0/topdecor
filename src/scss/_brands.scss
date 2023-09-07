@@ -86,7 +86,7 @@
             svg {
                 transform: scale(1.2);
                 fill: var(--white, #fff);
-                filter: drop-shadow(20px 40px 100px rgba(128, 131, 181, 0.2));
+                filter: drop-shadow(2rem 4rem 10rem rgba(128, 131, 181, 0.2));
 
                 circle {
                     fill: $white;
