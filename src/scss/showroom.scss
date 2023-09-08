@@ -199,9 +199,20 @@
         transition: .3s all ease;
         border: .1rem solid transparent;
 
+        @include small-tablet{
+            width: 8.8rem;
+            height: 8.8rem;
+            margin-top: 6rem;
+        }
+
         svg {
             width: 3.2rem;
             height: 3.2rem;
+
+            @include small-tablet{
+                width: 3.6rem;
+                height: 3.6rem;
+            }
 
             path {
                 transition: .3s all ease;

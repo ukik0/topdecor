@@ -123,23 +123,29 @@
             border-radius: 2.5rem;
             border: 0.1rem solid #f1f2fa;
             background: $white;
-            padding: 1.8rem;
             max-width: 11rem;
             width: 100%;
             height: 11rem;
             margin-right: 3rem;
             box-shadow: 2rem 4rem 10rem rgba(128, 131, 181, 0.2);
+            overflow: hidden;
+
+            &:hover{
+                img {
+                    transform: scale(1.1);
+                }
+            }
 
             @include small-tablet {
                 max-width: 18rem;
                 width: 100%;
                 height: 18rem;
-                padding: 3.6rem;
             }
 
             img {
                 height: 100%;
                 border-radius: inherit;
+                transition: .3s all ease;
             }
         }
 

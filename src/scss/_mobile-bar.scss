@@ -23,6 +23,8 @@
     }
 
     &-item {
+        position: relative;
+
         &.--active {
             svg {
                 path {
@@ -50,6 +52,23 @@
         svg {
             width: 4rem;
             height: 4rem;
+        }
+
+        .basket-counter-items {
+            position: absolute;
+            top: -2rem;
+            right: 0;
+            color: $white;
+            font-size: 2.4rem;
+            font-weight: 500;
+            line-height: 3.6rem;
+            width: 4rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: $grey-accent;
         }
     }
 }
