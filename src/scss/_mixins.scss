@@ -520,7 +520,7 @@
         gap: $gap-s;
     }
 
-    span {
+    > span, > strong {
         color: $black;
         font-size: 1.6rem;
         font-style: normal;
