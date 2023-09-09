@@ -635,6 +635,9 @@
     &-pagination-info {
         margin-top: 4.3rem;
         display: inline-flex;
+        position: relative;
+        z-index: 3;
+        margin-bottom: 0;
     }
 
     &-prev,
@@ -655,6 +658,8 @@
         align-items: center;
         gap: $gap-s;
         margin-top: 4rem;
+        position: relative;
+        z-index: 3;
     }
 
     @content;
