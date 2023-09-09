@@ -740,7 +740,3 @@ function disableRequestDetailsDropdown() {
 }
 
 disableRequestDetailsDropdown()
-
-$(window).on('resize', () => {
-    disableRequestDetailsDropdown()
-});
