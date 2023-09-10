@@ -769,12 +769,16 @@ $('.header__catalog-category').each(function () {
     $(this).on('mouseenter', function () {
         $('.header__catalog-category').each(function () {
             $(this).removeClass('--active');
-            isMobile() && $(this).find('.header__catalog-category-content').slideUp(1000);
+            isMobile() && $(this).find('.header__catalog-category-content').slideUp('slow');
         });
 
         $(this).addClass('--active');
-        isMobile() && $(this).find('.header__catalog-category-content').slideToggle(1000);
+        isMobile() && $(this).find('.header__catalog-category-content').slideDown('slow');
     });
+
+    if (isMobile() && $(this).hasClass('--active')) {
+        $(this).find('.header__catalog-category-content').slideDown('slow');
+    }
 });
 
 $('.catalog-entry').each(function () {

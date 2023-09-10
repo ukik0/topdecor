@@ -3,7 +3,7 @@
 
 .header {
     padding-top: 1.85rem;
-    transition: .3s all ease;
+    transition: 0.3s all ease;
 
     @include small-tablet {
         padding-top: 3rem;
@@ -194,7 +194,7 @@
                         top: 65%;
                         left: 4.2rem;
                         transform: translate(-50%, -50%);
-                        transition: .3s all ease;
+                        transition: 0.3s all ease;
                     }
                 }
 
@@ -207,7 +207,7 @@
                         top: 40%;
                         left: 4.2rem;
                         transform: translate(-50%, -50%);
-                        transition: .3s all ease;
+                        transition: 0.3s all ease;
                     }
                 }
 
@@ -243,7 +243,7 @@
                         top: 51%;
                         left: 4.2rem;
                         transform: translate(-50%, -50%);
-                        transition: .3s all ease;
+                        transition: 0.3s all ease;
 
                         @include small-tablet {
                             width: 3.5rem;
@@ -726,12 +726,12 @@
         align-items: flex-start;
         padding-top: 1rem;
         opacity: 0;
-        transition: .3s all ease;
+        transition: 0.3s all ease;
         z-index: 6;
         pointer-events: none;
         user-select: none;
 
-        @include small-tablet{
+        @include small-tablet {
             top: 0;
             border-radius: 0;
             box-shadow: initial;
@@ -752,7 +752,7 @@
             }
 
             .header__catalog-category-wrapper {
-                @include small-tablet{
+                @include small-tablet {
                     margin-bottom: 4rem;
                 }
             }
@@ -767,17 +767,17 @@
             width: 100%;
             position: relative;
             height: 78rem;
-            transform: scale(.9);
-            transition: .3s all ease;
+            transform: scale(0.9);
+            transition: 0.3s all ease;
 
-            @include small-tablet{
+            @include small-tablet {
                 background: transparent;
                 box-shadow: initial;
                 max-width: 100%;
             }
 
             &-title {
-                @include small-tablet{
+                @include small-tablet {
                     color: $black;
                     font-size: 4rem;
                     font-weight: 600;
@@ -788,7 +788,7 @@
             }
 
             &-back {
-                @include small-tablet{
+                @include small-tablet {
                     margin-bottom: 6.6rem;
 
                     svg {
@@ -821,7 +821,7 @@
             align-items: center;
             width: 100%;
 
-            @include small-tablet{
+            @include small-tablet {
                 flex-direction: column;
             }
 
@@ -830,17 +830,20 @@
                 align-items: center;
                 width: 100%;
 
-                @include small-tablet{
+                @include small-tablet {
                     margin-bottom: 4rem;
                 }
             }
 
             &.--active {
                 .header__catalog-category-content {
-                    opacity: 1;
                     pointer-events: auto;
                     user-select: auto;
                     visibility: visible;
+
+                    @media (min-width: 48rem) {
+                        display: flex;
+                    }
                 }
 
                 .header__catalog-category-name {
@@ -851,7 +854,7 @@
                             fill: $accent;
                         }
 
-                        @include small-tablet{
+                        @include small-tablet {
                             transform: rotate(90deg);
                         }
                     }
@@ -866,7 +869,7 @@
                 height: 6rem;
                 overflow: hidden;
 
-                @include small-tablet{
+                @include small-tablet {
                     max-width: 8rem;
                     height: 8rem;
                 }
@@ -894,7 +897,7 @@
                 transition: 0.3s all ease;
                 width: 100%;
 
-                @include small-tablet{
+                @include small-tablet {
                     font-size: 3rem;
                     line-height: 4.5rem;
                 }
@@ -912,9 +915,9 @@
                 svg {
                     width: 2.4rem;
                     height: 2.4rem;
-                    transition: .3s all ease;
+                    transition: 0.3s all ease;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         width: 4rem;
                         height: 4rem;
                     }
@@ -929,16 +932,14 @@
                 position: absolute;
                 top: 4rem;
                 left: 47.5rem;
-                display: flex;
                 align-items: flex-start;
                 gap: 12rem;
-                transition: 0.3s all ease;
-                opacity: 0;
                 pointer-events: none;
                 user-select: none;
                 visibility: hidden;
+                display: none;
 
-                @include small-tablet{
+                @include small-tablet {
                     position: initial;
                     flex-direction: column-reverse;
                     align-items: flex-start;
@@ -955,7 +956,7 @@
                     margin-bottom: 3rem;
                     display: block;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         color: $grey;
                         font-size: 3rem;
                         font-weight: 500;
@@ -965,12 +966,18 @@
                 }
             }
 
+            &-subcategory {
+                @include small-tablet{
+                    margin-bottom: 4rem;
+                }
+            }
+
             &-list {
                 display: grid;
                 grid-template-columns: repeat(2, 21.6rem);
                 gap: 2rem 4rem;
 
-                @include small-tablet{
+                @include small-tablet {
                     display: flex;
                     flex-direction: column;
                     gap: $gap-s;
@@ -982,14 +989,14 @@
                 font-size: 1.6rem;
                 font-weight: 500;
                 line-height: 2.464rem;
-                transition: .3s all ease;
+                transition: 0.3s all ease;
 
-                @include small-tablet{
+                @include small-tablet {
                     font-size: 3rem;
                     line-height: 4.5rem;
                 }
 
-                &:hover{
+                &:hover {
                     color: $accent;
                 }
             }
@@ -1000,7 +1007,7 @@
                     flex-direction: column;
                     gap: $gap-s;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         flex-direction: row;
                         white-space: nowrap;
                         overflow: scroll;
