@@ -148,6 +148,7 @@
             align-items: center;
             gap: $gap-s;
             width: 100%;
+            position: relative;
 
             &-button {
                 padding: 1.2rem 2.6rem 1.2rem 5.5rem;
@@ -237,6 +238,10 @@
             &-input {
                 width: 100%;
                 height: 5rem;
+                color: $black;
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: 2.464rem;
 
                 @include small-tablet {
                     height: initial;
@@ -386,9 +391,9 @@
             padding: 3rem;
             z-index: 5;
             opacity: 0;
-            transform: scale(.95);
+            transform: scale(0.95);
             will-change: opacity, transform;
-            transition: .3s all ease-in;
+            transition: 0.3s all ease-in;
             pointer-events: none;
 
             &.--active {
@@ -470,6 +475,214 @@
             img {
                 width: 4rem;
                 height: 4rem;
+            }
+        }
+    }
+
+    &__searchbar {
+        &-menu {
+            border-radius: 5rem;
+            background: $white;
+            box-shadow: 1rem 2rem 9.4rem 0 rgba(125, 128, 161, 0.2);
+            padding: 4rem 3.6rem;
+            padding-right: 2.4rem;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 6rem;
+            z-index: 6;
+            max-width: 85.3rem;
+            width: 100%;
+            overscroll-behavior: contain;
+            opacity: 0;
+            transition: .3s all ease;
+            pointer-events: none;
+            user-select: none;
+            transform: scale(.95);
+
+            &.--active {
+                opacity: 1;
+                pointer-events: auto;
+                user-select: auto;
+                transform: scale(1);
+            }
+
+
+            &-scroll {
+                max-height: 90rem;
+                overflow: auto;
+                padding-right: 2.3rem;
+                overscroll-behavior: contain;
+
+                &::-webkit-scrollbar {
+                    width: .3rem;
+                    border-radius: 0.3rem;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: transparent;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: #DFDFF0;
+                }
+            }
+
+            .empty-response {
+                color: $grey;
+                font-size: 2rem;
+                font-weight: 600;
+                line-height: 2.8rem;
+            }
+        }
+
+        &-category {
+            color: $black;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        &-subcategory {
+            color: $grey;
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 2.24rem;
+            letter-spacing: 0.016rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+
+            &-list {
+                display: flex;
+                flex-direction: column;
+                gap: $gap-xs;
+                margin-bottom: 2rem;
+            }
+
+            &-item {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                gap: 1.5rem;
+
+                &-image {
+                    max-width: 8.8rem;
+                    width: 100%;
+                    height: 7rem;
+                    border-radius: 2.5rem;
+                    background: linear-gradient(
+                        330deg,
+                        #e7eaff 5.17%,
+                        #f8f9ff 34.26%,
+                        #e9ebf9 52.5%,
+                        #eaedff 91.39%
+                    );
+                    overflow: hidden;
+
+                    &:hover{
+                        img {
+                            transform: scale(1.1);
+                        }
+                    }
+
+                    img {
+                        height: 100%;
+                        transition: .3s all ease;
+                    }
+                }
+
+                &-title {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    transition: .3s all ease;
+                    color: $black;
+                    font-size: 1.6rem;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 2.464rem;
+                    max-width: 56.5rem;
+                    width: 100%;
+
+                    &:hover{
+                        color: $accent;
+                    }
+                }
+
+                &-price {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .4rem;
+                    align-items: flex-start;
+
+                    .big {
+                        color: $black;
+                        font-size: 2rem;
+                        font-weight: 600;
+                        line-height: 2.8rem;
+                    }
+
+                    .small {
+                        color: $grey;
+                        font-size: 1.4rem;
+                        font-weight: 500;
+                        line-height: 1.96rem;
+                        text-decoration: line-through;
+                        text-decoration-color: currentColor;
+                    }
+                }
+            }
+        }
+
+        &-search {
+            &-list {
+                display: flex;
+                flex-direction: column;
+                gap: $gap-xs;
+                margin-bottom: 3rem;
+                margin-top: 2rem;
+            }
+
+            &-item {
+                align-items: center;
+                gap: $gap-s;
+                color: $black;
+                display: inline-flex;
+
+                &:hover {
+                    color: $accent;
+                }
+
+                &-link {
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    line-height: 2.464rem;
+                    transition: 0.3s all ease;
+                }
+
+                svg {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                }
+            }
+        }
+
+        &-brands {
+            &-list {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1.89rem;
+            }
+
+            &-item {
+                max-width: 11.3rem;
+                width: 100%;
+                height: 11.3rem;
             }
         }
     }

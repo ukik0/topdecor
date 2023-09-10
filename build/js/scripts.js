@@ -762,3 +762,11 @@ $('.request-details-dropdown').on('click', function () {
     $(this).siblings('.request__details-list').slideToggle(500);
 });
 
+$('.header__content-searchbar-input').on('focus', function () {
+    $('.header__searchbar-menu').addClass('--active')
+})
+
+$('.header__content-searchbar-input').on('blur', function () {
+    $('.header__searchbar-menu').removeClass('--active')
+})
+
