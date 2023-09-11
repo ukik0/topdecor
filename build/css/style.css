@@ -2576,12 +2576,12 @@ section {
 
 .shares__item-top-heading {
   position: relative;
-  padding: 3.5rem 6.8rem;
   border-radius: 2rem;
   background: #fff;
   max-height: 27rem;
   margin-bottom: 1rem;
   display: block;
+  overflow: hidden;
 }
 
 .shares__item-top-heading:hover [class*=-image] {
@@ -2637,10 +2637,10 @@ section {
 
 .shares__item-top-image {
   width: 100%;
-  max-width: 20rem;
-  height: 20rem;
   -webkit-transition: 0.3s all ease-in;
   transition: 0.3s all ease-in;
+  max-width: 33.8rem;
+  height: 26.9rem;
 }
 
 .shares__item-top-image img {
@@ -3001,12 +3001,12 @@ section {
 
 .leaders__item-top-heading {
   position: relative;
-  padding: 3.5rem 6.8rem;
   border-radius: 2rem;
   background: #fff;
   max-height: 27rem;
   margin-bottom: 1rem;
   display: block;
+  overflow: hidden;
 }
 
 .leaders__item-top-heading:hover [class*=-image] {
@@ -3062,10 +3062,10 @@ section {
 
 .leaders__item-top-image {
   width: 100%;
-  max-width: 20rem;
-  height: 20rem;
   -webkit-transition: 0.3s all ease-in;
   transition: 0.3s all ease-in;
+  max-width: 33.8rem;
+  height: 26.9rem;
 }
 
 .leaders__item-top-image img {
@@ -3377,12 +3377,12 @@ section {
 
 .novelties__item-top-heading {
   position: relative;
-  padding: 3.5rem 6.8rem;
   border-radius: 2rem;
   background: #fff;
   max-height: 27rem;
   margin-bottom: 1rem;
   display: block;
+  overflow: hidden;
 }
 
 .novelties__item-top-heading:hover [class*=-image] {
@@ -3438,10 +3438,10 @@ section {
 
 .novelties__item-top-image {
   width: 100%;
-  max-width: 20rem;
-  height: 20rem;
   -webkit-transition: 0.3s all ease-in;
   transition: 0.3s all ease-in;
+  max-width: 33.8rem;
+  height: 26.9rem;
 }
 
 .novelties__item-top-image img {
@@ -4271,12 +4271,12 @@ section {
 
 .favorites__item-top-heading {
   position: relative;
-  padding: 3.5rem 6.8rem;
   border-radius: 2rem;
   background: #fff;
   max-height: 27rem;
   margin-bottom: 1rem;
   display: block;
+  overflow: hidden;
 }
 
 .favorites__item-top-heading:hover [class*=-image] {
@@ -4332,10 +4332,10 @@ section {
 
 .favorites__item-top-image {
   width: 100%;
-  max-width: 20rem;
-  height: 20rem;
   -webkit-transition: 0.3s all ease-in;
   transition: 0.3s all ease-in;
+  max-width: 33.8rem;
+  height: 26.9rem;
 }
 
 .favorites__item-top-image img {
@@ -4764,12 +4764,12 @@ section {
 
 .interested__item-top-heading {
   position: relative;
-  padding: 3.5rem 6.8rem;
   border-radius: 2rem;
   background: #fff;
   max-height: 27rem;
   margin-bottom: 1rem;
   display: block;
+  overflow: hidden;
 }
 
 .interested__item-top-heading:hover [class*=-image] {
@@ -4825,10 +4825,10 @@ section {
 
 .interested__item-top-image {
   width: 100%;
-  max-width: 20rem;
-  height: 20rem;
   -webkit-transition: 0.3s all ease-in;
   transition: 0.3s all ease-in;
+  max-width: 33.8rem;
+  height: 26.9rem;
 }
 
 .interested__item-top-image img {
@@ -5644,12 +5644,12 @@ section {
 
 .service-products__item-top-heading {
   position: relative;
-  padding: 3.5rem 6.8rem;
   border-radius: 2rem;
   background: #fff;
   max-height: 27rem;
   margin-bottom: 1rem;
   display: block;
+  overflow: hidden;
 }
 
 .service-products__item-top-heading:hover [class*=-image] {
@@ -5705,10 +5705,10 @@ section {
 
 .service-products__item-top-image {
   width: 100%;
-  max-width: 20rem;
-  height: 20rem;
   -webkit-transition: 0.3s all ease-in;
   transition: 0.3s all ease-in;
+  max-width: 33.8rem;
+  height: 26.9rem;
 }
 
 .service-products__item-top-image img {
@@ -6253,12 +6253,12 @@ section {
 
 .usable-materials__item-top-heading {
   position: relative;
-  padding: 3.5rem 6.8rem;
   border-radius: 2rem;
   background: #fff;
   max-height: 27rem;
   margin-bottom: 1rem;
   display: block;
+  overflow: hidden;
 }
 
 .usable-materials__item-top-heading:hover [class*=-image] {
@@ -6314,10 +6314,10 @@ section {
 
 .usable-materials__item-top-image {
   width: 100%;
-  max-width: 20rem;
-  height: 20rem;
   -webkit-transition: 0.3s all ease-in;
   transition: 0.3s all ease-in;
+  max-width: 33.8rem;
+  height: 26.9rem;
 }
 
 .usable-materials__item-top-image img {
@@ -6930,12 +6930,12 @@ section {
 
 .related-products__item-top-heading {
   position: relative;
-  padding: 3.5rem 6.8rem;
   border-radius: 2rem;
   background: #fff;
   max-height: 27rem;
   margin-bottom: 1rem;
   display: block;
+  overflow: hidden;
 }
 
 .related-products__item-top-heading:hover [class*=-image] {
@@ -6991,10 +6991,10 @@ section {
 
 .related-products__item-top-image {
   width: 100%;
-  max-width: 20rem;
-  height: 20rem;
   -webkit-transition: 0.3s all ease-in;
   transition: 0.3s all ease-in;
+  max-width: 33.8rem;
+  height: 26.9rem;
 }
 
 .related-products__item-top-image img {
@@ -7893,6 +7893,13 @@ section {
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 2.464rem;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.product__description-item:hover {
+  background: #586CBE;
+  color: #fff;
 }
 
 @font-face {

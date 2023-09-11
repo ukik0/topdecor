@@ -792,6 +792,8 @@ $('.catalog-entry').each(function () {
         $('body').toggleClass('locked');
         $('.header').toggleClass('--active');
 
+        !isMobile() && window.scrollTo({top: 0, behavior: 'smooth'})
+
         $('.header__catalog').toggleClass('--active');
     });
 });
