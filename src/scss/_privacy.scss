@@ -1,0 +1,67 @@
+@import 'vars';
+@import 'mixins';
+
+.privacy {
+    &__content {
+        max-width: 97.8rem;
+        width: 100%;
+        margin: auto;
+
+        @include small-tablet{
+            max-width: 100%;
+        }
+    }
+
+    &__block {
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        @include small-tablet{
+            gap: $gap-m;
+        }
+
+        &-text {
+            display: flex;
+            flex-direction: column;
+
+            .privacy__description{
+                &:nth-of-type(1) {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    &__title {
+        color: $black;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 2.8rem;
+
+        @include small-tablet{
+            color: $black;
+            font-size: 3.4rem;
+            font-weight: 600;
+            line-height: 4.8rem;
+        }
+    }
+
+    &__description {
+        color: $black;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 2.464rem;
+        margin-top: 2.5rem;
+
+        @include small-tablet{
+            font-size: 3rem;
+            line-height: 4.5rem;
+        }
+
+        &.subtext {
+            margin-top: 0;
+        }
+    }
+}
