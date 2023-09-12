@@ -1,0 +1,46 @@
+@import 'vars';
+@import 'mixins';
+
+.catalog-banner {
+    &__content {
+        padding: 8.65rem 8rem;
+        border-radius: 5rem;
+        position: relative;
+
+        @include small-tablet{
+            border-radius: 4rem;
+            padding: 6rem 4rem;
+            height: 85rem;
+        }
+    }
+
+    &__title {
+        color: $black;
+        font-size: 3.7rem;
+        font-weight: 600;
+        line-height: 4.44rem;
+        margin-bottom: 3rem;
+        max-width: 50.9rem;
+
+        @include small-tablet{
+            font-size: 4.4rem;
+            line-height: 5.28rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__description {
+        color: $grey;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 2.464rem;
+
+        @include small-tablet{
+            font-size: 3rem;
+            line-height: 4.5rem;
+        }
+    }
+
+    @include section-banner-image;
+
+}

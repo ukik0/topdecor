@@ -3228,7 +3228,7 @@ section {
   position: absolute;
   inset: 0;
   z-index: -1;
-  border-radius: 2.5rem;
+  border-radius: inherit;
 }
 
 .banner__image img {
@@ -5257,7 +5257,7 @@ section {
   position: absolute;
   inset: 0;
   z-index: -1;
-  border-radius: 2.5rem;
+  border-radius: inherit;
 }
 
 .projects-banner__image img {
@@ -5342,7 +5342,7 @@ section {
   position: absolute;
   inset: 0;
   z-index: -1;
-  border-radius: 2.5rem;
+  border-radius: inherit;
 }
 
 .services-banner__image img {
@@ -7951,6 +7951,42 @@ section {
 
 .privacy__description.subtext {
   margin-top: 0;
+}
+
+.catalog-banner__content {
+  padding: 8.65rem 8rem;
+  border-radius: 5rem;
+  position: relative;
+}
+
+.catalog-banner__title {
+  color: #555760;
+  font-size: 3.7rem;
+  font-weight: 600;
+  line-height: 4.44rem;
+  margin-bottom: 3rem;
+  max-width: 50.9rem;
+}
+
+.catalog-banner__description {
+  color: #A8A7CA;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.464rem;
+}
+
+.catalog-banner__image {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.catalog-banner__image img {
+  border-radius: inherit;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @font-face {
@@ -12359,6 +12395,23 @@ button.swiper-pagination-bullet {
   }
 
   .privacy__description {
+    font-size: 3rem;
+    line-height: 4.5rem;
+  }
+
+  .catalog-banner__content {
+    border-radius: 4rem;
+    padding: 6rem 4rem;
+    height: 85rem;
+  }
+
+  .catalog-banner__title {
+    font-size: 4.4rem;
+    line-height: 5.28rem;
+    margin-bottom: 2rem;
+  }
+
+  .catalog-banner__description {
     font-size: 3rem;
     line-height: 4.5rem;
   }
