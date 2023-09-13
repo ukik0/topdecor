@@ -2,6 +2,12 @@
 @import 'mixins';
 
 .catalog-banner {
+    margin-bottom: 4rem;
+
+    @include small-tablet{
+        margin-bottom: 8rem;
+    }
+
     &__content {
         padding: 8.65rem 8rem;
         border-radius: 5rem;
