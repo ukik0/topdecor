@@ -887,9 +887,7 @@ useClickOutside('.catalog__heading-settings', '--active', () => $('body').remove
 
 $(window).on('scroll', function () {
     if (
-        $(this).scrollTop() > $('.section-heading.catalog__heading').position().top &&
-        $(this).scrollTop() <
-            $('.catalog__products-content').position().top + $('.catalog__products-content').height()
+        $(this).scrollTop() > $('.section-heading.catalog__heading').position().top
     ) {
         $('.catalog__heading-settings').addClass('--active');
         $('.section-heading.catalog__heading').css(
