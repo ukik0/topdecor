@@ -873,15 +873,17 @@ $('.catalog__products-filters-reset').on('click', () => {
     rangeSlider.noUiSlider.reset();
 });
 
-function useClickOutside(target, active) {
+function useClickOutside(target, active, callback = () => null) {
     $(window).on('click', (event) => {
         if ($(event.target).closest(target).length) return;
 
         $('.catalog__sort').removeClass(active);
+
+        callback()
     });
 }
 
-useClickOutside('.catalog__heading-settings', '--active');
+useClickOutside('.catalog__heading-settings', '--active', () => $('body').removeClass('locked'));
 
 $(window).on('scroll', function () {
     if (
