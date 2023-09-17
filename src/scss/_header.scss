@@ -529,6 +529,14 @@
             user-select: none;
             transform: scale(0.95);
 
+            @include small-tablet{
+                position: fixed;
+                inset: 0;
+                border-radius: 0;
+                box-shadow: initial;
+                max-width: 100%;
+            }
+
             &.--active {
                 opacity: 1;
                 pointer-events: auto;
@@ -536,11 +544,87 @@
                 transform: scale(1);
             }
 
+            &-field {
+                display: flex;
+                align-items: center;
+                gap: 5rem;
+                position: relative;
+                margin-bottom: 4rem;
+
+                &-back-button {
+                    width: 4.8rem;
+                    height: 4.8rem;
+
+                    svg {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            &-input {
+                width: 100%;
+
+                label {
+                    width: 100%;
+
+                    input {
+                        border-radius: 6rem;
+                        border: .1rem solid #E6EAFF;
+                        background: #FCFAFA;
+                        padding: 2.1rem 4rem;
+                        color: $black;
+                        font-size: 3rem;
+                        font-weight: 500;
+                        line-height: 4.5rem;
+                        width: 100%;
+                    }
+
+                    svg {
+                        position: absolute;
+                        right: 3.2rem;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 4.8rem;
+                        height: 4.8rem;
+                    }
+                }
+            }
+
+            &-searched{
+                &-list {
+                    display: flex;
+                    align-items: center;
+                    gap: $gap-s;
+                    margin-bottom: 4rem;
+                    padding-bottom: 2rem;
+                    position: relative;
+                    white-space: nowrap;
+                    overflow-x: auto;
+                }
+
+                &-item {
+                    padding: 1.3rem 4rem;
+                    border-radius: 6rem;
+                    border: .1rem solid #E6EAFF;
+                    background: $white;
+                    color: $black;
+                    font-size: 3rem;
+                    font-weight: 500;
+                    line-height: 4.5rem;
+                }
+            }
+
             &-scroll {
                 max-height: 90rem;
                 overflow: auto;
                 padding-right: 2.3rem;
                 overscroll-behavior: contain;
+
+                @include small-tablet{
+                    max-height: 80%;
+                    padding-right: 1rem;
+                }
 
                 &::-webkit-scrollbar {
                     width: 0.3rem;
@@ -570,6 +654,12 @@
             font-weight: 600;
             line-height: 2.8rem;
             margin-bottom: 1rem;
+
+            @include small-tablet{
+                font-size: 3.4rem;
+                line-height: 4.8rem;
+                margin-bottom: 4rem;
+            }
         }
 
         &-subcategory {
@@ -582,11 +672,21 @@
             margin-bottom: 1rem;
             display: block;
 
+            @include small-tablet{
+                font-size: 3rem;
+                line-height: 4.5rem;
+                margin-bottom: 4rem;
+            }
+
             &-list {
                 display: flex;
                 flex-direction: column;
                 gap: $gap-xs;
                 margin-bottom: 2rem;
+
+                @include small-tablet{
+                    gap: $gap-m;
+                }
             }
 
             &-item {
@@ -594,6 +694,10 @@
                 align-items: flex-start;
                 justify-content: space-between;
                 gap: 1.5rem;
+
+                @include small-tablet{
+                    gap: 0;
+                }
 
                 &-image {
                     max-width: 8.8rem;
@@ -608,6 +712,12 @@
                         #eaedff 91.39%
                     );
                     overflow: hidden;
+
+                    @include small-tablet{
+                        max-width: 12.8rem;
+                        height: 12rem;
+                        margin-right: 2.4rem;
+                    }
 
                     &:hover {
                         img {
@@ -636,6 +746,12 @@
                     max-width: 56.5rem;
                     width: 100%;
 
+                    @include small-tablet{
+                        font-size: 3rem;
+                        line-height: 4.5rem;
+                        max-width: 38.4rem;
+                    }
+
                     &:hover {
                         color: $accent;
                     }
@@ -652,6 +768,11 @@
                         font-size: 2rem;
                         font-weight: 600;
                         line-height: 2.8rem;
+
+                        @include small-tablet{
+                            font-size: 3.4rem;
+                            line-height: 4.8rem;
+                        }
                     }
 
                     .small {
@@ -661,6 +782,11 @@
                         line-height: 1.96rem;
                         text-decoration: line-through;
                         text-decoration-color: currentColor;
+
+                        @include small-tablet{
+                            font-size: 2.4rem;
+                            line-height: 3.6rem;
+                        }
                     }
                 }
             }
@@ -673,6 +799,12 @@
                 gap: $gap-xs;
                 margin-bottom: 3rem;
                 margin-top: 2rem;
+
+                @include small-tablet{
+                    gap: $gap-s;
+                    margin-bottom: 6rem;
+                    margin-top: 4rem;
+                }
             }
 
             &-item {
@@ -680,6 +812,10 @@
                 gap: $gap-s;
                 color: $black;
                 display: inline-flex;
+
+                @include small-tablet{
+                    gap: $gap-s;
+                }
 
                 &:hover {
                     color: $accent;
@@ -690,11 +826,23 @@
                     font-weight: 500;
                     line-height: 2.464rem;
                     transition: 0.3s all ease;
+
+                    @include small-tablet{
+                        color: $black;
+                        font-size: 3rem;
+                        font-weight: 500;
+                        line-height: 4.5rem;
+                    }
                 }
 
                 svg {
                     width: 2.4rem;
                     height: 2.4rem;
+
+                    @include small-tablet{
+                        width: 4.2rem;
+                        height: 4.2rem;
+                    }
                 }
             }
         }
@@ -809,12 +957,21 @@
             border-right: 0.1rem solid #e6eaff;
             max-width: 39.4rem;
             width: 100%;
+            max-height: 100%;
+            height: 100%;
+            overflow: auto;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
 
             @include small-tablet {
                 max-width: 100%;
                 border-right: 0;
                 padding-right: 0;
                 gap: $gap-l;
+                max-height: 100%;
+                overflow: initial;
             }
         }
 
@@ -935,11 +1092,27 @@
                 top: 4rem;
                 left: 47.5rem;
                 align-items: flex-start;
-                gap: 12rem;
+                gap: 8rem;
                 pointer-events: none;
                 user-select: none;
                 visibility: hidden;
                 display: none;
+                max-height: 90%;
+                height: 100%;
+                overflow: auto;
+
+                &::-webkit-scrollbar {
+                    width: 0.4rem;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: #E6EAFF;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: #A8A7CA;
+                    border-radius: 0.6rem;
+                }
 
                 @include small-tablet {
                     position: initial;
@@ -948,6 +1121,8 @@
                     gap: $gap-l;
                     margin-left: 6rem;
                     display: none;
+                    max-height: 100%;
+                    overflow: initial;
                 }
 
                 &-name {
@@ -1004,6 +1179,14 @@
             }
 
             &-brands {
+                padding: 0 2rem 0 4rem;
+                border-left: .1rem solid #E6EAFF;
+
+                @include small-tablet{
+                    padding: 0;
+                    border-left: 0;
+                }
+
                 &-list {
                     display: flex;
                     flex-direction: column;

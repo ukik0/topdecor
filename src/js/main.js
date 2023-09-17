@@ -9,418 +9,156 @@ const rem = function (rem) {
     }
 };
 
+const swiperSettings = (init, ...payload) => ({
+    loop: true,
+    ...payload,
+    keyboard: {
+        enabled: true
+    },
+    pagination: {
+        el: `.${init}-pagination`,
+        clickable: true
+    },
+    navigation: {
+        nextEl: `.${init}-next`,
+        prevEl: `.${init}-prev`
+    },
+    on: {
+        init: ({ slides }) => {
+            const selector = document.querySelector(`.${init}-length-slides`);
+            selector.textContent = `${slides[0].ariaLabel.split('/')[1].toString().trim().padStart(2, '0')}`;
+        },
+        slideChange: ({ realIndex }) => {
+            $(`.${init}-current-slide`).text(String(realIndex + 1).padStart(2, '0'));
+        }
+    }
+});
+
 const heroSwiper = document.querySelector('.hero__swiper');
 if (heroSwiper) {
     const swiper = new Swiper('.hero__swiper', {
-        pagination: {
-            el: '.hero-pagination',
-            clickable: true
-        },
         grabCursor: true,
         slidesPerView: 1,
         effect: 'fade',
         fadeEffect: {
             crossFade: true
         },
-        keyboard: {
-            enabled: true
-        },
-        navigation: {
-            nextEl: '.hero-next',
-            prevEl: '.hero-prev'
-        },
-        on: {
-            init: ({ slides }) => {
-                const selector = document.querySelector('.hero-length-slides');
-                selector.textContent = `${slides.length.toString().padStart(2, '0')}`;
-            },
-            slideChange: ({ realIndex, slides }) => {
-                $('.hero-current-slide').text(String(realIndex + 1).padStart(2, '0'));
-            }
-        }
+        ...swiperSettings('hero')
     });
 }
 
 const categoriesSwiper = document.querySelector('.categories__swiper');
 if (categoriesSwiper) {
     const swiper = new Swiper('.categories__swiper', {
-        pagination: {
-            el: '.categories-pagination',
-            clickable: true
-        },
         spaceBetween: 30,
         slidesPerView: 1,
-        keyboard: {
-            enabled: true
-        },
-        effect: 'creative',
-        creativeEffect: {
-            prev: {
-                opacity: 0,
-                translate: [rem(4), 0, 0],
-                scale: 0.9
-            },
-            next: {
-                opacity: 0,
-                translate: [rem(4), 0, 0],
-                scale: 0.9
-            }
-        },
-        navigation: {
-            nextEl: '.categories-next',
-            prevEl: '.categories-prev'
-        },
-        on: {
-            init: ({ slides }) => {
-                const selector = document.querySelector('.categories-length-slides');
-                selector.textContent = `${slides.length.toString().padStart(2, '0')}`;
-            },
-            slideChange: ({ realIndex, slides }) => {
-                $('.categories-current-slide').text(String(realIndex + 1).padStart(2, '0'));
-            }
-        }
+        ...swiperSettings('categories')
     });
 }
 
 const brandsSwiper = document.querySelector('.brands__swiper');
 if (brandsSwiper) {
     const swiper = new Swiper('.brands__swiper', {
-        pagination: {
-            el: '.brands-pagination',
-            clickable: true
-        },
-        slidesPerView: 5,
+        slidesPerView: 1,
         autoplay: true,
         grabCursor: true,
         speed: 700,
         centeredSlides: true,
-        loop: true,
-        keyboard: {
-            enabled: true
-        },
-        navigation: {
-            nextEl: '.brands-next',
-            prevEl: '.brands-prev'
-        },
-        breakpoints: {
-            1: {
-                slidesPerView: 3
-            },
-            768: {
-                slidesPerView: 5
-            }
-        },
-        on: {
-            init: ({ slides }) => {
-                const selector = document.querySelector('.brands-length-slides');
-                selector.textContent = `${slides[0].ariaLabel
-                    .split('/')[1]
-                    .toString()
-                    .trim()
-                    .padStart(2, '0')}`;
-            },
-            slideChange: ({ realIndex }) => {
-                $('.brands-current-slide').text(String(realIndex + 1).padStart(2, '0'));
-            }
-        }
+        ...swiperSettings('brands')
     });
 }
 
 const sharesSlider = document.querySelector('.shares__swiper');
 if (sharesSlider) {
     const swiper = new Swiper('.shares__swiper', {
-        pagination: {
-            el: '.shares-pagination',
-            clickable: true
-        },
         slidesPerView: 1,
         grabCursor: true,
         speed: 700,
-        keyboard: {
-            enabled: true
-        },
-        navigation: {
-            nextEl: '.shares-next',
-            prevEl: '.shares-prev'
-        },
-        on: {
-            init: ({ slides }) => {
-                const selector = document.querySelector('.shares-length-slides');
-                selector.textContent = `${slides[0].ariaLabel
-                    .split('/')[1]
-                    .toString()
-                    .trim()
-                    .padStart(2, '0')}`;
-            },
-            slideChange: ({ realIndex }) => {
-                $('.shares-current-slide').text(String(realIndex + 1).padStart(2, '0'));
-            }
-        }
+        ...swiperSettings('shares')
     });
 }
 
 const leadersSlider = document.querySelector('.leaders__swiper');
 if (leadersSlider) {
     const swiper = new Swiper('.leaders__swiper', {
-        pagination: {
-            el: '.leaders-pagination',
-            clickable: true
-        },
         slidesPerView: 1,
         grabCursor: true,
         speed: 700,
-        keyboard: {
-            enabled: true
-        },
-        navigation: {
-            nextEl: '.leaders-next',
-            prevEl: '.leaders-prev'
-        },
-        on: {
-            init: ({ slides }) => {
-                const selector = document.querySelector('.leaders-length-slides');
-                selector.textContent = `${slides[0].ariaLabel
-                    .split('/')[1]
-                    .toString()
-                    .trim()
-                    .padStart(2, '0')}`;
-            },
-            slideChange: ({ realIndex }) => {
-                $('.leaders-current-slide').text(String(realIndex + 1).padStart(2, '0'));
-            }
-        }
+        ...swiperSettings('leaders')
     });
 }
 
 const noveltiesSlider = document.querySelector('.novelties__swiper');
 if (noveltiesSlider) {
     const swiper = new Swiper('.novelties__swiper', {
-        pagination: {
-            el: '.novelties-pagination',
-            clickable: true
-        },
         slidesPerView: 1,
         grabCursor: true,
         speed: 700,
-        keyboard: {
-            enabled: true
-        },
-        navigation: {
-            nextEl: '.novelties-next',
-            prevEl: '.novelties-prev'
-        },
-        on: {
-            init: ({ slides }) => {
-                const selector = document.querySelector('.novelties-length-slides');
-                selector.textContent = `${slides[0].ariaLabel
-                    .split('/')[1]
-                    .toString()
-                    .trim()
-                    .padStart(2, '0')}`;
-            },
-            slideChange: ({ realIndex }) => {
-                $('.novelties-current-slide').text(String(realIndex + 1).padStart(2, '0'));
-            }
-        }
+        ...swiperSettings('novelties')
     });
 }
 
 const ourServicesSlider = document.querySelector('.our-services__swiper');
 if (ourServicesSlider) {
     const swiper = new Swiper('.our-services__swiper', {
-        pagination: {
-            el: '.our-services-pagination',
-            clickable: true
-        },
         spaceBetween: rem(4),
         slidesPerView: 1,
         grabCursor: true,
         speed: 700,
-        keyboard: {
-            enabled: true
-        },
-        navigation: {
-            nextEl: '.our-services-next',
-            prevEl: '.our-services-prev'
-        },
-        on: {
-            init: ({ slides }) => {
-                const selector = document.querySelector('.our-services-length-slides');
-                selector.textContent = `${slides[0].ariaLabel
-                    .split('/')[1]
-                    .toString()
-                    .trim()
-                    .padStart(2, '0')}`;
-            },
-            slideChange: ({ realIndex }) => {
-                $('.our-services-current-slide').text(String(realIndex + 1).padStart(2, '0'));
-            }
-        }
+        ...swiperSettings('our-services')
     });
 }
 
 const showroomSlider = document.querySelector('.showroom__swiper');
 if (showroomSlider) {
     const swiper = new Swiper('.showroom__swiper', {
-        pagination: {
-            el: '.showroom-pagination',
-            clickable: true
-        },
         spaceBetween: rem(4),
         slidesPerView: 1,
         grabCursor: true,
         speed: 700,
-        keyboard: {
-            enabled: true
-        },
-        navigation: {
-            nextEl: '.showroom-next',
-            prevEl: '.showroom-prev'
-        },
-        on: {
-            init: ({ slides }) => {
-                const selector = document.querySelector('.showroom-length-slides');
-                selector.textContent = `${slides[0].ariaLabel
-                    .split('/')[1]
-                    .toString()
-                    .trim()
-                    .padStart(2, '0')}`;
-            },
-            slideChange: ({ realIndex }) => {
-                $('.showroom-current-slide').text(String(realIndex + 1).padStart(2, '0'));
-            }
-        }
+        ...swiperSettings('showroom')
     });
 }
 
 const interestedSlider = document.querySelector('.interested__swiper');
 if (interestedSlider) {
     const swiper = new Swiper('.interested__swiper', {
-        pagination: {
-            el: '.interested-pagination',
-            clickable: true
-        },
         spaceBetween: rem(4),
         slidesPerView: 1,
         grabCursor: true,
         speed: 700,
-        keyboard: {
-            enabled: true
-        },
-        navigation: {
-            nextEl: '.interested-next',
-            prevEl: '.interested-prev'
-        },
-        on: {
-            init: ({ slides }) => {
-                const selector = document.querySelector('.interested-length-slides');
-                selector.textContent = `${slides[0].ariaLabel
-                    .split('/')[1]
-                    .toString()
-                    .trim()
-                    .padStart(2, '0')}`;
-            },
-            slideChange: ({ realIndex }) => {
-                $('.interested-current-slide').text(String(realIndex + 1).padStart(2, '0'));
-            }
-        }
+        ...swiperSettings('interested')
     });
 }
 
 const serviceProductsSlider = document.querySelector('.service-products__swiper');
 if (serviceProductsSlider) {
     const swiper = new Swiper('.service-products__swiper', {
-        pagination: {
-            el: '.service-products-pagination',
-            clickable: true
-        },
         spaceBetween: rem(4),
         slidesPerView: 1,
         grabCursor: true,
         speed: 700,
-        keyboard: {
-            enabled: true
-        },
-        navigation: {
-            nextEl: '.service-products-next',
-            prevEl: '.service-products-prev'
-        },
-        on: {
-            init: ({ slides }) => {
-                const selector = document.querySelector('.service-products-length-slides');
-                selector.textContent = `${slides[0].ariaLabel
-                    .split('/')[1]
-                    .toString()
-                    .trim()
-                    .padStart(2, '0')}`;
-            },
-            slideChange: ({ realIndex }) => {
-                $('.service-products-current-slide').text(String(realIndex + 1).padStart(2, '0'));
-            }
-        }
+        ...swiperSettings('service-products')
     });
 }
 
 const usableMaterialsSlider = document.querySelector('.usable-materials__swiper');
 if (usableMaterialsSlider) {
     const swiper = new Swiper('.usable-materials__swiper', {
-        pagination: {
-            el: '.usable-materials-pagination',
-            clickable: true
-        },
         spaceBetween: rem(4),
         slidesPerView: 1,
         grabCursor: true,
         speed: 700,
-        keyboard: {
-            enabled: true
-        },
-        navigation: {
-            nextEl: '.usable-materials-next',
-            prevEl: '.usable-materials-prev'
-        },
-        on: {
-            init: ({ slides }) => {
-                const selector = document.querySelector('.usable-materials-length-slides');
-                selector.textContent = `${slides[0].ariaLabel
-                    .split('/')[1]
-                    .toString()
-                    .trim()
-                    .padStart(2, '0')}`;
-            },
-            slideChange: ({ realIndex }) => {
-                $('.usable-materials-current-slide').text(String(realIndex + 1).padStart(2, '0'));
-            }
-        }
+        ...swiperSettings('usable-materials')
     });
 }
 
 const projectSlider = document.querySelector('.project__swiper');
 if (projectSlider) {
     const swiper = new Swiper('.project__swiper', {
-        pagination: {
-            el: '.project-pagination',
-            clickable: true
-        },
         slidesPerView: 1.5,
         grabCursor: true,
         speed: 700,
-        keyboard: {
-            enabled: true
-        },
-        navigation: {
-            nextEl: '.project-next',
-            prevEl: '.project-prev'
-        },
-        on: {
-            init: ({ slides }) => {
-                const selector = document.querySelector('.project-length-slides');
-                selector.textContent = `${slides.length.toString().padStart(2, '0')}`;
-            },
-            slideChange: ({ realIndex, slides }) => {
-                $('.project-current-slide').text(String(realIndex + 1).padStart(2, '0'));
-            }
-        },
         breakpoints: {
             1: {
                 spaceBetween: rem(1)
@@ -428,37 +166,19 @@ if (projectSlider) {
             768: {
                 spaceBetween: rem(3)
             }
-        }
+        },
+        ...swiperSettings('project')
     });
 }
 
 const relatedProductsSlider = document.querySelector('.related-products__swiper');
 if (relatedProductsSlider) {
     const swiper = new Swiper('.related-products__swiper', {
-        pagination: {
-            el: '.related-products-pagination',
-            clickable: true
-        },
         spaceBetween: rem(4),
         slidesPerView: 1,
         grabCursor: true,
         speed: 700,
-        keyboard: {
-            enabled: true
-        },
-        navigation: {
-            nextEl: '.related-products-next',
-            prevEl: '.related-products-prev'
-        },
-        on: {
-            init: ({ slides }) => {
-                const selector = document.querySelector('.related-products-length-slides');
-                selector.textContent = `${slides.length.toString().padStart(2, '0')}`;
-            },
-            slideChange: ({ realIndex, slides }) => {
-                $('.related-products-current-slide').text(String(realIndex + 1).padStart(2, '0'));
-            }
-        }
+        ...swiperSettings('related-products')
     });
 }
 
@@ -560,6 +280,7 @@ bindModal(
     bindSuccessModal
 );
 bindModal('.service-request-button', '#request-modal', '#request-modal .modal__close', bindSuccessModal);
+bindModal('.request__form-submit-button', '#request-modal-success', '#request-modal-success .modal__close');
 
 function bindSuccessModal() {
     $('.request-success-button').on('click', (event) => {
@@ -612,10 +333,17 @@ if (document.querySelector('.shares__categories')) {
     //     content.addEventListener('mouseleave', mouseupHandler);
     // }
     //
-    const arrow = document.querySelector('.shares__categories-icon');
+    const arrows = {
+        left: document.querySelector('.shares__categories-icon.left'),
+        right: document.querySelector('.shares__categories-icon.right')
+    }
     const container = document.querySelector(CONTENT_SELECTOR);
 
-    arrow.addEventListener('click', () => {
+    arrows.left.addEventListener('click', () => {
+        container.scrollBy({ left: -150, behavior: 'smooth' });
+    });
+
+    arrows.right.addEventListener('click', () => {
         container.scrollBy({ left: 150, behavior: 'smooth' });
     });
 }
@@ -757,12 +485,29 @@ $('.request-details-dropdown').on('click', function () {
     $(this).siblings('.request__details-list').slideToggle(500);
 });
 
-$('.header__content-searchbar-input').on('focus', function () {
+let timeout = null;
+
+$('.header__content-searchbar-input').on(isMobile() && isMatchMedia() ? 'focus' : 'click', function () {
     $('.header__searchbar-menu').addClass('--active');
+    isMobile() && isMatchMedia() && $('#menu-search-field').focus();
+
+    if (timeout) {
+        clearTimeout(timeout)
+    }
 });
 
-$('.header__content-searchbar-input').on('blur', function () {
+$('.header__searchbar-menu-back-button').on('click', function () {
     $('.header__searchbar-menu').removeClass('--active');
+});
+
+$('.header__searchbar-menu-input .reset-input-text').on('click', function () {
+    $('#menu-search-field').val('');
+});
+
+$('.header__content-searchbar-input').on('blur', function (event) {
+    timeout = setTimeout(() => {
+        !(isMobile() && isMatchMedia()) && $('.header__searchbar-menu').removeClass('--active');
+    }, 50);
 });
 
 $('.header__catalog-category').each(function () {
@@ -788,18 +533,26 @@ $('.catalog-entry').each(function () {
         $('.header').toggleClass('--active');
 
         !isMobile() && window.scrollTo({ top: 0, behavior: 'smooth' });
-
         $('.header__catalog').toggleClass('--active');
     });
 });
 
+// $('.header__content-searchbar-button').on('focus', function () {
+//     $(this).closest('.catalog-entry').click();
+//     $('body').addClass('locked');
+//     $('.header').addClass('--active');
+//
+//     !isMobile() && window.scrollTo({ top: 0, behavior: 'smooth' });
+//     $('.header__catalog').addClass('--active');
+// });
+
 $('.header__catalog').on('click', (event) => {
     if ($(event.target).hasClass('header__catalog')) {
-        $('.catalog-entry').removeClass('--active');
-        $('body').removeClass('locked');
-        $('.header').removeClass('--active');
+        $('.catalog-entry').toggleClass('--active');
+        $('body').toggleClass('locked');
+        $('.header').toggleClass('--active');
 
-        $('.header__catalog').removeClass('--active');
+        $('.header__catalog').toggleClass('--active');
     }
 });
 
@@ -813,7 +566,7 @@ $('.header__catalog-menu-back').on('click', () => {
 
 $('.catalog__sort-heading').on('click', function () {
     $(this).closest('.catalog__sort').toggleClass('--active');
-    $('body').toggleClass('locked')
+    $('body').toggleClass('locked');
 });
 
 $('.catalog__filters-show-more').on('click', function () {
@@ -827,7 +580,7 @@ $('.catalog__filters-hide').on('click', function () {
 $('.catalog__sort-menu').on('click', function (event) {
     if ($(event.target).hasClass('catalog__sort-menu')) {
         $(this).closest('.catalog__sort').removeClass('--active');
-        $('body').removeClass('locked')
+        $('body').removeClass('locked');
     }
 });
 
@@ -867,20 +620,23 @@ $('.catalog__products-filters-reset').on('click', () => {
     rangeSlider.noUiSlider.reset();
 });
 
-function useClickOutside(target, active, callback = () => null) {
-    $(window).on('click', (event) => {
-        if ($(event.target).closest(target).length) return;
-
-        $('.catalog__sort').removeClass(active);
-
-        callback()
-    });
-}
-
-useClickOutside('.catalog__heading-settings', '--active', () => $('body').removeClass('locked'));
-
+// function useClickOutside(target, active, callback = () => null) {
+//     $(window).on('click', (event) => {
+//         if ($(event.target).closest(target).length) return;
+//
+//         $('.catalog__sort').removeClass(active);
+//
+//         callback()
+//     });
+// }
+//
+// useClickOutside('.catalog__heading-settings', '--active', () => $('body').removeClass('locked'));
 $(window).on('scroll', function () {
+    if (!$('.catalog__heading-settings').length) return;
+
     if (
+        isMobile() &&
+        isMatchMedia() &&
         $(this).scrollTop() > $('.section-heading.catalog__heading').position().top
     ) {
         $('.catalog__heading-settings').addClass('--active');
@@ -896,10 +652,11 @@ $(window).on('scroll', function () {
 
 $('.catalog__heading-settings-filter').on('click', () => {
     $('.catalog__products-filters').addClass('--active');
-    $('body').addClass('locked')
+    $('body').addClass('locked');
 });
 
 $('.catalog__products-filters-heading button').on('click', () => {
     $('.catalog__products-filters').removeClass('--active');
-    $('body').removeClass('locked')
+    $('body').removeClass('locked');
 });
+

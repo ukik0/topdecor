@@ -411,12 +411,18 @@
 
             &__swiper {
                 @include small-tablet {
-                    display: none;
+                    margin-top: 9rem;
                 }
             }
 
             &-wrapper {
                 padding-left: 6rem;
+
+                @include small-tablet{
+                    padding-left: 0;
+                    gap: .8rem;
+                    justify-content: center;
+                }
             }
 
             &-slide {
@@ -427,14 +433,32 @@
                 border: 0.1rem solid transparent;
                 cursor: pointer;
 
+
+                @include small-tablet{
+                    width: 1.4rem !important;
+                    height: 1.4rem !important;
+                    margin-right: 0 !important;
+                    background: #F1F2FA;
+                    border-radius: 50%;
+                }
+
                 &.swiper-slide-thumb-active {
-                    transition: 0.3s all ease;
                     border: 0.1rem solid $grey;
+                    transition: 0.3s all ease;
+
+                    @include small-tablet{
+                        border: 0;
+                        background: $accent;
+                    }
                 }
 
                 img {
                     height: 100%;
                     border-radius: inherit;
+
+                    @include small-tablet{
+                        display: none;
+                    }
                 }
             }
         }
@@ -498,6 +522,13 @@
             display: flex;
             flex-wrap: wrap;
             gap: 2rem 1.2rem;
+
+            @include small-tablet{
+                flex-direction: column;
+                flex-wrap: initial;
+                margin-top: 6rem;
+                gap: $gap-l;
+            }
         }
 
         &-item {
@@ -509,6 +540,14 @@
             font-weight: 500;
             line-height: 2.464rem;
             transition: .3s all ease;
+
+            @include small-tablet{
+                padding: .7rem 3.2rem;
+                border-radius: 4rem;
+                font-size: 3rem;
+                line-height: 4.5rem;
+                width: fit-content;
+            }
 
             &:hover{
                 background: $accent;

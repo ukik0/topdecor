@@ -7,13 +7,11 @@
     &__categories {
         display: flex;
         align-items: center;
-        gap: 1.4rem;
         margin-bottom: 4rem;
 
         &-list {
             display: flex;
             align-items: center;
-            max-width: 90%;
             overflow-x: scroll;
             cursor: grab;
             -ms-overflow-style: none;
@@ -62,6 +60,16 @@
             width: 2.8rem;
             height: 2.8rem;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            &.left {
+                margin-right: .78rem;
+            }
+
+            &.right {
+                transform: rotate(180deg);
+            }
 
             @include small-tablet{
                 display: none;
