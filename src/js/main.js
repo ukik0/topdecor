@@ -182,6 +182,22 @@ if (relatedProductsSlider) {
     });
 }
 
+const feedbackSlider = document.querySelector('.feedback__swiper');
+if (feedbackSlider) {
+    const swiper = new Swiper('.feedback__swiper', {
+        spaceBetween: rem(4),
+        slidesPerView: 1,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        grabCursor: true,
+        speed: 700,
+        ...swiperSettings('feedback'),
+        on: {},
+    });
+}
+
 const productSlider = new Swiper('.product__slider-thumb__swiper', {
     spaceBetween: rem(3),
     slidesPerView: 4,
@@ -297,9 +313,9 @@ function bindSuccessModal() {
 }
 
 if (document.querySelector('.shares__categories')) {
-    // const COMPONENT_SELECTOR = '.shares__categories';
+    const COMPONENT_SELECTOR = '.shares__categories';
     const CONTENT_SELECTOR = '.shares__categories-list';
-    //
+
     // const components = document.querySelectorAll(COMPONENT_SELECTOR);
     //
     // for (let i = 0; i < components.length; i++) {
@@ -332,11 +348,11 @@ if (document.querySelector('.shares__categories')) {
     //     content.addEventListener('mouseup', mouseupHandler);
     //     content.addEventListener('mouseleave', mouseupHandler);
     // }
-    //
+
     const arrows = {
         left: document.querySelector('.shares__categories-icon.left'),
         right: document.querySelector('.shares__categories-icon.right')
-    }
+    };
     const container = document.querySelector(CONTENT_SELECTOR);
 
     arrows.left.addEventListener('click', () => {
@@ -345,6 +361,12 @@ if (document.querySelector('.shares__categories')) {
 
     arrows.right.addEventListener('click', () => {
         container.scrollBy({ left: 150, behavior: 'smooth' });
+        const width = (container.offsetWidth / 2) * 0.1;
+        const scrollLeft = container.scrollLeft;
+
+        if (scrollLeft > width) {
+            arrows.left.classList.add('--active');
+        }
     });
 }
 
@@ -492,7 +514,7 @@ $('.header__content-searchbar-input').on(isMobile() && isMatchMedia() ? 'focus' 
     isMobile() && isMatchMedia() && $('#menu-search-field').focus();
 
     if (timeout) {
-        clearTimeout(timeout)
+        clearTimeout(timeout);
     }
 });
 
@@ -566,7 +588,6 @@ $('.header__catalog-menu-back').on('click', () => {
 
 $('.catalog__sort-heading').on('click', function () {
     $(this).closest('.catalog__sort').toggleClass('--active');
-    $('body').toggleClass('locked');
 });
 
 $('.catalog__filters-show-more').on('click', function () {
@@ -577,11 +598,10 @@ $('.catalog__filters-hide').on('click', function () {
     $(this).closest('.catalog__filters').removeClass('--active');
 });
 
-$('.catalog__sort-menu').on('click', function (event) {
-    if ($(event.target).hasClass('catalog__sort-menu')) {
+$('.catalog__sort-item').each(function () {
+    $(this).on('change', function () {
         $(this).closest('.catalog__sort').removeClass('--active');
-        $('body').removeClass('locked');
-    }
+    });
 });
 
 const rangeSlider = document.querySelector('.range-slider');
@@ -620,17 +640,21 @@ $('.catalog__products-filters-reset').on('click', () => {
     rangeSlider.noUiSlider.reset();
 });
 
-// function useClickOutside(target, active, callback = () => null) {
-//     $(window).on('click', (event) => {
-//         if ($(event.target).closest(target).length) return;
-//
-//         $('.catalog__sort').removeClass(active);
-//
-//         callback()
-//     });
-// }
-//
-// useClickOutside('.catalog__heading-settings', '--active', () => $('body').removeClass('locked'));
+function useClickOutside(element, callback) {
+    document.addEventListener('click', function (event) {
+        const outsideClick =
+            typeof event.composedPath === 'function' && !event.composedPath().includes(element);
+
+        if (outsideClick) {
+            callback();
+        }
+    });
+}
+
+useClickOutside(document.querySelector('.catalog__heading-settings'), () => {
+    $('.catalog__sort').removeClass('--active');
+});
+
 $(window).on('scroll', function () {
     if (!$('.catalog__heading-settings').length) return;
 
@@ -659,4 +683,3 @@ $('.catalog__products-filters-heading button').on('click', () => {
     $('.catalog__products-filters').removeClass('--active');
     $('body').removeClass('locked');
 });
-

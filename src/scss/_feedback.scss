@@ -1,0 +1,134 @@
+@import 'vars';
+@import 'mixins';
+
+.feedback {
+    @include swiper-controls;
+
+    &-buttons {
+        margin-top: 0;
+    }
+
+    &__swiper {
+        max-width: 94.5rem;
+        width: 100%;
+        margin-left: initial !important;
+    }
+
+    &__slides {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &-authors {
+            .top {
+                display: flex;
+                align-items: center;
+                gap: 12.6rem;
+            }
+
+            .bottom {
+                margin-top: 6rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            &-button {
+                padding: .75rem 1.6rem;
+                border-radius: 2rem;
+                border: .1rem solid $grey;
+                color: $black;
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: 2.464rem;
+            }
+
+            &-slide {
+                max-width: 18rem;
+                width: 100%;
+                height: 18rem;
+                padding: 1.67rem;
+                background: linear-gradient(90deg, rgba(255, 255, 255, 0.29) -34.07%, rgba(224, 228, 255, 0.58) 111.47%, rgba(255, 255, 255, 0.58) 111.48%);
+                border-radius: 50%;
+                border-left: .1rem solid #A5A9BC;
+
+                &:not(:last-child) {
+                    position: relative;
+                    border-right: .1rem solid #A5A9BC;
+                    border-left: 0;
+
+                    &::after{
+                        @include pseudo{
+                            top: 50%;
+                            right: -13rem;
+                            transform: translateY(-50%);
+                            width: 12.8rem;
+                            height: .1rem;
+                            background: $grey;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-slide {
+        display: flex !important;
+        align-items: center;
+        gap: 7.5rem;
+    }
+
+    &__blockquote {
+        max-width: 51.8rem;
+        width: 100%;
+        margin-left: 5.5rem;
+
+        &-author {
+            color: $black;
+            font-size: 2.4rem;
+            font-weight: 600;
+            line-height: 2.88rem;
+            display: block;
+            margin-bottom: 2rem;
+        }
+
+        &-text {
+            color: $black;
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 2.464rem;
+            margin: 0;
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        &-date {
+            color: $grey;
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 2.464rem;
+            margin-left: auto;
+        }
+    }
+
+    &__author {
+        padding: 1.67rem;
+        border-radius: 50%;
+        background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.29) -34.07%,
+            rgba(224, 228, 255, 0.58) 111.47%,
+            rgba(255, 255, 255, 0.58) 111.48%
+        );
+        border-right: 0.1rem solid #a5a9bc;
+        max-width: 30rem;
+        width: 100%;
+        height: 30rem;
+
+        img {
+            height: 100%;
+            border-radius: inherit;
+        }
+    }
+}

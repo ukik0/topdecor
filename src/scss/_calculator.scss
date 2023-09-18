@@ -92,4 +92,21 @@
             }
         }
     }
+
+    &__decor {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 19.7rem;
+        height: 14.3rem;
+
+        @include small-tablet{
+            right: auto;
+            left: 2rem;
+            bottom: 2rem;
+            width: 13rem;
+            height: 12rem;
+            transform: rotate(110deg);
+        }
+    }
 }

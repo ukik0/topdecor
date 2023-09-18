@@ -99,6 +99,7 @@
             flex-direction: column;
             gap: $gap-m;
             padding: 1.4rem 1.4rem 3rem 1.4rem;
+            margin-top: 4rem;
         }
 
         .decor-circles{
@@ -107,6 +108,10 @@
             bottom: 0;
             width: 15.4rem;
             height: 12.4rem;
+
+            @include small-tablet{
+                display: none;
+            }
         }
 
         &-list {
