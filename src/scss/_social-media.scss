@@ -3,23 +3,12 @@
 
 .social-media {
     position: absolute;
-    top: 75rem;
+    top: 98rem;
     right: 18rem;
     z-index: 6;
 
     @include small-tablet{
         display: none;
-    }
-
-    &:hover {
-        .social-media__list {
-            transform: translateY(8rem);
-            opacity: 1;
-        }
-
-        //.social-media__button {
-        //    opacity: 0;
-        //}
     }
 
     &__button {
@@ -40,7 +29,7 @@
 
     &__list {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         background: $accent;
         border-radius: 4.6rem;
@@ -48,12 +37,23 @@
         will-change: tranfsorm, opacity;
         opacity: 0;
         transform: translateY(0);
+        pointer-events: none;
+        user-select: none;
+        position: absolute;
+        bottom: 8rem;
+
+        &.--active {
+            transform: translateY(8rem);
+            opacity: 1;
+            pointer-events: auto;
+            user-select: auto;
+        }
     }
 
     &__item {
         border-radius: 50%;
         width: 8rem;
-        height: 8rem;
+        height: 7rem;
         padding: 2.4rem;
         display: flex;
         align-items: center;
