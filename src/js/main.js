@@ -185,8 +185,8 @@ if (relatedProductsSlider) {
 const feedbackSlider = document.querySelector('.feedback__swiper');
 if (feedbackSlider) {
     const swiper = new Swiper('.feedback__swiper', {
-        spaceBetween: rem(4),
-        slidesPerView: 1,
+        spaceBetween: rem(12.6),
+        slidesPerView: 3,
         effect: 'fade',
         fadeEffect: {
             crossFade: true
@@ -194,15 +194,7 @@ if (feedbackSlider) {
         grabCursor: true,
         speed: 700,
         ...swiperSettings('feedback'),
-        on: {
-            slideChange: ({realIndex, slides}) => {
-                const index = realIndex + 1;
-                const currentSlide = slides[realIndex];
-                console.log($(currentSlide).find('img'))
-                const item = $(`[data-id="${index}"]`);
-                console.log($(`[data-id="${index}"]`))
-            }
-        }
+        on: {}
     });
 }
 
@@ -722,7 +714,6 @@ $('#select-all').on('change', function (event) {
             $(this).find('input').prop('checked', false);
         });
     }
-
 });
 
 $('.basket__item input').on('change', function () {

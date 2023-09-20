@@ -1,12 +1,24 @@
-@import "vars";
-@import "mixins";
+@import 'vars';
+@import 'mixins';
 
 .hero {
     overflow: hidden;
     position: relative;
-    margin-bottom: 14rem;
+    margin-bottom: 12rem;
 
-    @include small-tablet{
+    &::after {
+        @include pseudo {
+            background: $white;
+            z-index: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 4rem;
+        }
+    }
+
+    @include small-tablet {
         margin-bottom: 10rem;
     }
 
@@ -15,6 +27,50 @@
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+
+        [data-banner='1'] {
+            max-width: 66.9rem;
+            margin-left: 6rem;
+
+            @include small-tablet{
+                    margin: initial;
+                    max-width: 37.2rem;
+            }
+        }
+
+        [data-banner='2'] {
+            max-width: 100%;
+            transform: scale(1.15);
+
+            @include small-tablet{
+                margin: initial;
+                transform: scale(1) translateY(10rem);
+            }
+        }
+
+        [data-banner='3'] {
+            max-width: 68.7rem;
+            margin-top: -4rem;
+            margin-left: 2rem;
+
+            @include small-tablet{
+                margin: initial;
+                max-width: 37.2rem;
+                transform: translateY(15rem) translateX(-5rem);
+            }
+        }
+
+        [data-banner='4'] {
+            max-width: 70rem;
+            margin-top: -15rem;
+            margin-left: -1rem;
+
+            @include small-tablet{
+                margin: initial;
+                max-width: 37.2rem;
+                transform: translateY(15rem);
+            }
+        }
     }
 
     &__banner {
@@ -23,22 +79,23 @@
         margin-top: -8rem;
         max-height: 39rem;
 
-        @include small-tablet{
+
+        @include small-tablet {
             position: absolute;
             width: 45rem;
             height: 45rem;
             right: -5rem;
-            bottom: -37rem
+            bottom: -37rem;
         }
     }
 
     &__title-unwrap {
         position: absolute;
-        z-index: 1;
+        z-index: 0;
         inset: 0;
         top: 38%;
 
-        @include small-tablet{
+        @include small-tablet {
             top: 45%;
             left: -31rem;
 
@@ -48,7 +105,7 @@
         }
     }
 
-    &__info{
+    &__info {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -56,7 +113,7 @@
         max-width: 73.8rem;
         width: 100%;
 
-        @include small-tablet{
+        @include small-tablet {
             margin-left: initial;
             max-width: 100%;
         }
@@ -72,7 +129,7 @@
         text-transform: uppercase;
         margin-bottom: 1rem;
 
-        @include small-tablet{
+        @include small-tablet {
             font-size: 3rem;
             font-style: normal;
             line-height: 4.5rem;
@@ -88,7 +145,7 @@
         line-height: 8.8rem;
         margin-bottom: 4rem;
 
-        @include small-tablet{
+        @include small-tablet {
             font-size: 6.4rem;
             font-style: normal;
             line-height: 7.14rem;
@@ -98,7 +155,7 @@
     &__button {
         padding: 1.9rem 2.6rem;
 
-        @include small-tablet{
+        @include small-tablet {
             padding: 1.9rem 4rem;
         }
     }
@@ -110,7 +167,7 @@
         transform: translateX(50%);
         z-index: 10;
 
-        @include small-tablet{
+        @include small-tablet {
             left: -12rem;
             right: auto;
             bottom: 11rem;
@@ -118,9 +175,9 @@
     }
 
     &-swiper-slide {
-        padding: 13.3rem 12rem 18rem 0;
+        padding: 13.3rem 12rem 20rem 0;
 
-        @include small-tablet{
+        @include small-tablet {
             padding: 13.3rem 0 45rem 0;
         }
     }
@@ -130,7 +187,7 @@
         bottom: 7.7rem !important;
         right: 18rem !important;
 
-        @include small-tablet{
+        @include small-tablet {
             right: 45.5rem !important;
             bottom: 20.5rem !important;
         }
@@ -142,7 +199,7 @@
         bottom: 7.7rem !important;
         top: auto !important;
 
-        @include small-tablet{
+        @include small-tablet {
             right: 60.5rem !important;
             bottom: 20.5rem !important;
         }
@@ -152,4 +209,3 @@
         overflow: initial !important;
     }
 }
-

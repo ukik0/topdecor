@@ -166,53 +166,68 @@
                     display: block;
                 }
 
+                .desktop {
+                    color: $white;
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    line-height: 2.464rem;
+                }
+
                 @include small-tablet {
                     width: 8.4rem;
                     height: 8.4rem;
 
                     &::after,
                     &::before {
-                        width: 3.5rem;
-                        height: 0.4rem;
+                        left: 2.6rem;
+                        max-width: 3.6rem;
+                        border-width: 0.2rem;
                     }
 
                     &::after {
-                        top: 66%;
+                        top: 4rem;
                     }
 
                     &::before {
-                        top: 39%;
+                        top: 2.8rem;
                     }
                 }
 
                 &::after {
                     @include pseudo {
                         position: absolute;
-                        width: 1.8rem;
-                        height: 0.2rem;
+                        max-width: 1.8rem;
+                        width: 100%;
+                        border: 0.1rem solid $white;
                         background: $white;
-                        top: 65%;
-                        left: 4.2rem;
-                        transform: translate(-50%, -50%);
+                        top: 3rem;
+                        left: 2.9rem;
                         transition: 0.3s all ease;
+                        border-radius: 0.3rem;
                     }
                 }
 
                 &::before {
                     @include pseudo {
                         position: absolute;
-                        width: 1.8rem;
-                        height: 0.2rem;
+                        max-width: 1.8rem;
+                        width: 100%;
+                        border: 0.1rem solid $white;
                         background: $white;
-                        top: 40%;
-                        left: 4.2rem;
-                        transform: translate(-50%, -50%);
+                        top: 1.8rem;
+                        left: 2.9rem;
                         transition: 0.3s all ease;
+                        border-radius: 0.3rem;
                     }
                 }
 
                 &-wrapper {
                     position: relative;
+                    max-width: 14.4rem;
+                    width: 100%;
+                    height: 5rem;
+                    display: flex;
+                    align-items: flex-end;
 
                     &.--active {
                         span {
@@ -237,18 +252,20 @@
 
                     span {
                         position: absolute;
-                        width: 1.8rem;
-                        height: 0.2rem;
+                        max-width: 1.8rem;
+                        width: 100%;
+                        border: 0.1rem solid $white;
                         background: $white;
-                        top: 51%;
-                        left: 4.2rem;
-                        transform: translate(-50%, -50%);
+                        top: 2.4rem;
+                        left: 2.9rem;
                         transition: 0.3s all ease;
+                        border-radius: 0.3rem;
 
                         @include small-tablet {
-                            width: 3.5rem;
-                            height: 0.4rem;
-                            top: 52%;
+                            max-width: 3.6rem;
+                            border-width: 0.2rem;
+                            top: 1.8rem;
+                            left: 2.6rem;
                         }
                     }
                 }
@@ -529,7 +546,7 @@
             user-select: none;
             transform: scale(0.95);
 
-            @include small-tablet{
+            @include small-tablet {
                 position: fixed;
                 inset: 0;
                 border-radius: 0;
@@ -570,8 +587,8 @@
 
                     input {
                         border-radius: 6rem;
-                        border: .1rem solid #E6EAFF;
-                        background: #FCFAFA;
+                        border: 0.1rem solid #e6eaff;
+                        background: #fcfafa;
                         padding: 2.1rem 4rem;
                         color: $black;
                         font-size: 3rem;
@@ -591,7 +608,7 @@
                 }
             }
 
-            &-searched{
+            &-searched {
                 &-list {
                     display: flex;
                     align-items: center;
@@ -606,7 +623,7 @@
                 &-item {
                     padding: 1.3rem 4rem;
                     border-radius: 6rem;
-                    border: .1rem solid #E6EAFF;
+                    border: 0.1rem solid #e6eaff;
                     background: $white;
                     color: $black;
                     font-size: 3rem;
@@ -621,7 +638,7 @@
                 padding-right: 2.3rem;
                 overscroll-behavior: contain;
 
-                @include small-tablet{
+                @include small-tablet {
                     max-height: 80%;
                     padding-right: 1rem;
                 }
@@ -655,7 +672,7 @@
             line-height: 2.8rem;
             margin-bottom: 1rem;
 
-            @include small-tablet{
+            @include small-tablet {
                 font-size: 3.4rem;
                 line-height: 4.8rem;
                 margin-bottom: 4rem;
@@ -672,7 +689,7 @@
             margin-bottom: 1rem;
             display: block;
 
-            @include small-tablet{
+            @include small-tablet {
                 font-size: 3rem;
                 line-height: 4.5rem;
                 margin-bottom: 4rem;
@@ -684,7 +701,7 @@
                 gap: $gap-xs;
                 margin-bottom: 2rem;
 
-                @include small-tablet{
+                @include small-tablet {
                     gap: $gap-m;
                 }
             }
@@ -695,7 +712,7 @@
                 justify-content: space-between;
                 gap: 1.5rem;
 
-                @include small-tablet{
+                @include small-tablet {
                     gap: 0;
                 }
 
@@ -713,7 +730,7 @@
                     );
                     overflow: hidden;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         max-width: 12.8rem;
                         height: 12rem;
                         margin-right: 2.4rem;
@@ -746,7 +763,7 @@
                     max-width: 56.5rem;
                     width: 100%;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         font-size: 3rem;
                         line-height: 4.5rem;
                         max-width: 38.4rem;
@@ -769,7 +786,7 @@
                         font-weight: 600;
                         line-height: 2.8rem;
 
-                        @include small-tablet{
+                        @include small-tablet {
                             font-size: 3.4rem;
                             line-height: 4.8rem;
                         }
@@ -783,7 +800,7 @@
                         text-decoration: line-through;
                         text-decoration-color: currentColor;
 
-                        @include small-tablet{
+                        @include small-tablet {
                             font-size: 2.4rem;
                             line-height: 3.6rem;
                         }
@@ -800,7 +817,7 @@
                 margin-bottom: 3rem;
                 margin-top: 2rem;
 
-                @include small-tablet{
+                @include small-tablet {
                     gap: $gap-s;
                     margin-bottom: 6rem;
                     margin-top: 4rem;
@@ -813,7 +830,7 @@
                 color: $black;
                 display: inline-flex;
 
-                @include small-tablet{
+                @include small-tablet {
                     gap: $gap-s;
                 }
 
@@ -827,7 +844,7 @@
                     line-height: 2.464rem;
                     transition: 0.3s all ease;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         color: $black;
                         font-size: 3rem;
                         font-weight: 500;
@@ -839,7 +856,7 @@
                     width: 2.4rem;
                     height: 2.4rem;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         width: 4.2rem;
                         height: 4.2rem;
                     }
@@ -854,7 +871,7 @@
                 justify-content: space-between;
                 gap: 1.89rem;
 
-                @include small-tablet{
+                @include small-tablet {
                     gap: $gap-l;
                     white-space: nowrap;
                     max-width: 100%;
@@ -868,13 +885,13 @@
                 width: 100%;
                 height: 11.3rem;
 
-                @include small-tablet{
+                @include small-tablet {
                     max-width: 12rem;
                     height: 12rem;
                 }
 
                 img {
-                    @include small-tablet{
+                    @include small-tablet {
                         width: 12rem;
                         height: 12rem;
                     }
@@ -1105,7 +1122,6 @@
                         height: 4rem;
                         transform: rotate(90deg);
                     }
-
                 }
             }
 
@@ -1128,11 +1144,11 @@
                 }
 
                 &::-webkit-scrollbar-track {
-                    background: #E6EAFF;
+                    background: #e6eaff;
                 }
 
                 &::-webkit-scrollbar-thumb {
-                    background: #A8A7CA;
+                    background: #a8a7ca;
                     border-radius: 0.6rem;
                 }
 
@@ -1168,7 +1184,7 @@
             }
 
             &-subcategory {
-                @include small-tablet{
+                @include small-tablet {
                     margin-bottom: 4rem;
                 }
             }
@@ -1204,9 +1220,9 @@
 
             &-brands {
                 padding: 0 2rem 0 4rem;
-                border-left: .1rem solid #E6EAFF;
+                border-left: 0.1rem solid #e6eaff;
 
-                @include small-tablet{
+                @include small-tablet {
                     padding: 0;
                     border-left: 0;
                 }
