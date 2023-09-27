@@ -3076,8 +3076,7 @@ section {
 .our-projects__item {
   border-radius: 2.5rem;
   background: #fff;
-  -webkit-box-shadow: 2rem 4rem 10rem 0 rgba(128, 131, 181, 0.2);
-          box-shadow: 2rem 4rem 10rem 0 rgba(128, 131, 181, 0.2);
+  border: 0.1rem solid #E6EAFF;
   padding: 1.5rem 1.5rem 2.3rem 1.5rem;
   max-width: 50rem;
   width: 100%;
@@ -5413,8 +5412,7 @@ section {
 .projects__item {
   border-radius: 2.5rem;
   background: #fff;
-  -webkit-box-shadow: 2rem 4rem 10rem 0 rgba(128, 131, 181, 0.2);
-          box-shadow: 2rem 4rem 10rem 0 rgba(128, 131, 181, 0.2);
+  border: 0.1rem solid #E6EAFF;
   padding: 1.5rem 1.5rem 2.3rem 1.5rem;
   max-width: 50rem;
   width: 100%;
