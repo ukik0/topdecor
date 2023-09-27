@@ -39,7 +39,13 @@
             padding: 6.01rem;
 
             @include small-tablet {
-                padding: 5.9rem;
+                padding: 5.74rem;
+            }
+
+            .circle {
+                @include small-tablet{
+                    padding: 5.86rem 5.98rem 4.86rem 5.92rem;
+                }
             }
 
             img {
@@ -123,6 +129,8 @@
             font-weight: 600;
             line-height: 2.8rem;
             margin-top: 1rem;
+            background: url("../img/materials/circle.svg") no-repeat center;
+            background-size: 7rem;
 
             @include small-tablet {
                 width: 10rem;
@@ -130,6 +138,8 @@
                 font-size: 3.4rem;
                 font-weight: 600;
                 line-height: 4.8rem;
+                background: url("../img/materials/circle-mobile.svg") no-repeat center;
+                background-size: 10rem;
             }
         }
 

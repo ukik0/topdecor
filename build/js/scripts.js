@@ -38,7 +38,7 @@ const swiperSettings = (init, ...payload) => ({
             $(`.${init}-current-slide`).text(String(realIndex + 1).padStart(2, '0'));
         }
     },
-    ...payload,
+    ...payload
 });
 
 const heroSwiper = document.querySelector('.hero__swiper');
@@ -66,12 +66,34 @@ if (categoriesSwiper) {
 const brandsSwiper = document.querySelector('.brands__swiper');
 if (brandsSwiper) {
     const swiper = new Swiper('.brands__swiper', {
-        slidesPerView: 1,
-        autoplay: true,
-        grabCursor: true,
-        speed: 700,
-        centeredSlides: true,
-        ...swiperSettings('brands')
+        ...(!(isMatchMedia() && isMobile()) && swiperSettings('brands')),
+        breakpoints: {
+            1: {
+                enabled: false
+            },
+            768: {
+                enabled: true,
+                slidesPerView: 1,
+                autoplay: true,
+                grabCursor: true,
+                centeredSlides: true
+            }
+        }
+    });
+
+    const swiperMobile = new Swiper('.brands__swiper-mobile', {
+        ...((isMatchMedia() && isMobile()) && swiperSettings('brands-mobile')),
+        breakpoints: {
+            1: {
+                slidesPerView: 3,
+                centeredSlides: true,
+                loop: true,
+                enabled: true
+            },
+            768: {
+                enabled: false
+            }
+        }
     });
 }
 

@@ -4,7 +4,7 @@
 .hero {
     overflow: hidden;
     position: relative;
-    margin-bottom: 12rem;
+    margin-bottom: 10rem;
 
     &::after {
         @include pseudo {
@@ -48,6 +48,8 @@
             @include small-tablet{
                 margin: initial;
                 transform: scale(1) translateY(10rem);
+                left: auto;
+                right: -2rem;
             }
         }
 
@@ -165,10 +167,10 @@
 
     &-pagination-info {
         position: absolute;
-        right: 46.5%;
-        bottom: 7.7rem;
+        right: 88.5rem;
+        bottom: 11.5rem;
         transform: translateX(50%);
-        z-index: 10;
+        z-index: 4;
 
         @include small-tablet {
             left: -12rem;
@@ -178,7 +180,7 @@
     }
 
     &-swiper-slide {
-        padding: 13.3rem 12rem 20rem 0;
+        padding: 13.3rem 12rem 22rem 0;
 
         @include small-tablet {
             padding: 13.3rem 0 45rem 0;
@@ -187,7 +189,7 @@
 
     &-next {
         top: auto !important;
-        bottom: 7.7rem !important;
+        bottom: 11.5rem!important;
         right: 18rem !important;
 
         @include small-tablet {
@@ -198,9 +200,9 @@
 
     &-prev {
         left: auto !important;
-        right: 28rem !important;
-        bottom: 7.7rem !important;
         top: auto !important;
+        right: 27.5rem!important;
+        bottom: 11.5rem!important;
 
         @include small-tablet {
             right: 60.5rem !important;
