@@ -11,7 +11,7 @@ const rem = function (rem) {
 
 const swiperSettings = (init, ...payload) => ({
     loop: true,
-    ...payload,
+    speed: 1200,
     keyboard: {
         enabled: true
     },
@@ -31,7 +31,8 @@ const swiperSettings = (init, ...payload) => ({
         slideChange: ({ realIndex }) => {
             $(`.${init}-current-slide`).text(String(realIndex + 1).padStart(2, '0'));
         }
-    }
+    },
+    ...payload,
 });
 
 const heroSwiper = document.querySelector('.hero__swiper');

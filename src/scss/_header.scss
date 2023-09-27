@@ -179,13 +179,13 @@
 
                     &::after,
                     &::before {
-                        left: 2.6rem;
+                        left: 2.4rem;
                         max-width: 3.6rem;
                         border-width: 0.2rem;
                     }
 
                     &::after {
-                        top: 4rem;
+                        top: 5.2rem;
                     }
 
                     &::before {
@@ -201,7 +201,7 @@
                         border: 0.1rem solid $white;
                         background: $white;
                         top: 3rem;
-                        left: 2.9rem;
+                        left: 2.4rem;
                         transition: 0.3s all ease;
                         border-radius: 0.3rem;
                     }
@@ -215,7 +215,7 @@
                         border: 0.1rem solid $white;
                         background: $white;
                         top: 1.8rem;
-                        left: 2.9rem;
+                        left: 2.4rem;
                         transition: 0.3s all ease;
                         border-radius: 0.3rem;
                     }
@@ -228,6 +228,11 @@
                     height: 5rem;
                     display: flex;
                     align-items: flex-end;
+
+                    @include small-tablet{
+                        max-width: 8.4rem;
+                        height: initial;
+                    }
 
                     &.--active {
                         span {
@@ -257,15 +262,15 @@
                         border: 0.1rem solid $white;
                         background: $white;
                         top: 2.4rem;
-                        left: 2.9rem;
+                        left: 2.4rem;
                         transition: 0.3s all ease;
                         border-radius: 0.3rem;
 
                         @include small-tablet {
                             max-width: 3.6rem;
                             border-width: 0.2rem;
-                            top: 1.8rem;
-                            left: 2.6rem;
+                            top: 4rem;
+                            left: 2.4rem;
                         }
                     }
                 }
@@ -875,8 +880,7 @@
                     gap: $gap-l;
                     white-space: nowrap;
                     max-width: 100%;
-                    width: 100%;
-                    overflow: auto;
+                    width: 114%;
                 }
             }
 
@@ -933,6 +937,7 @@
             user-select: auto;
             display: flex;
             animation: fade 0.3s ease both;
+            overflow-x: hidden;
 
             .header__catalog-menu {
                 transform: scale(1);
@@ -1236,6 +1241,7 @@
                         flex-direction: row;
                         white-space: nowrap;
                         overflow: auto;
+                        width: 115%;
                     }
                 }
 

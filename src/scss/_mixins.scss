@@ -7,7 +7,7 @@
 }
 
 @mixin small-tablet {
-    @media (max-width: 48rem) {
+    @media (max-width: 48em) {
         @content;
     }
 }

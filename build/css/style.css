@@ -1161,7 +1161,7 @@ section {
   border: 0.1rem solid #fff;
   background: #fff;
   top: 3rem;
-  left: 2.9rem;
+  left: 2.4rem;
   -webkit-transition: 0.3s all ease;
   transition: 0.3s all ease;
   border-radius: 0.3rem;
@@ -1176,7 +1176,7 @@ section {
   border: 0.1rem solid #fff;
   background: #fff;
   top: 1.8rem;
-  left: 2.9rem;
+  left: 2.4rem;
   -webkit-transition: 0.3s all ease;
   transition: 0.3s all ease;
   border-radius: 0.3rem;
@@ -1226,7 +1226,7 @@ section {
   border: 0.1rem solid #fff;
   background: #fff;
   top: 2.4rem;
-  left: 2.9rem;
+  left: 2.4rem;
   -webkit-transition: 0.3s all ease;
   transition: 0.3s all ease;
   border-radius: 0.3rem;
@@ -1890,6 +1890,7 @@ section {
   display: flex;
   -webkit-animation: fade 0.3s ease both;
           animation: fade 0.3s ease both;
+  overflow-x: hidden;
 }
 
 .header__catalog.--active .header__catalog-menu {
@@ -2160,9 +2161,12 @@ section {
 
 .hero__content [data-banner="2"] {
   max-width: 100%;
-  -webkit-transform: scale(1.15);
-      -ms-transform: scale(1.15);
-          transform: scale(1.15);
+  -webkit-transform: scale(0.83);
+      -ms-transform: scale(0.83);
+          transform: scale(0.83);
+  left: 0;
+  margin-left: -2rem;
+  margin-top: -9rem;
 }
 
 .hero__content [data-banner="3"] {
@@ -3548,10 +3552,10 @@ section {
 
 .calculator__image {
   position: absolute;
-  left: 4rem;
+  left: -8rem;
   top: -8rem;
-  width: 56rem;
-  height: 56rem;
+  width: 76.4rem;
+  height: 56.8rem;
 }
 
 .calculator__info {
@@ -11149,12 +11153,6 @@ button.swiper-pagination-bullet {
   .desktop {
     display: none;
   }
-}
-
-@media (max-width: 48rem) {
-  section {
-    margin-bottom: 24rem;
-  }
 
   .swiper-button-next,
   .swiper-button-prev {
@@ -11423,24 +11421,29 @@ button.swiper-pagination-bullet {
 
   .header__content-searchbar-button::after,
   .header__content-searchbar-button::before {
-    left: 2.6rem;
+    left: 2.4rem;
     max-width: 3.6rem;
     border-width: 0.2rem;
   }
 
   .header__content-searchbar-button::after {
-    top: 4rem;
+    top: 5.2rem;
   }
 
   .header__content-searchbar-button::before {
     top: 2.8rem;
   }
 
+  .header__content-searchbar-button-wrapper {
+    max-width: 8.4rem;
+    height: initial;
+  }
+
   .header__content-searchbar-button-wrapper span {
     max-width: 3.6rem;
     border-width: 0.2rem;
-    top: 1.8rem;
-    left: 2.6rem;
+    top: 4rem;
+    left: 2.4rem;
   }
 
   .header__content-searchbar-input {
@@ -11548,8 +11551,7 @@ button.swiper-pagination-bullet {
     gap: 4rem;
     white-space: nowrap;
     max-width: 100%;
-    width: 100%;
-    overflow: auto;
+    width: 114%;
   }
 
   .header__searchbar-brands-item {
@@ -11709,6 +11711,7 @@ button.swiper-pagination-bullet {
             flex-direction: row;
     white-space: nowrap;
     overflow: auto;
+    width: 115%;
   }
 
   .hero {
@@ -12223,12 +12226,12 @@ button.swiper-pagination-bullet {
   }
 
   .calculator__image {
-    right: -10rem;
-    bottom: -9rem;
+    right: -16rem;
+    bottom: -4rem;
     top: auto;
     left: auto;
-    width: 36rem;
-    height: 36rem;
+    width: 43.4rem;
+    height: 32.4rem;
   }
 
   .calculator__info-title {
@@ -15045,5 +15048,11 @@ button.swiper-pagination-bullet {
   .noUi-handle {
     width: 4rem;
     height: 4rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  section {
+    margin-bottom: 24rem;
   }
 }

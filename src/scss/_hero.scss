@@ -40,7 +40,10 @@
 
         [data-banner='2'] {
             max-width: 100%;
-            transform: scale(1.15);
+            transform: scale(.83);
+            left: 0;
+            margin-left: -2rem;
+            margin-top: -9rem;
 
             @include small-tablet{
                 margin: initial;
