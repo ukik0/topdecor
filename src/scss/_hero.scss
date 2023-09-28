@@ -35,6 +35,8 @@
             @include small-tablet{
                     margin: initial;
                     max-width: 37.2rem;
+                    right: -2rem;
+                    bottom: -35rem;
             }
         }
 
@@ -47,9 +49,9 @@
 
             @include small-tablet{
                 margin: initial;
-                transform: scale(1) translateY(10rem);
+                transform: scale(.9) translateY(10rem);
                 left: auto;
-                right: -2rem;
+                right: -3rem;
             }
         }
 
@@ -74,6 +76,7 @@
                 margin: initial;
                 max-width: 37.2rem;
                 transform: translateY(15rem);
+                right: -3rem;
             }
         }
     }

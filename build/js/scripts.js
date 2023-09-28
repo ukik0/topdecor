@@ -57,7 +57,7 @@ if (heroSwiper) {
 const categoriesSwiper = document.querySelector('.categories__swiper');
 if (categoriesSwiper) {
     const swiper = new Swiper('.categories__swiper', {
-        spaceBetween: 30,
+        spaceBetween: rem(3),
         slidesPerView: 1,
         ...swiperSettings('categories')
     });
@@ -82,7 +82,7 @@ if (brandsSwiper) {
     });
 
     const swiperMobile = new Swiper('.brands__swiper-mobile', {
-        ...((isMatchMedia() && isMobile()) && swiperSettings('brands-mobile')),
+        ...(isMatchMedia() && isMobile() && swiperSettings('brands-mobile')),
         breakpoints: {
             1: {
                 slidesPerView: 3,
@@ -100,10 +100,22 @@ if (brandsSwiper) {
 const sharesSlider = document.querySelector('.shares__swiper');
 if (sharesSlider) {
     const swiper = new Swiper('.shares__swiper', {
+        ...swiperSettings('shares'),
+        spaceBetween: rem(3),
         slidesPerView: 1,
         grabCursor: true,
         speed: 700,
-        ...swiperSettings('shares')
+    });
+
+    const swiperCategories = new Swiper('.shares-categories__swiper', {
+        slidesPerView: 'auto',
+        grabCursor: true,
+        speed: 1200,
+        navigation: {
+            nextEl: `.shares-categories-next`,
+            prevEl: `.shares-categories-prev`,
+        },
+        // ...swiperSettings('shares-categories')
     });
 }
 
@@ -213,17 +225,34 @@ if (relatedProductsSlider) {
 
 const feedbackSlider = document.querySelector('.feedback__swiper');
 if (feedbackSlider) {
-    const swiper = new Swiper('.feedback__swiper', {
+    const swiperFeedbackImages = new Swiper('.feedback-list__swiper', {
         spaceBetween: rem(12.6),
-        slidesPerView: 3,
+        slidesPerView: 2,
+        speed: 700,
+        watchSlidesProgress: true,
+        grabCursor: true,
+        loop: true
+    });
+
+    const swiper = new Swiper('.feedback__swiper', {
+        navigation: {
+            nextEl: `.feedback-next`,
+            prevEl: `.feedback-prev`
+        },
+        slidesPerView: 1,
+        grabCursor: true,
+        speed: 700,
+        loop: true,
         effect: 'fade',
         fadeEffect: {
             crossFade: true
         },
-        grabCursor: true,
-        speed: 700,
-        ...swiperSettings('feedback'),
-        on: {}
+        keyboard: {
+            enabled: true
+        },
+        thumbs: {
+            swiper: swiperFeedbackImages
+        }
     });
 }
 
@@ -326,6 +355,7 @@ bindModal(
 );
 bindModal('.service-request-button', '#request-modal', '#request-modal .modal__close', bindSuccessModal);
 bindModal('.request__form-submit-button', '#request-modal-success', '#request-modal-success .modal__close');
+bindModal('.burger-modal-phone-entry', '#request-modal', '#request-modal .modal__close', bindSuccessModal);
 
 function bindSuccessModal() {
     $('.request-success-button').on('click', (event) => {
@@ -378,25 +408,25 @@ if (document.querySelector('.shares__categories')) {
     //     content.addEventListener('mouseleave', mouseupHandler);
     // }
 
-    const arrows = {
-        left: document.querySelector('.shares__categories-icon.left'),
-        right: document.querySelector('.shares__categories-icon.right')
-    };
-    const container = document.querySelector(CONTENT_SELECTOR);
-
-    arrows.left.addEventListener('click', () => {
-        container.scrollBy({ left: -150, behavior: 'smooth' });
-    });
-
-    arrows.right.addEventListener('click', () => {
-        container.scrollBy({ left: 150, behavior: 'smooth' });
-        const width = (container.offsetWidth / 2) * 0.1;
-        const scrollLeft = container.scrollLeft;
-
-        if (scrollLeft > width) {
-            arrows.left.classList.add('--active');
-        }
-    });
+    // const arrows = {
+    //     left: document.querySelector('.shares__categories-icon.left'),
+    //     right: document.querySelector('.shares__categories-icon.right')
+    // };
+    // const container = document.querySelector(CONTENT_SELECTOR);
+    //
+    // arrows.left.addEventListener('click', () => {
+    //     container.scrollBy({ left: -150, behavior: 'smooth' });
+    // });
+    //
+    // arrows.right.addEventListener('click', () => {
+    //     container.scrollBy({ left: 150, behavior: 'smooth' });
+    //     const width = (container.offsetWidth / 2) * 0.1;
+    //     const scrollLeft = container.scrollLeft;
+    //
+    //     if (scrollLeft > width) {
+    //         arrows.left.classList.add('--active');
+    //     }
+    // });
 }
 
 if (document.querySelector('.map')) {

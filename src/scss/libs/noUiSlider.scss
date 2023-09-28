@@ -35,7 +35,6 @@
     @include small-tablet{
         height: .4rem;
         max-width: 51.6rem;
-        margin-left: 4rem;
     }
 }
 /* Wrapper for all connect elements.
@@ -81,7 +80,15 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     position: absolute;
+    cursor: pointer;
 }
+
+.noUi-handle-lower {
+    @include small-tablet{
+        right: -3.6rem !important;
+    }
+}
+
 .noUi-touch-area {
     height: 100%;
     width: 100%;
@@ -143,10 +150,16 @@
     box-shadow: .2rem .4rem 3rem 0 rgba(57, 56, 113, 0.25);
     width: 2rem;
     height: 2rem;
+    transition: background-color .3s ease, border .3s ease;
 
     @include small-tablet{
         width: 4rem;
         height: 4rem;
+    }
+
+    &:hover{
+        background-color: $accent;
+        border: .1rem solid $white;
     }
 }
 .noUi-active {

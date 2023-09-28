@@ -2,6 +2,7 @@
 @import 'vars';
 
 .materials {
+    margin-bottom: 22.5rem;
 
     &__heading {
         position: relative;
@@ -36,13 +37,15 @@
         .circle {
             border-radius: 50%;
             border: 0.4rem solid $light-blue;
-            padding: 6.01rem;
+            padding: 5.01rem 6.01rem 5.01rem 6.01rem;
 
             @include small-tablet {
                 padding: 5.74rem;
             }
 
             .circle {
+                padding: 6.19rem 6.19rem 6.09rem 6.09rem;
+
                 @include small-tablet{
                     padding: 5.86rem 5.98rem 4.86rem 5.92rem;
                 }
@@ -52,6 +55,7 @@
                 border-radius: inherit;
                 width: 44.1rem;
                 height: 44.1rem;
+                margin-left: -1rem;
 
                 @include small-tablet {
                     width: 42rem;
@@ -102,6 +106,12 @@
             display: flex;
             flex-direction: column;
             gap: 5.2rem;
+        }
+
+        .materials__item-icon {
+            @include small-tablet{
+                padding: 3rem;
+            }
         }
     }
 
@@ -236,7 +246,7 @@
 
         &:nth-child(4) {
             left: 46.5rem;
-            bottom: -3rem;
+            bottom: -2rem;
         }
     }
 }

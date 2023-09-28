@@ -4,10 +4,6 @@
 .feedback {
     @include swiper-controls;
 
-    &-buttons {
-        margin-top: 0;
-    }
-
     &__swiper {
         max-width: 94.5rem;
         width: 100%;
@@ -18,58 +14,8 @@
         display: flex;
         align-items: center;
         position: relative;
-
-        &-authors {
-            .top {
-                display: flex;
-                align-items: center;
-                gap: 12.6rem;
-            }
-
-            .bottom {
-                margin-top: 6rem;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
-
-            &-button {
-                padding: .75rem 1.6rem;
-                border-radius: 2rem;
-                border: .1rem solid $grey;
-                color: $black;
-                font-size: 1.6rem;
-                font-weight: 500;
-                line-height: 2.464rem;
-            }
-
-            &-slide {
-                max-width: 18rem;
-                width: 100%;
-                height: 18rem;
-                padding: 1.67rem;
-                background: linear-gradient(90deg, rgba(255, 255, 255, 0.29) -34.07%, rgba(224, 228, 255, 0.58) 111.47%, rgba(255, 255, 255, 0.58) 111.48%);
-                border-radius: 50%;
-                border-left: .1rem solid #A5A9BC;
-
-                &:not(:last-child) {
-                    position: relative;
-                    border-right: .1rem solid #A5A9BC;
-                    border-left: 0;
-
-                    &::after{
-                        @include pseudo{
-                            top: 50%;
-                            right: -13rem;
-                            transform: translateY(-50%);
-                            width: 12.8rem;
-                            height: .1rem;
-                            background: $grey;
-                        }
-                    }
-                }
-            }
-        }
+        gap: 12.6rem;
+        justify-content: space-between;
     }
 
     &-slide {
@@ -108,7 +54,8 @@
             font-size: 1.6rem;
             font-weight: 500;
             line-height: 2.464rem;
-            margin-left: auto;
+            display: flex;
+            justify-content: flex-end;
         }
     }
 
@@ -130,5 +77,69 @@
             height: 100%;
             border-radius: inherit;
         }
+    }
+
+    &-list {
+        &__swiper {
+            margin-top: -7rem;
+            padding-left: .2rem !important;
+        }
+
+        &-slide {
+            width: 18rem !important;
+            height: 18rem !important;
+        }
+
+        &-wrapper {
+            max-width: 50rem;
+            width: 100%;
+        }
+
+        &-image {
+            &__wrapper {
+                padding: 1.67rem;
+                border-radius: 50%;
+                background: linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.29) -34.07%,
+                    rgba(224, 228, 255, 0.58) 111.47%,
+                    rgba(255, 255, 255, 0.58) 111.48%
+                );
+                border-right: 0.1rem solid #a5a9bc;
+                width: 18rem;
+                height: 18rem;
+
+                &.reverted {
+                    border-right: transparent;
+                    border-left: 0.1rem solid #a5a9bc;
+                }
+
+                img {
+                    border-radius: inherit;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    &-buttons {
+        margin-top: 0;
+    }
+
+    &-controls {
+        gap: 15.1rem;
+        justify-content: flex-end;
+        margin-top: -4rem;
+    }
+
+    &-button {
+        padding: 0.75rem 1.6rem;
+        border-radius: 2rem;
+        border: 0.1rem solid $grey;
+        color: $black;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 2.464rem;
     }
 }
