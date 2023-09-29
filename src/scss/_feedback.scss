@@ -4,10 +4,21 @@
 .feedback {
     @include swiper-controls;
 
+    &__content {
+        @include small-tablet {
+            position: relative;
+        }
+    }
+
     &__swiper {
-        max-width: 56.8rem;
+        max-width: 61.8rem;
         width: 100%;
+        padding-right: 1rem !important;
         margin-left: initial !important;
+
+        @include small-tablet {
+            max-width: 100%;
+        }
     }
 
     &__slides {
@@ -15,11 +26,53 @@
         align-items: center;
         position: relative;
         justify-content: space-between;
+
+        @include small-tablet {
+            flex-direction: column-reverse;
+            gap: $gap-m;
+        }
     }
 
     &__blockquote {
         width: 100%;
         padding-left: 5.5rem;
+        padding-right: 3.5rem;
+        position: relative;
+
+        @include small-tablet {
+            padding: 0;
+        }
+
+        &::after {
+            @include pseudo {
+                width: 4rem;
+                height: 4rem;
+                background: url('../img/feedback/blockquote.svg') no-repeat center;
+                background-size: cover;
+                right: -1.5rem;
+                top: 0;
+
+                @include small-tablet {
+                    display: none;
+                }
+            }
+        }
+
+        &::before {
+            @include pseudo {
+                width: 4rem;
+                height: 4rem;
+                background: url('../img/feedback/blockquote.svg') no-repeat center;
+                background-size: cover;
+                left: -0.5rem;
+                bottom: 0;
+                transform: rotate(180deg);
+
+                @include small-tablet {
+                    display: none;
+                }
+            }
+        }
 
         &-author {
             color: $black;
@@ -28,6 +81,12 @@
             line-height: 2.88rem;
             display: block;
             margin-bottom: 2rem;
+
+            @include small-tablet {
+                font-size: 4rem;
+                line-height: 4.8rem;
+                margin-bottom: $gap-s;
+            }
         }
 
         &-text {
@@ -39,6 +98,12 @@
             margin-bottom: 3rem;
             display: flex;
             justify-content: flex-end;
+
+            @include small-tablet {
+                font-size: 3rem;
+                line-height: 4.5rem;
+                margin-bottom: 4.8rem;
+            }
         }
 
         &-date {
@@ -48,6 +113,12 @@
             line-height: 2.464rem;
             display: flex;
             justify-content: flex-end;
+
+            @include small-tablet {
+                justify-content: flex-start;
+                font-size: 3rem;
+                line-height: 4.5rem;
+            }
         }
     }
 
@@ -57,12 +128,52 @@
             height: 31rem;
             max-width: 86rem;
             margin-right: 0 !important;
+
+            @include small-tablet {
+                padding: 7rem 0 0 5rem;
+                margin-top: 0;
+                max-width: 100%;
+                margin-bottom: -3rem;
+            }
         }
 
         &-slide {
+            transition: .3s all ease;
+
             &.swiper-slide-active {
                 .feedback-list-image__wrapper {
-                    transform: scale(1.667);
+                    transform: scale(1.667) translateY(0rem);
+                }
+
+                @include small-tablet {
+                    margin-right: 5rem;
+                }
+            }
+
+            &.swiper-slide-next {
+                position: relative;
+                z-index: 2;
+
+                &::after {
+                    @include pseudo {
+                        width: 12.8rem;
+                        height: 0.1rem;
+                        background: #a8a7ca;
+                        right: 0;
+                        top: 50%;
+                        transform: translate(50%, -50%);
+                        z-index: -1;
+
+                        @include small-tablet{
+                            width: 5.8rem;
+                            height: 0.1rem;
+                            background: #a8a7ca;
+                            right: 3rem;
+                            top: 3.5rem;
+                            transform: translate(50%, -50%);
+                            z-index: -1;
+                        }
+                    }
                 }
             }
         }
@@ -84,6 +195,15 @@
                 width: 100%;
                 height: 18rem;
                 margin: 6rem 0 0 6rem;
+
+                @include small-tablet {
+                    max-width: 16rem;
+                    height: 16rem;
+                    padding: 1.48rem;
+                    margin: 0;
+                    transform: translateY(-5rem);
+                    transition: 0.5s transform ease-out;
+                }
 
                 &.reverted {
                     border-right: transparent;
@@ -107,6 +227,13 @@
         gap: 15.1rem;
         justify-content: flex-end;
         margin-top: -4rem;
+
+        @include small-tablet {
+            gap: 0;
+            position: absolute;
+            right: 6rem;
+            top: 36rem;
+        }
     }
 
     &-button {
@@ -117,5 +244,9 @@
         font-size: 1.6rem;
         font-weight: 500;
         line-height: 2.464rem;
+
+        @include small-tablet {
+            display: none;
+        }
     }
 }

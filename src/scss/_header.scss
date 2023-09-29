@@ -392,11 +392,6 @@
             line-height: 2.464rem;
             transition: 0.3s all ease-in-out;
 
-            &:focus {
-                outline: 0.1rem solid $accent;
-                outline-offset: 0.3rem;
-            }
-
             &:hover {
                 color: $white;
                 background-color: $accent;

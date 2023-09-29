@@ -244,7 +244,7 @@ if (feedbackSlider) {
         loop: true,
         autoplay: {
             delay: 3000,
-            disableOnInteraction: false
+            disableOnInteraction: true
         },
         thumbs: {
             swiper
