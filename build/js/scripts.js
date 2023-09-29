@@ -225,34 +225,34 @@ if (relatedProductsSlider) {
 
 const feedbackSlider = document.querySelector('.feedback__swiper');
 if (feedbackSlider) {
-    const swiperFeedbackImages = new Swiper('.feedback-list__swiper', {
-        spaceBetween: rem(12.6),
-        slidesPerView: 2,
-        speed: 700,
-        watchSlidesProgress: true,
-        grabCursor: true,
-        loop: true
-    });
 
     const swiper = new Swiper('.feedback__swiper', {
-        navigation: {
-            nextEl: `.feedback-next`,
-            prevEl: `.feedback-prev`
-        },
         slidesPerView: 1,
-        grabCursor: true,
-        speed: 700,
+        speed: 1200,
         loop: true,
+        allowTouchMove: false,
         effect: 'fade',
         fadeEffect: {
             crossFade: true
         },
-        keyboard: {
-            enabled: true
+    });
+
+    const swiperFeedbackImages = new Swiper('.feedback-list__swiper', {
+        slidesPerView: 3,
+        speed: 1200,
+        allowTouchMove: false,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
         },
         thumbs: {
-            swiper: swiperFeedbackImages
-        }
+            swiper
+        },
+        navigation: {
+            nextEl: `.feedback-next`,
+            prevEl: `.feedback-prev`
+        },
     });
 }
 

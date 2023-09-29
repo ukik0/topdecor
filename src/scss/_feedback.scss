@@ -5,7 +5,7 @@
     @include swiper-controls;
 
     &__swiper {
-        max-width: 94.5rem;
+        max-width: 56.8rem;
         width: 100%;
         margin-left: initial !important;
     }
@@ -14,20 +14,12 @@
         display: flex;
         align-items: center;
         position: relative;
-        gap: 12.6rem;
         justify-content: space-between;
     }
 
-    &-slide {
-        display: flex !important;
-        align-items: center;
-        gap: 7.5rem;
-    }
-
     &__blockquote {
-        max-width: 51.8rem;
         width: 100%;
-        margin-left: 5.5rem;
+        padding-left: 5.5rem;
 
         &-author {
             color: $black;
@@ -59,40 +51,20 @@
         }
     }
 
-    &__author {
-        padding: 1.67rem;
-        border-radius: 50%;
-        background: linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 0.29) -34.07%,
-            rgba(224, 228, 255, 0.58) 111.47%,
-            rgba(255, 255, 255, 0.58) 111.48%
-        );
-        border-right: 0.1rem solid #a5a9bc;
-        max-width: 30rem;
-        width: 100%;
-        height: 30rem;
-
-        img {
-            height: 100%;
-            border-radius: inherit;
-        }
-    }
-
     &-list {
         &__swiper {
             margin-top: -7rem;
-            padding-left: .2rem !important;
+            height: 31rem;
+            max-width: 86rem;
+            margin-right: 0 !important;
         }
 
         &-slide {
-            width: 18rem !important;
-            height: 18rem !important;
-        }
-
-        &-wrapper {
-            max-width: 50rem;
-            width: 100%;
+            &.swiper-slide-active {
+                .feedback-list-image__wrapper {
+                    transform: scale(1.667);
+                }
+            }
         }
 
         &-image {
@@ -106,8 +78,12 @@
                     rgba(255, 255, 255, 0.58) 111.48%
                 );
                 border-right: 0.1rem solid #a5a9bc;
-                width: 18rem;
+                transition: 0.2s transform ease-out;
+                will-change: transofrm;
+                max-width: 18rem;
+                width: 100%;
                 height: 18rem;
+                margin: 6rem 0 0 6rem;
 
                 &.reverted {
                     border-right: transparent;
