@@ -42,9 +42,9 @@ section {
     background: $white;
     width: 7.6rem !important;
     height: 3.4rem !important;
-    transition: .3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
 
-    @include small-tablet{
+    @include small-tablet {
         width: 12rem !important;
         height: 6rem !important;
     }
@@ -59,16 +59,16 @@ section {
         height: 2.4rem;
 
         path {
-            transition: .3s all ease-in-out;
+            transition: 0.3s all ease-in-out;
         }
 
-        @include small-tablet{
+        @include small-tablet {
             width: 4rem;
             height: 4rem;
         }
     }
 
-    &:hover{
+    &:hover {
         background: $accent;
 
         svg {
@@ -97,22 +97,23 @@ section {
         background: $white !important;
         border-radius: 0 !important;
         opacity: 1 !important;
-        transition: .3s all ease-in-out;
+        transition: 0.3s all ease-in-out;
 
-        @include small-tablet{
-            height: .4rem !important;
+        @include small-tablet {
+            height: 0.4rem !important;
             width: 5rem !important;
         }
 
         &-active {
             background: $accent !important;
-            transition: .3s all ease-in-out;
+            transition: 0.3s all ease-in-out;
         }
     }
 }
 
-.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
-    opacity: .5 !important;
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+    opacity: 0.5 !important;
 }
 
 // Animations
@@ -120,7 +121,7 @@ section {
 @keyframes fade {
     0% {
         opacity: 0;
-        transform: scale(.98);
+        transform: scale(0.98);
     }
 
     50% {
@@ -157,3 +158,34 @@ section {
     }
 }
 
+@keyframes slide-vertical-right {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-2rem, -3rem);
+    }
+}
+
+@keyframes slide-vertical-left {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-2rem, 3rem);
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

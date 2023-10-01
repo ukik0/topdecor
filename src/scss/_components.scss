@@ -380,6 +380,12 @@
         &:checked {
             &::after {
                 transform: scale(1);
+
+                @include small-tablet {
+                    transform: scale(1) translate(-50%, -50%);
+                    top: 50%;
+                    left: 50%;
+                }
             }
         }
     }

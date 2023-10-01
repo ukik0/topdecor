@@ -164,7 +164,7 @@
             flex-direction: column;
             width: 36rem;
             right: 0;
-            z-index: 6;
+            z-index: $z-index-catalog-sort-menu;
             transition: 0.3s all ease;
             opacity: 0;
             will-change: opacity, transform;
@@ -390,7 +390,7 @@
                 box-shadow: initial;
                 max-width: 100%;
                 overflow: auto;
-                z-index: 6;
+                z-index: $z-index-catalog-filter-menu;
                 opacity: 0;
                 transform: scale(0.95);
                 will-change: opacity, transform;

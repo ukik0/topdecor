@@ -1273,7 +1273,7 @@
 
                     <div class="header__searchbar-menu">
                         <div class="header__searchbar-menu-field mobile">
-                            <button class="header__searchbar-menu-back-button">
+                            <button type="button" class="header__searchbar-menu-back-button">
                                 <svg
                                     width="24"
                                     height="24"
@@ -3454,9 +3454,9 @@
             2023 © Топ Декор магазин в Москве, комплектация жилых и коммерческих объектов
         </span>
     </div>
-    <img src="../img/footer/circles-1.svg" alt="circle" class="decor-circles-1">
-    <img src="../img/footer/circles-2.svg" alt="circle" class="decor-circles-2">
-    <img src="../img/footer/circles-3.svg" alt="circle" class="decor-circles-3">
+    <img src="../img/footer/circles-1.svg" alt="circle" class="decor-circles-1" />
+    <img src="../img/footer/circles-2.svg" alt="circle" class="decor-circles-2" />
+    <img src="../img/footer/circles-3.svg" alt="circle" class="decor-circles-3" />
 </footer>
 
 <div class="modal__wrapper" id="request-modal">
@@ -3511,11 +3511,11 @@
         <div class="modal__close">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
-                        d="M18 18L6 6M18 6L6 18"
-                        stroke="#555760"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                    d="M18 18L6 6M18 6L6 18"
+                    stroke="#555760"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                 />
             </svg>
         </div>
@@ -3528,20 +3528,20 @@
                     <label class="label" for="name">
                         <span>Имя</span>
                         <input
-                                id="name"
-                                placeholder="Ваше имя"
-                                type="text"
-                                class="input request__modal-input"
+                            id="name"
+                            placeholder="Ваше имя"
+                            type="text"
+                            class="input request__modal-input"
                         />
                     </label>
 
                     <label class="label" for="phone">
                         <span>Номер телефона</span>
                         <input
-                                id="phone"
-                                placeholder="+ 7 (999) 999 99-99"
-                                type="tel"
-                                class="input request__modal-input"
+                            id="phone"
+                            placeholder="+ 7 (999) 999 99-99"
+                            type="tel"
+                            class="input request__modal-input"
                         />
                     </label>
                 </div>
@@ -3573,6 +3573,79 @@
             </h3>
 
             <button class="button request__modal-button-success">Вернуться к покупкам</button>
+        </div>
+    </div>
+</div>
+<div class="modal__wrapper" id="request-modal-feedback">
+    <div class="modal">
+        <div class="modal__close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M18 18L6 6M18 6L6 18"
+                    stroke="#555760"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+            </svg>
+        </div>
+        <h2 class="modal__title">Оставить отзыв</h2>
+        <div class="modal__body">
+            <form action="#" class="request__feedback-form">
+                <div class="request__feedback-fields">
+                    <label class="label" for="name">
+                        <span>Имя</span>
+                        <input
+                            id="name"
+                            placeholder="Ваше имя"
+                            type="text"
+                            class="input request__feedback-input"
+                        />
+                    </label>
+
+                    <label class="label" for="phone">
+                        <span>Номер телефона</span>
+                        <input
+                            id="phone"
+                            placeholder="+ 7 (999) 999 99-99"
+                            type="tel"
+                            class="input request__feedback-input"
+                        />
+                    </label>
+
+                    <label class="label" for="comment">
+                        <span>Комментарий</span>
+                        <textarea
+                            id="comment"
+                            placeholder="Опишите свой отзыв"
+                            class="input request__feedback-textarea"
+                        ></textarea>
+                    </label>
+                </div>
+
+                <button type="submit" class="button request__feedback-button request-feedback-success">
+                    Отправить отзыв
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal__wrapper" id="request-modal-feedback-success">
+    <div class="modal">
+        <div class="modal__close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M18 18L6 6M18 6L6 18"
+                    stroke="#555760"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+            </svg>
+        </div>
+        <h2 class="modal__title request__modal-title">Ваш отзыв отправлен!</h2>
+        <div class="modal__body">
+            <button class="button request__feedback-button">Вернуться к покупкам</button>
         </div>
     </div>
 </div>

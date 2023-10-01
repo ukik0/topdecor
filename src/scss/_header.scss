@@ -313,6 +313,8 @@
 
                 @include small-tablet {
                     top: 4.6rem;
+                    width: 4.8rem;
+                    height: 4.8rem;
                 }
             }
         }
@@ -437,9 +439,9 @@
             inset: 0;
             background: $white;
             padding: 3rem;
-            z-index: 5;
+            z-index: $z-index-burger-menu;
             opacity: 0;
-            transform: scale(0.95);
+            transform: scale(1.05);
             will-change: opacity, transform;
             transition: 0.3s all ease-in;
             pointer-events: none;
@@ -543,7 +545,7 @@
             left: 0;
             right: 0;
             top: 6rem;
-            z-index: 6;
+            z-index: $z-index-searchbar-menu;
             max-width: 85.3rem;
             width: 100%;
             overscroll-behavior: contain;
@@ -551,7 +553,7 @@
             transition: 0.3s all ease;
             pointer-events: none;
             user-select: none;
-            transform: scale(0.95);
+            transform: scale(1.05);
 
             @include small-tablet {
                 position: fixed;
@@ -918,7 +920,7 @@
         padding-top: 1rem;
         opacity: 0;
         transition: 0.3s all ease;
-        z-index: 6;
+        z-index: $z-index-catalog;
         pointer-events: none;
         user-select: none;
         display: none;
@@ -962,8 +964,8 @@
             width: 100%;
             position: relative;
             height: 78rem;
-            transform: scale(0.9);
-            transition: 0.3s all ease;
+            transform: scale(.9);
+            transition: 0.3s transform ease;
 
             @include small-tablet {
                 background: transparent;

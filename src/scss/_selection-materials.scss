@@ -14,7 +14,7 @@
             width: 19rem;
             height: 18rem;
 
-            @include small-tablet{
+            @include small-tablet {
                 right: -3rem;
                 top: 6rem;
                 width: 16rem;
@@ -27,50 +27,61 @@
         max-width: 68.4rem;
         width: 100%;
         height: 68.4rem;
+        border-radius: 50%;
+        border: 0.25rem solid #e6eaff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
 
         @include small-tablet {
+            max-width: 65.4rem;
             height: 65.4rem;
-            width: 65.8rem;
             position: relative;
+            border-width: .5rem;
         }
 
-        .circle {
-            border-radius: 50%;
-            border: 0.4rem solid $light-blue;
-            padding: 5.01rem 6.01rem 5.01rem 6.01rem;
-
-            @include small-tablet {
-                padding: 5.74rem;
-            }
-
-            .circle {
-                padding: 6.19rem 6.19rem 6.09rem 6.09rem;
+        &::after {
+            @include pseudo {
+                max-width: 56.3761rem;
+                width: 100%;
+                height: 56.3761rem;
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border: 0.4rem solid #e6eaff;
 
                 @include small-tablet{
-                    padding: 5.86rem 5.98rem 4.86rem 5.92rem;
+                    border-width: .8rem;
+                    max-width: 53.9034rem;
+                    height: 53.9034rem;
                 }
             }
+        }
 
-            img {
-                border-radius: inherit;
-                width: 44.1rem;
-                height: 44.1rem;
-                margin-left: -1rem;
+        img {
+            border-radius: inherit;
+            width: 44.1rem;
+            height: 44.1rem;
 
-                @include small-tablet {
-                    width: 42rem;
-                    height: 42rem;
-                }
+            @include small-tablet {
+                width: 42rem;
+                height: 42rem;
             }
         }
 
         .icon {
-            @include small-tablet{
+            @include small-tablet {
                 position: absolute;
 
                 &:nth-of-type(1) {
                     top: -2rem;
                     right: 14rem;
+
+                    @include small-tablet{
+                        top: -3rem;
+                    }
                 }
 
                 &:nth-of-type(2) {
@@ -109,7 +120,7 @@
         }
 
         .materials__item-icon {
-            @include small-tablet{
+            @include small-tablet {
                 padding: 3rem;
             }
         }
@@ -128,7 +139,8 @@
         }
 
         &-icon {
-            width: 7rem;
+            max-width: 7rem;
+            width: 100%;
             height: 7rem;
             display: flex;
             align-items: center;
@@ -139,16 +151,16 @@
             font-weight: 600;
             line-height: 2.8rem;
             margin-top: 1rem;
-            background: url("../img/materials/circle.svg") no-repeat center;
+            background: url('../img/materials/circle.svg') no-repeat center;
             background-size: 7rem;
 
             @include small-tablet {
-                width: 10rem;
+                max-width: 10rem;
                 height: 10rem;
                 font-size: 3.4rem;
                 font-weight: 600;
                 line-height: 4.8rem;
-                background: url("../img/materials/circle-mobile.svg") no-repeat center;
+                background: url('../img/materials/circle-mobile.svg') no-repeat center;
                 background-size: 10rem;
             }
         }
@@ -201,20 +213,20 @@
                     position: relative;
                     margin-left: 2rem;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         margin-left: 5rem;
                     }
 
-                    &::after{
+                    &::after {
                         @include pseudo {
                             left: -1rem;
                             top: 1rem;
-                            width: .5rem;
-                            height: .5rem;
+                            width: 0.5rem;
+                            height: 0.5rem;
                             border-radius: 50%;
                             background: $grey;
 
-                            @include small-tablet{
+                            @include small-tablet {
                                 width: 1rem;
                                 height: 1rem;
                                 top: 2rem;

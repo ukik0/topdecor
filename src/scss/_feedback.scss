@@ -106,16 +106,24 @@
             }
         }
 
+        &-bottom {
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            @include small-tablet{
+                justify-content: space-between;
+            }
+        }
+
         &-date {
             color: $grey;
             font-size: 1.6rem;
             font-weight: 500;
             line-height: 2.464rem;
-            display: flex;
-            justify-content: flex-end;
 
             @include small-tablet {
-                justify-content: flex-start;
                 font-size: 3rem;
                 line-height: 4.5rem;
             }
@@ -156,19 +164,19 @@
 
                 &::after {
                     @include pseudo {
-                        width: 12.8rem;
+                        width: 10.8rem;
                         height: 0.1rem;
                         background: #a8a7ca;
-                        right: 0;
+                        right: -.6rem;
                         top: 50%;
                         transform: translate(50%, -50%);
                         z-index: -1;
 
                         @include small-tablet{
-                            width: 5.8rem;
+                            width: 5.4rem;
                             height: 0.1rem;
                             background: #a8a7ca;
-                            right: 3rem;
+                            right: 2.6rem;
                             top: 3.5rem;
                             transform: translate(50%, -50%);
                             z-index: -1;
@@ -244,9 +252,20 @@
         font-size: 1.6rem;
         font-weight: 500;
         line-height: 2.464rem;
+        position: relative;
+        z-index: $z-index-other;
+        transition: .3s background ease, .3s color ease;
+
+        &:hover{
+            background: $accent;
+            color: $white;
+        }
 
         @include small-tablet {
-            display: none;
+            padding: .7rem 3rem;
+            border-radius: 4rem;
+            font-size: 3rem;
+            line-height: 4.5rem;
         }
     }
 }

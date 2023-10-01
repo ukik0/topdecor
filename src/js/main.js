@@ -350,6 +350,8 @@ bindModal(
 bindModal('.service-request-button', '#request-modal', '#request-modal .modal__close', bindSuccessModal);
 bindModal('.request__form-submit-button', '#request-modal-success', '#request-modal-success .modal__close');
 bindModal('.burger-modal-phone-entry', '#request-modal', '#request-modal .modal__close', bindSuccessModal);
+bindModal('.feedback-entry', '#request-modal-feedback', '#request-modal-feedback .modal__close', bindSuccessModal);
+bindModal('.request-feedback-success', '#request-modal-feedback-success', '#request-modal-feedback-success .modal__close', bindFeedbackSuccessModal);
 
 function bindSuccessModal() {
     $('.request-success-button').on('click', (event) => {
@@ -362,6 +364,20 @@ function bindSuccessModal() {
 
         $('#request-modal-success').addClass('--active');
         $('#request-modal-success .modal').addClass('--active');
+    });
+}
+
+function bindFeedbackSuccessModal() {
+    $('.request-feedback-success').on('click', (event) => {
+        event.preventDefault();
+
+        $('.modal__wrapper').each(function () {
+            $(this).removeClass('--active');
+            $(this).find('.modal').removeClass('--active');
+        });
+
+        $('#request-modal-feedback-success').addClass('--active');
+        $('#request-modal-feedback-success .modal').addClass('--active');
     });
 }
 

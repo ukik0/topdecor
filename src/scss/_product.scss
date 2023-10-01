@@ -315,7 +315,7 @@
 
                     &::after {
                         @include pseudo {
-                            top: 1.5rem;
+                            top: 1.47rem;
                             right: 0.5rem;
                             width: 1.6rem;
                             height: 0.2rem;
@@ -326,7 +326,8 @@
                             @include small-tablet {
                                 width: 3.2rem;
                                 height: 0.4rem;
-                                top: 2rem;
+                                top: 2.2rem;
+                                right: .4rem;
                             }
                         }
                     }
