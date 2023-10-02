@@ -49,7 +49,7 @@
                 height: 4rem;
                 background: url('../img/feedback/blockquote.svg') no-repeat center;
                 background-size: cover;
-                right: -1.5rem;
+                right: 0.5rem;
                 top: 0;
 
                 @include small-tablet {
@@ -151,10 +151,23 @@
             &.swiper-slide-active {
                 .feedback-list-image__wrapper {
                     transform: scale(1.667) translateY(0rem);
+                    border-right: 0.1rem solid #a5a9bc;
                 }
 
                 @include small-tablet {
                     margin-right: 5rem;
+                }
+            }
+
+            &.swiper-slide-next {
+                .feedback-list-image__wrapper {
+                    border-right: 0.1rem solid #a5a9bc;
+                }
+            }
+
+            &.swiper-slide-duplicate-prev {
+                .feedback-list-image__wrapper {
+                    border-left: 0.1rem solid #a5a9bc;
                 }
             }
 
@@ -196,7 +209,6 @@
                     rgba(224, 228, 255, 0.58) 111.47%,
                     rgba(255, 255, 255, 0.58) 111.48%
                 );
-                border-right: 0.1rem solid #a5a9bc;
                 transition: 0.2s transform ease-out;
                 will-change: transofrm;
                 max-width: 18rem;

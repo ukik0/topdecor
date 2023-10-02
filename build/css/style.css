@@ -9677,7 +9677,7 @@ section {
   height: 4rem;
   background: url("../img/feedback/blockquote.svg") no-repeat center;
   background-size: cover;
-  right: -1.5rem;
+  right: 0.5rem;
   top: 0;
 }
 
@@ -9754,6 +9754,15 @@ section {
   -webkit-transform: scale(1.667) translateY(0rem);
       -ms-transform: scale(1.667) translateY(0rem);
           transform: scale(1.667) translateY(0rem);
+  border-right: 0.1rem solid #a5a9bc;
+}
+
+.feedback-list-slide.swiper-slide-next .feedback-list-image__wrapper {
+  border-right: 0.1rem solid #a5a9bc;
+}
+
+.feedback-list-slide.swiper-slide-duplicate-prev .feedback-list-image__wrapper {
+  border-left: 0.1rem solid #a5a9bc;
 }
 
 .feedback-list-slide.swiper-slide-next {
@@ -9780,7 +9789,6 @@ section {
   border-radius: 50%;
   background: -webkit-gradient(linear, left top, right top, color-stop(-34.07%, rgba(255, 255, 255, 0.29)), color-stop(111.47%, rgba(224, 228, 255, 0.58)), color-stop(111.48%, rgba(255, 255, 255, 0.58)));
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.29) -34.07%, rgba(224, 228, 255, 0.58) 111.47%, rgba(255, 255, 255, 0.58) 111.48%);
-  border-right: 0.1rem solid #a5a9bc;
   -webkit-transition: 0.2s -webkit-transform ease-out;
   transition: 0.2s -webkit-transform ease-out;
   transition: 0.2s transform ease-out;
