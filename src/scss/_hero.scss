@@ -30,9 +30,7 @@
 
         [data-banner='1'] {
             max-width: 66.9rem;
-            margin-left: 8rem;
-            transform: scale(1.35);
-            margin-top: -7rem;
+            margin-left: 6rem;
 
             @include small-tablet{
                     margin: initial;
