@@ -2362,7 +2362,11 @@ section {
 
 .hero__content [data-banner="1"] {
   max-width: 66.9rem;
-  margin-left: 6rem;
+  margin-left: 8rem;
+  -webkit-transform: scale(1.35);
+      -ms-transform: scale(1.35);
+          transform: scale(1.35);
+  margin-top: -7rem;
 }
 
 .hero__content [data-banner="2"] {
@@ -5062,6 +5066,8 @@ section {
   background: #fff;
   -webkit-box-shadow: 2rem 4rem 10rem 0 rgba(128, 131, 181, 0.2);
           box-shadow: 2rem 4rem 10rem 0 rgba(128, 131, 181, 0.2);
+  position: relative;
+  height: 50rem;
 }
 
 .designers__item.--image {
@@ -5071,18 +5077,37 @@ section {
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.29) -34.07%, rgba(224, 228, 255, 0.58) 111.47%, rgba(255, 255, 255, 0.58) 111.48%);
   -webkit-box-shadow: initial;
           box-shadow: initial;
-  border-right: 0.1rem solid #A5A9BC;
+  border-right: 0.1rem solid #a5a9bc;
 }
 
 .designers__item.--medium {
   grid-column: span 2;
   -webkit-box-shadow: initial;
           box-shadow: initial;
-  border-right: 0.1rem solid #A5A9BC;
+  border-right: 0.1rem solid #a5a9bc;
+}
+
+.designers__item.--medium img {
+  position: absolute;
+  -webkit-transform: scale(1.13);
+      -ms-transform: scale(1.13);
+          transform: scale(1.13);
+  top: 0;
+  left: 0;
 }
 
 .designers__item.--bordered-image {
   border-radius: 50%;
+}
+
+.designers__item.--bordered-image img {
+  -webkit-transform: scale(1.28);
+      -ms-transform: scale(1.28);
+          transform: scale(1.28);
+  position: absolute;
+  inset: 0;
+  top: 4.3rem;
+  left: 1.9rem;
 }
 
 .designers__item.--bordered-image .designers__item-image {
@@ -13320,10 +13345,19 @@ button.swiper-pagination-bullet {
 
   .designers__item {
     padding: 12.4rem 8.4rem;
+    height: initial;
+    overflow: hidden;
+    min-height: 33.4rem;
   }
 
   .designers__item.--image {
     padding: 5rem;
+  }
+
+  .designers__item.--medium img {
+    -webkit-transform: scale(1.12);
+        -ms-transform: scale(1.12);
+            transform: scale(1.12);
   }
 
   .designers__item.--medium {
@@ -13332,6 +13366,14 @@ button.swiper-pagination-bullet {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
+  }
+
+  .designers__item.--bordered-image img {
+    -webkit-transform: scale(1.26);
+        -ms-transform: scale(1.26);
+            transform: scale(1.26);
+    top: 5.3rem;
+    left: 2.5rem;
   }
 
   .designers__item.--bordered-image .designers__item-image {
