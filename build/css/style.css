@@ -10808,31 +10808,6 @@ button.swiper-pagination-bullet {
   border-radius: 5rem;
 }
 
-.map [class*=copyrights-pane] {
-  display: none !important;
-}
-
-.map [class*=ground-pane] {
-  -webkit-filter: grayscale(1);
-          filter: grayscale(1);
-}
-
-.map [class*=inner-panes] {
-  border-radius: 5rem;
-}
-
-.map .ymaps-2-1-79-map {
-  width: 100%;
-  border-radius: inherit;
-}
-
-.contacts-map {
-  max-width: 100%;
-  width: 100%;
-  height: 70rem;
-  border-radius: 5rem;
-}
-
 .accordion {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15682,14 +15657,6 @@ button.swiper-pagination-bullet {
   .map {
     max-width: 69rem;
     height: 38rem;
-  }
-
-  .map [class*=inner-panes] {
-    border-radius: 1rem;
-  }
-
-  .contacts-map {
-    height: 78rem;
   }
 
   .accordion .accordion__item.accordion__item-active .accordion__item-content {
