@@ -12,6 +12,7 @@
         position: relative;
         padding: 10.6rem 10rem 9.6rem 10rem;
         display: block;
+        overflow: hidden;
 
         @include small-tablet {
             padding: 7rem 4rem;
@@ -23,13 +24,28 @@
 
     .card-1 {
         position: absolute;
-        max-width: 41rem;
-        height: 100%;
-        top: -6.3rem;
-        right: 13.7rem;
+        max-width: 20rem;
+        height: 20rem;
+        top: 2.6rem;
+        right: 28.4rem;
         width: 100%;
-        transform: scale(2);
         animation: slide-vertical-left 2s infinite alternate;
+        background: linear-gradient(
+            131deg,
+            #c9b8ff 0%,
+            rgba(201, 184, 255, 0.89) 13.17%,
+            rgba(201, 184, 255, 0.75) 33.82%,
+            rgba(201, 184, 255, 0.57) 53.76%,
+            rgba(201, 184, 255, 0.42) 66.34%,
+            rgba(255, 255, 255, 0) 93.1%
+        );
+        border-radius: 2.4rem;
+        padding: 1.9rem 2.7rem 2.51rem 2.3rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
 
         @include small-tablet {
             top: 34.4rem;
@@ -47,6 +63,25 @@
         top: 16.2rem;
         right: 50rem;
         animation: slide-vertical-right 3s infinite alternate;
+        border-radius: 3.8rem;
+        background: linear-gradient(
+                        182deg,
+                        #96c0ff -11.96%,
+                        #78aeff -11.95%,
+                        rgba(150, 192, 255, 0.8) 3.13%,
+                        rgba(150, 192, 255, 0.67) 32.08%,
+                        rgba(150, 192, 255, 0.48) 55.43%,
+                        rgba(150, 192, 255, 0.23) 76.77%,
+                        rgba(255, 255, 255, 0) 118.51%
+        );
+        padding: 5rem 4.8rem 5.7rem 5rem;
+        transform: rotate(-45deg);
+
+        img {
+            width: 100%;
+            height: 100%;
+            transform: rotate(45deg);
+        }
 
         @include small-tablet {
             left: 2.6rem;
@@ -58,13 +93,20 @@
 
     .card-3 {
         position: absolute;
-        max-width: 27.8047rem;
+        max-width: 13.6788rem;
         width: 100%;
-        height: 17.8996rem;
-        top: 28.3rem;
-        right: 25.8rem;
-        transform: scale(1.7);
+        height: 13.6788rem;
+        top: 27.3rem;
+        right: 32.8rem;
         animation: slide-vertical-left 2.5s infinite alternate;
+        background: linear-gradient(140deg, #D2EFFF 3.86%, rgba(212, 238, 253, 0.00) 84.74%);
+        padding: 1.55rem 1.46rem 1.46rem 1.55rem;
+        border-radius: 50%;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
 
         @include small-tablet {
             max-width: 36rem;

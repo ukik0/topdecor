@@ -5,7 +5,6 @@
     max-width: 89.7rem;
     width: 100%;
     height: 70.5rem;
-    background: $light -4.315px -178.784px / 132.175% 168.171%;
     border-radius: 5rem;
 
     @include small-tablet{
@@ -14,9 +13,9 @@
     }
 }
 
-.map [class*="copyrights-pane"] {
-    display: none !important;
-}
+//.map [class*="copyrights-pane"] {
+//    display: none !important;
+//}
 
 .map [class*="ground-pane"] {
     filter: grayscale(1);
@@ -39,7 +38,6 @@
     max-width: 100%;
     width: 100%;
     height: 70rem;
-    background: $light -4.315px -178.784px / 132.175% 168.171%;
     border-radius: 5rem;
 
     @include small-tablet{

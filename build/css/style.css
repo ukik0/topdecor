@@ -1454,8 +1454,8 @@ section {
   border-radius: 3rem;
   border: 0.1rem solid #E6EAFF;
   background: #fff;
-  -webkit-box-shadow: 3rem 1.5rem 10rem 0px rgba(128, 131, 181, 0.25);
-          box-shadow: 3rem 1.5rem 10rem 0px rgba(128, 131, 181, 0.25);
+  -webkit-box-shadow: 2rem 1.5rem 6rem 0 rgba(128, 131, 181, 0.25);
+          box-shadow: 2rem 1.5rem 6rem 0 rgba(128, 131, 181, 0.25);
 }
 
 .header__content-searchbar-icon {
@@ -5913,6 +5913,7 @@ section {
   position: relative;
   padding: 10.6rem 10rem 9.6rem 10rem;
   display: block;
+  overflow: hidden;
 }
 
 .services-banner__image {
@@ -5931,16 +5932,21 @@ section {
 
 .services-banner .card-1 {
   position: absolute;
-  max-width: 41rem;
-  height: 100%;
-  top: -6.3rem;
-  right: 13.7rem;
+  max-width: 20rem;
+  height: 20rem;
+  top: 2.6rem;
+  right: 28.4rem;
   width: 100%;
-  -webkit-transform: scale(2);
-      -ms-transform: scale(2);
-          transform: scale(2);
   -webkit-animation: slide-vertical-left 2s infinite alternate;
           animation: slide-vertical-left 2s infinite alternate;
+  background: linear-gradient(131deg, #c9b8ff 0%, rgba(201, 184, 255, 0.89) 13.17%, rgba(201, 184, 255, 0.75) 33.82%, rgba(201, 184, 255, 0.57) 53.76%, rgba(201, 184, 255, 0.42) 66.34%, rgba(255, 255, 255, 0) 93.1%);
+  border-radius: 2.4rem;
+  padding: 1.9rem 2.7rem 2.51rem 2.3rem;
+}
+
+.services-banner .card-1 img {
+  width: 100%;
+  height: 100%;
 }
 
 .services-banner .card-2 {
@@ -5952,20 +5958,39 @@ section {
   right: 50rem;
   -webkit-animation: slide-vertical-right 3s infinite alternate;
           animation: slide-vertical-right 3s infinite alternate;
+  border-radius: 3.8rem;
+  background: linear-gradient(182deg, #96c0ff -11.96%, #78aeff -11.95%, rgba(150, 192, 255, 0.8) 3.13%, rgba(150, 192, 255, 0.67) 32.08%, rgba(150, 192, 255, 0.48) 55.43%, rgba(150, 192, 255, 0.23) 76.77%, rgba(255, 255, 255, 0) 118.51%);
+  padding: 5rem 4.8rem 5.7rem 5rem;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.services-banner .card-2 img {
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .services-banner .card-3 {
   position: absolute;
-  max-width: 27.8047rem;
+  max-width: 13.6788rem;
   width: 100%;
-  height: 17.8996rem;
-  top: 28.3rem;
-  right: 25.8rem;
-  -webkit-transform: scale(1.7);
-      -ms-transform: scale(1.7);
-          transform: scale(1.7);
+  height: 13.6788rem;
+  top: 27.3rem;
+  right: 32.8rem;
   -webkit-animation: slide-vertical-left 2.5s infinite alternate;
           animation: slide-vertical-left 2.5s infinite alternate;
+  background: linear-gradient(140deg, #D2EFFF 3.86%, rgba(212, 238, 253, 0) 84.74%);
+  padding: 1.55rem 1.46rem 1.46rem 1.55rem;
+  border-radius: 50%;
+}
+
+.services-banner .card-3 img {
+  width: 100%;
+  height: 100%;
 }
 
 .services-banner__card {
@@ -10780,12 +10805,7 @@ button.swiper-pagination-bullet {
   max-width: 89.7rem;
   width: 100%;
   height: 70.5rem;
-  background: #A8A7CA -4.315px -178.784px/132.175% 168.171%;
   border-radius: 5rem;
-}
-
-.map [class*=copyrights-pane] {
-  display: none !important;
 }
 
 .map [class*=ground-pane] {
@@ -10806,7 +10826,6 @@ button.swiper-pagination-bullet {
   max-width: 100%;
   width: 100%;
   height: 70rem;
-  background: #A8A7CA -4.315px -178.784px/132.175% 168.171%;
   border-radius: 5rem;
 }
 
