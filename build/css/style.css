@@ -10808,6 +10808,10 @@ button.swiper-pagination-bullet {
   border-radius: 5rem;
 }
 
+.map [class*=copyrights-pane] {
+  display: none !important;
+}
+
 .map [class*=ground-pane] {
   -webkit-filter: grayscale(1);
           filter: grayscale(1);

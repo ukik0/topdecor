@@ -13,9 +13,9 @@
     }
 }
 
-//.map [class*="copyrights-pane"] {
-//    display: none !important;
-//}
+.map [class*="copyrights-pane"] {
+    display: none !important;
+}
 
 .map [class*="ground-pane"] {
     filter: grayscale(1);
