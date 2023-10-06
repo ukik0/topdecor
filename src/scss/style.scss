@@ -1,3 +1,53 @@
+// Sections or Pages SCSS-files imports
+@import './header';
+@import './hero';
+@import './benefits';
+@import './categoeries';
+@import './mobile-bar';
+@import './brands';
+@import './shares';
+@import './our-projects';
+@import './leaders';
+@import './banner-paints';
+@import './calculator';
+@import './novelties';
+@import './room-setup';
+@import './our-services';
+@import './showroom';
+@import './favorites';
+@import './designers';
+@import './breadcrumbs';
+@import './404';
+@import './interested';
+@import './contacts';
+@import './projects';
+@import './projects-banner';
+@import './services-banner';
+@import './services';
+@import './service';
+@import './service-products';
+@import './customers';
+@import './selection-materials';
+@import './project';
+@import './usable-products';
+@import './basket';
+@import './related-products';
+@import './request';
+@import './product';
+@import './privacy';
+@import './catalog';
+@import './catalog-banner';
+@import './social-media';
+@import './feedback';
+@import './footer';
+
+// Libs
+@import './libs/swiper';
+@import './libs/yandex-map';
+@import './libs/accordion';
+@import './libs/tabs';
+@import './libs/noUiSlider';
+
 // Global SCSS-files imports
 @import './vars';
 @import './reset';
@@ -5,53 +55,3 @@
 @import './fonts';
 @import './components';
 @import './modal';
-
-// Sections or Pages SCSS-files imports
- @import './header';
- @import './hero';
- @import './benefits';
- @import './categoeries';
- @import './mobile-bar';
- @import './brands';
- @import './shares';
- @import './our-projects';
- @import './leaders';
- @import './banner-paints';
- @import './calculator';
- @import './novelties';
- @import './room-setup';
- @import './our-services';
- @import './showroom';
- @import './footer';
- @import './favorites';
- @import './designers';
- @import './breadcrumbs';
- @import './404';
- @import './interested';
- @import './contacts';
- @import './projects';
- @import './projects-banner';
- @import './services-banner';
- @import './services';
- @import './service';
- @import './service-products';
- @import './customers';
- @import './selection-materials';
- @import './project';
- @import './usable-products';
- @import './basket';
- @import './related-products';
- @import './request';
- @import './product';
- @import './privacy';
- @import './catalog';
- @import './catalog-banner';
- @import './social-media';
- @import './feedback';
-
-// Libs
- @import './libs/swiper';
- @import './libs/yandex-map';
- @import './libs/accordion';
- @import './libs/tabs';
- @import './libs/noUiSlider';
