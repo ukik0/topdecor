@@ -245,7 +245,6 @@
         position: relative;
         transition: 0.15s all ease-in-out;
         border: 0.1rem solid $light;
-        overflow: hidden;
 
         @include small-tablet {
             width: 4rem;
@@ -350,7 +349,6 @@
         position: relative;
         transition: 0.15s all ease-in-out;
         border: 0.1rem solid $grey;
-        overflow: hidden;
         padding: 0.5rem;
 
         @include small-tablet {

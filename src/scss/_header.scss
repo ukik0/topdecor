@@ -229,7 +229,7 @@
                     display: flex;
                     align-items: flex-end;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         max-width: 8.4rem;
                         height: initial;
                     }
@@ -294,9 +294,9 @@
                 font-weight: 500;
                 line-height: 2.464rem;
                 border-radius: 3rem;
-                border: .1rem solid #E6EAFF;
+                border: 0.1rem solid #e6eaff;
                 background: $white;
-                box-shadow: 2rem 1.5rem 6rem 0 rgba(128,131,181,.25);
+                box-shadow: 3rem 3.5rem 10rem 0 rgba(128, 131, 181, 0.15);
 
                 @include small-tablet {
                     height: initial;
@@ -964,7 +964,7 @@
             width: 100%;
             position: relative;
             height: 78rem;
-            transform: scale(.9);
+            transform: scale(0.9);
             transition: 0.3s transform ease;
 
             @include small-tablet {

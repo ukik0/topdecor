@@ -30,6 +30,11 @@
             width: 100%;
             height: 12rem;
             animation: scale 1.5s infinite alternate;
+
+            @include small-tablet{
+                top: 52rem;
+                left: 11rem
+            }
         }
 
         .chandelier-2 {
@@ -40,6 +45,12 @@
             width: 100%;
             height: 14.4987rem;
             animation: scale 3s infinite alternate;
+
+            @include small-tablet{
+                top: auto;
+                right: 22.68rem;
+                bottom: 8rem;
+            }
         }
 
         .chandelier-3 {
@@ -50,6 +61,11 @@
             width: 100%;
             height: 14.5rem;
             animation: scale 2s infinite alternate;
+
+            @include small-tablet{
+                top: 28.5rem;
+                right: 2.6rem;
+            }
         }
     }
 

@@ -748,7 +748,6 @@ section {
   -webkit-transition: 0.15s all ease-in-out;
   transition: 0.15s all ease-in-out;
   border: 0.1rem solid #A8A7CA;
-  overflow: hidden;
 }
 
 .checkbox input::before {
@@ -839,7 +838,6 @@ section {
   -webkit-transition: 0.15s all ease-in-out;
   transition: 0.15s all ease-in-out;
   border: 0.1rem solid #A8A7CA;
-  overflow: hidden;
   padding: 0.5rem;
 }
 
@@ -1148,6 +1146,164 @@ section {
   display: block;
 }
 
+#select-color-modal .modal {
+  max-width: 120rem;
+  height: calc(100vh - 5rem);
+  padding: 6rem;
+}
+
+#select-color-modal .modal__title {
+  text-align: start;
+}
+
+#select-color-modal .modal__body-heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+#select-color-modal .modal__body-heading-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  cursor: pointer;
+}
+
+#select-color-modal .modal__body-heading-select:hover svg path {
+  fill: #586CBE;
+}
+
+#select-color-modal .modal__body-heading-select-name {
+  color: #555760;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.464rem;
+}
+
+#select-color-modal .modal__body-heading-select svg {
+  max-width: 2.4rem;
+  width: 100%;
+  height: 2.4rem;
+}
+
+#select-color-modal .modal__body-heading-select svg path {
+  -webkit-transition: 0.3s fill ease-out;
+  transition: 0.3s fill ease-out;
+}
+
+#select-color-modal .modal__body-field {
+  position: relative;
+  max-width: 61rem;
+  width: 100%;
+}
+
+#select-color-modal .modal__body-field label {
+  width: 100%;
+}
+
+#select-color-modal .modal__body-field label .input {
+  border-radius: 3rem;
+  border: 0.1rem solid #e6eaff;
+  background: #fcfafa;
+  padding: 2.1rem 2.6rem;
+  width: 100%;
+}
+
+#select-color-modal .modal__body-field-icon {
+  position: absolute;
+  top: 50%;
+  right: 2.15rem;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  max-width: 2.4rem;
+  width: 100%;
+  height: 2.4rem;
+}
+
+#select-color-modal .modal__body-colors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  max-height: 73.6rem;
+  height: 100%;
+  padding-right: 3.3rem;
+  overflow-y: auto;
+}
+
+#select-color-modal .modal__body-colors::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+#select-color-modal .modal__body-colors::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#select-color-modal .modal__body-colors::-webkit-scrollbar-thumb {
+  background: #dfdff0;
+  border-radius: 0.6rem;
+}
+
+#select-color-modal .modal__body-color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.6rem;
+  max-width: 8rem;
+  width: 100%;
+}
+
+#select-color-modal .modal__body-color-background {
+  max-width: 8rem;
+  width: 100%;
+  height: 8rem;
+  border-radius: 50%;
+}
+
+#select-color-modal .modal__body-color-article {
+  color: #555760;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.96rem;
+}
+
+#select-color-modal .modal__body-button {
+  display: block;
+  margin: 0 auto;
+  padding: 1.75rem 2.6rem;
+  max-width: 15.3rem;
+}
+
+#select-color-modal .modal__close {
+  display: none;
+}
+
 .header {
   padding-top: 1.85rem;
   -webkit-transition: 0.3s all ease;
@@ -1452,10 +1608,10 @@ section {
   font-weight: 500;
   line-height: 2.464rem;
   border-radius: 3rem;
-  border: 0.1rem solid #E6EAFF;
+  border: 0.1rem solid #e6eaff;
   background: #fff;
-  -webkit-box-shadow: 2rem 1.5rem 6rem 0 rgba(128, 131, 181, 0.25);
-          box-shadow: 2rem 1.5rem 6rem 0 rgba(128, 131, 181, 0.25);
+  -webkit-box-shadow: 3rem 3.5rem 10rem 0 rgba(128, 131, 181, 0.15);
+          box-shadow: 3rem 3.5rem 10rem 0 rgba(128, 131, 181, 0.15);
 }
 
 .header__content-searchbar-icon {
@@ -5944,34 +6100,25 @@ section {
   padding: 1.9rem 2.7rem 2.51rem 2.3rem;
 }
 
-.services-banner .card-1 img {
-  width: 100%;
-  height: 100%;
-}
-
 .services-banner .card-2 {
   position: absolute;
-  max-width: 18.8rem;
+  max-width: 14rem;
   width: 100%;
-  height: 19.596rem;
-  top: 16.2rem;
-  right: 50rem;
-  -webkit-animation: slide-vertical-right 3s infinite alternate;
-          animation: slide-vertical-right 3s infinite alternate;
+  height: 14.596rem;
+  top: 17.4rem;
+  right: 52.2rem;
   border-radius: 3.8rem;
   background: linear-gradient(182deg, #96c0ff -11.96%, #78aeff -11.95%, rgba(150, 192, 255, 0.8) 3.13%, rgba(150, 192, 255, 0.67) 32.08%, rgba(150, 192, 255, 0.48) 55.43%, rgba(150, 192, 255, 0.23) 76.77%, rgba(255, 255, 255, 0) 118.51%);
-  padding: 5rem 4.8rem 5.7rem 5rem;
-  -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  padding: 2rem;
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
 }
 
 .services-banner .card-2 img {
-  width: 100%;
-  height: 100%;
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
+  -webkit-transform: rotate(30deg);
+      -ms-transform: rotate(30deg);
+          transform: rotate(30deg);
 }
 
 .services-banner .card-3 {
@@ -5983,14 +6130,9 @@ section {
   right: 32.8rem;
   -webkit-animation: slide-vertical-left 2.5s infinite alternate;
           animation: slide-vertical-left 2.5s infinite alternate;
-  background: linear-gradient(140deg, #D2EFFF 3.86%, rgba(212, 238, 253, 0) 84.74%);
+  background: linear-gradient(140deg, #b7e5ff 4.46%, rgba(212, 238, 253, 0.2) 89.15%);
   padding: 1.55rem 1.46rem 1.46rem 1.55rem;
   border-radius: 50%;
-}
-
-.services-banner .card-3 img {
-  width: 100%;
-  height: 100%;
 }
 
 .services-banner__card {
@@ -8308,6 +8450,25 @@ section {
   width: 100%;
 }
 
+.product__info-button {
+  border-radius: 2rem;
+  border: 0.1rem solid #A8A7CA;
+  padding: 0.75rem 1.6rem;
+  color: #555760;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.464rem;
+  margin-bottom: 6rem;
+  -webkit-transition: 0.3s background-color, color, border-color ease-out;
+  transition: 0.3s background-color, color, border-color ease-out;
+}
+
+.product__info-button:hover {
+  background-color: #586CBE;
+  color: #fff;
+  border-color: transparent;
+}
+
 .product__info-article {
   color: #555760;
   font-size: 1.6rem;
@@ -8387,7 +8548,7 @@ section {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 2rem;
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
 }
 
 .product__info-item {
@@ -8492,7 +8653,6 @@ section {
           animation: flipdown 0.3s ease both;
   display: block;
   max-height: 100%;
-  overflow: initial;
   pointer-events: auto;
   border-top: 0;
 }
@@ -13779,25 +13939,25 @@ button.swiper-pagination-bullet {
   }
 
   .services-banner .card-1 {
-    top: 34.4rem;
-    left: 20.2rem;
-    max-width: 37.6rem;
-    height: 30rem;
+    top: 33.4rem;
+    left: 29.2rem;
+    max-width: 19rem;
+    height: 19rem;
   }
 
   .services-banner .card-2 {
-    left: 2.6rem;
-    top: 52rem;
-    max-width: 20rem;
-    height: 22rem;
+    left: 5.6rem;
+    top: 55rem;
+    max-width: 15rem;
+    height: 15rem;
   }
 
   .services-banner .card-3 {
-    max-width: 36rem;
-    height: 18.5rem;
+    max-width: 17rem;
+    height: 17.5rem;
     top: auto;
-    bottom: 4.8rem;
-    left: 19.4rem;
+    bottom: 3.8rem;
+    left: 24.4rem;
   }
 
   .services-banner__card {
@@ -13820,10 +13980,10 @@ button.swiper-pagination-bullet {
   }
 
   .services-banner__card-title {
-    whitespace: nowrap;
     font-size: 2.4rem;
     line-height: 3.6rem;
     -webkit-line-clamp: 1;
+    margin-bottom: 0;
   }
 
   .services-banner__card-price {
@@ -14907,10 +15067,16 @@ button.swiper-pagination-bullet {
     font-size: 3.4rem;
     line-height: 4.8rem;
     margin-right: 2rem;
+    white-space: nowrap;
   }
 
   .product__info-tabs-list {
     gap: 0.8rem;
+    overflow: auto;
+  }
+
+  .product__info-tabs-list::-webkit-scrollbar {
+    display: none;
   }
 
   .product__info-tabs-item {
@@ -14918,6 +15084,7 @@ button.swiper-pagination-bullet {
     font-size: 3rem;
     font-weight: 500;
     line-height: 4.5rem;
+    white-space: nowrap;
   }
 
   .product__info-list {
@@ -15560,6 +15727,22 @@ button.swiper-pagination-bullet {
     border-radius: 4rem;
     padding: 6rem 4rem;
     height: 85rem;
+  }
+
+  .catalog-banner__content .chandelier-1 {
+    top: 52rem;
+    left: 11rem;
+  }
+
+  .catalog-banner__content .chandelier-2 {
+    top: auto;
+    right: 22.68rem;
+    bottom: 8rem;
+  }
+
+  .catalog-banner__content .chandelier-3 {
+    top: 28.5rem;
+    right: 2.6rem;
   }
 
   .catalog-banner__title {
