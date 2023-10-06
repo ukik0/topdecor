@@ -1149,11 +1149,12 @@ section {
 #select-color-modal .modal {
   max-width: 120rem;
   height: calc(100vh - 5rem);
-  padding: 6rem;
+  padding: 6rem 0 6rem 6rem;
 }
 
 #select-color-modal .modal__title {
   text-align: start;
+  margin-bottom: 2.5rem;
 }
 
 #select-color-modal .modal__body-heading {
@@ -1167,6 +1168,7 @@ section {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-bottom: 4rem;
+  padding-right: 6rem;
 }
 
 #select-color-modal .modal__body-heading-select {
@@ -1178,10 +1180,48 @@ section {
           align-items: center;
   gap: 2rem;
   cursor: pointer;
+  position: relative;
 }
 
 #select-color-modal .modal__body-heading-select:hover svg path {
   fill: #586CBE;
+}
+
+#select-color-modal .modal__body-heading-select-list {
+  padding: 4rem 4.6rem 4rem 4rem;
+  position: absolute;
+  top: 4.3rem;
+  border-radius: 2.5rem;
+  background: #fff;
+  -webkit-box-shadow: 1rem 2rem 9.4rem 0 rgba(125, 128, 161, 0.2);
+          box-shadow: 1rem 2rem 9.4rem 0 rgba(125, 128, 161, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  width: 36rem;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  opacity: 0;
+  will-change: opacity, transform;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#select-color-modal .modal__body-heading-select-list.--active {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-user-select: auto;
+     -moz-user-select: auto;
+      -ms-user-select: auto;
+          user-select: auto;
 }
 
 #select-color-modal .modal__body-heading-select-name {
@@ -1239,24 +1279,12 @@ section {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 2rem;
-  margin-bottom: 4rem;
-  max-height: 73.6rem;
+  margin-bottom: 3rem;
+  margin-right: 2.4rem;
+  max-height: calc(100vh - 45rem);
   height: 100%;
-  padding-right: 3.3rem;
   overflow-y: auto;
-}
-
-#select-color-modal .modal__body-colors::-webkit-scrollbar {
-  width: 0.4rem;
-}
-
-#select-color-modal .modal__body-colors::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-#select-color-modal .modal__body-colors::-webkit-scrollbar-thumb {
-  background: #dfdff0;
-  border-radius: 0.6rem;
+  padding-right: 2.4rem;
 }
 
 #select-color-modal .modal__body-color {
@@ -1296,8 +1324,19 @@ section {
 #select-color-modal .modal__body-button {
   display: block;
   margin: 0 auto;
+  margin-right: 46%;
   padding: 1.75rem 2.6rem;
   max-width: 15.3rem;
+  cursor: pointer;
+  border: 0.1rem solid transparent;
+  -webkit-transition: 0.3s border-color ease-out, 0.3s background-color ease-out, 0.3s color ease-out;
+  transition: 0.3s border-color ease-out, 0.3s background-color ease-out, 0.3s color ease-out;
+}
+
+#select-color-modal .modal__body-button:hover {
+  background-color: transparent;
+  border-color: #586CBE;
+  color: #586CBE;
 }
 
 #select-color-modal .modal__close {
@@ -8518,8 +8557,7 @@ section {
   padding: 0.6rem 2.6rem;
   border-radius: 3rem;
   background: #fff;
-  -webkit-box-shadow: 0.5rem 1.3rem 5rem 0 rgba(57, 56, 113, 0.15);
-          box-shadow: 0.5rem 1.3rem 5rem 0 rgba(57, 56, 113, 0.15);
+  border: 0.1rem solid #e6eaff;
   color: #555760;
   font-size: 2rem;
   font-weight: 600;
@@ -11812,6 +11850,19 @@ button.swiper-pagination-bullet {
 }
 
 @media (min-width: 48em) {
+  #select-color-modal .modal__body-colors::-webkit-scrollbar {
+    width: 0.3rem;
+  }
+
+  #select-color-modal .modal__body-colors::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  #select-color-modal .modal__body-colors::-webkit-scrollbar-thumb {
+    background: #dfdff0;
+    border-radius: 0.6rem;
+  }
+
   .brands__item:hover {
     -webkit-transform: scale(1.2);
         -ms-transform: scale(1.2);
@@ -12117,6 +12168,107 @@ button.swiper-pagination-bullet {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+
+  #select-color-modal .modal {
+    padding: 4rem;
+    max-width: 69rem;
+    border-radius: 2rem;
+  }
+
+  #select-color-modal .modal__title {
+    text-align: center;
+    margin-bottom: 4.1rem;
+    margin-top: 4rem;
+  }
+
+  #select-color-modal .modal__body-heading {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    gap: 4rem;
+    padding-right: 0;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  #select-color-modal .modal__body-heading-select {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+  }
+
+  #select-color-modal .modal__body-heading-select-list {
+    padding: 3rem;
+    width: 100%;
+    top: 6.4rem;
+    gap: 4rem;
+  }
+
+  #select-color-modal .modal__body-heading-select-name {
+    font-size: 3rem;
+    line-height: 4.5rem;
+  }
+
+  #select-color-modal .modal__body-heading-select svg {
+    max-width: 4rem;
+    height: 4rem;
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+
+  #select-color-modal .modal__body-field {
+    width: 100%;
+  }
+
+  #select-color-modal .modal__body-field label .input {
+    padding: 2.1rem 4rem;
+  }
+
+  #select-color-modal .modal__body-field-icon {
+    max-width: 4.8rem;
+    height: 4.8rem;
+    right: 3.2rem;
+  }
+
+  #select-color-modal .modal__body-colors {
+    padding-right: 0;
+    gap: 3.6rem 3rem;
+    margin-right: 0;
+    max-height: calc(100vh - 62rem);
+  }
+
+  #select-color-modal .modal__body-colors::-webkit-scrollbar {
+    display: none;
+  }
+
+  #select-color-modal .modal__body-color {
+    max-width: 13rem;
+    gap: 1.2rem;
+  }
+
+  #select-color-modal .modal__body-color-background {
+    max-width: 13rem;
+    height: 13rem;
+  }
+
+  #select-color-modal .modal__body-color-article {
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+  }
+
+  #select-color-modal .modal__body-button {
+    max-width: 26.8rem;
+    padding: 2.1rem 4rem;
+    margin-right: auto;
+  }
+
+  #select-color-modal .modal__close {
+    display: block;
   }
 
   .header {
@@ -15046,6 +15198,14 @@ button.swiper-pagination-bullet {
     width: 72rem;
   }
 
+  .product__info-button {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    margin-bottom: 6rem;
+    padding: 0.7rem 3.2rem;
+    border-radius: 4rem;
+  }
+
   .product__info-article {
     font-size: 3rem;
     line-height: 4.5rem;
@@ -15202,7 +15362,7 @@ button.swiper-pagination-bullet {
     width: 1.4rem !important;
     height: 1.4rem !important;
     margin-right: 0 !important;
-    background: #F1F2FA;
+    background: #f1f2fa;
     border-radius: 50%;
   }
 

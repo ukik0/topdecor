@@ -41,19 +41,30 @@
 
         &-button {
             border-radius: 2rem;
-            border: .1rem solid $grey;
-            padding: .75rem 1.6rem;
+            border: 0.1rem solid $grey;
+            padding: 0.75rem 1.6rem;
             color: $black;
             font-size: 1.6rem;
             font-weight: 500;
             line-height: 2.464rem;
             margin-bottom: 6rem;
-            transition: .3s background-color, color, border-color ease-out;
+            transition:
+                0.3s background-color,
+                color,
+                border-color ease-out;
 
-            &:hover{
+            &:hover {
                 background-color: $accent;
                 color: $white;
                 border-color: transparent;
+            }
+
+            @include small-tablet{
+                font-size: 3rem;
+                line-height: 4.5rem;
+                margin-bottom: 6rem;
+                padding: .7rem 3.2rem;
+                border-radius: 4rem;
             }
         }
 
@@ -130,7 +141,7 @@
                 padding: 0.6rem 2.6rem;
                 border-radius: $initial-border-radius;
                 background: $white;
-                box-shadow: 0.5rem 1.3rem 5rem 0 rgba(57, 56, 113, 0.15);
+                border: 0.1rem solid #e6eaff;
                 color: $black;
                 font-size: 2rem;
                 font-weight: 600;
@@ -351,7 +362,7 @@
                                 width: 3.2rem;
                                 height: 0.4rem;
                                 top: 2.2rem;
-                                right: .4rem;
+                                right: 0.4rem;
                             }
                         }
                     }
@@ -443,9 +454,9 @@
             &-wrapper {
                 padding-left: 6rem;
 
-                @include small-tablet{
+                @include small-tablet {
                     padding-left: 0;
-                    gap: .8rem;
+                    gap: 0.8rem;
                     justify-content: center;
                 }
             }
@@ -458,12 +469,11 @@
                 border: 0.1rem solid transparent;
                 cursor: pointer;
 
-
-                @include small-tablet{
+                @include small-tablet {
                     width: 1.4rem !important;
                     height: 1.4rem !important;
                     margin-right: 0 !important;
-                    background: #F1F2FA;
+                    background: #f1f2fa;
                     border-radius: 50%;
                 }
 
@@ -471,7 +481,7 @@
                     border: 0.1rem solid $grey;
                     transition: 0.3s all ease;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         border: 0;
                         background: $accent;
                     }
@@ -481,7 +491,7 @@
                     height: 100%;
                     border-radius: inherit;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         display: none;
                     }
                 }
@@ -548,7 +558,7 @@
             flex-wrap: wrap;
             gap: 2rem 1.2rem;
 
-            @include small-tablet{
+            @include small-tablet {
                 flex-direction: column;
                 flex-wrap: initial;
                 margin-top: 6rem;
@@ -557,24 +567,24 @@
         }
 
         &-item {
-            padding: .75rem 1.6rem;
+            padding: 0.75rem 1.6rem;
             border-radius: 2rem;
-            border: .1rem solid $grey;
+            border: 0.1rem solid $grey;
             color: $black;
             font-size: 1.6rem;
             font-weight: 500;
             line-height: 2.464rem;
-            transition: .3s all ease;
+            transition: 0.3s all ease;
 
-            @include small-tablet{
-                padding: .7rem 3.2rem;
+            @include small-tablet {
+                padding: 0.7rem 3.2rem;
                 border-radius: 4rem;
                 font-size: 3rem;
                 line-height: 4.5rem;
                 width: fit-content;
             }
 
-            &:hover{
+            &:hover {
                 background: $accent;
                 color: $white;
             }
