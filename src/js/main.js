@@ -37,6 +37,12 @@ const swiperSettings = (init, ...payload) => ({
     ...payload
 });
 
+$('input[type="tel"]').inputmask({
+    "mask": "+7 (999) 999 99-99",
+    "placeholder": "+7 (999) 999 99-99",
+    "clearMaskOnLostFocus": false
+});
+
 new Swiper('.hero__swiper', {
     grabCursor: true,
     slidesPerView: 1,
@@ -519,12 +525,10 @@ $('.catalog__filters-hide').on('click', function () {
 });
 
 function closeSelectAfterChange(classname, parent, callback = () => null) {
-    $(classname).each(function () {
-        $(this).on('change', function (event) {
-            $(this).closest(parent).removeClass('--active');
+        $(classname).on('change', function (event) {
+            $(this).closest(parent).toggleClass('--active');
             callback(event.target.id);
         });
-    });
 }
 
 closeSelectAfterChange('.catalog__sort-item', '.catalog__sort', () => {
@@ -622,14 +626,6 @@ $('.social-media__list').on('mouseleave', () => {
     $('.social-media__list').removeClass('--active');
 });
 
-//mobile sort menu remove active class
-$('.catalog__sort-menu').on('click', function (event) {
-    if ($(event.target).hasClass('catalog__sort-menu')) {
-        $(this).closest('.catalog__sort').removeClass('--active');
-        $('body').removeClass('locked');
-    }
-});
-
 $('#select-all').on('change', function (event) {
     if (event.target.checked) {
         $('.basket__item').each(function () {
@@ -655,5 +651,22 @@ $('.basket__item input').on('change', function () {
         $('#select-all').prop('checked', true);
     } else {
         $('#select-all').prop('checked', false);
+    }
+});
+
+$('.modal__body-color').each(function () {
+    $(this).find('.modal__body-color-background').on('click', function () {
+        $(this).toggleClass('--selected')
+    })
+})
+
+//mobile sort menu remove active class
+$('.catalog__sort-menu').on('click', function (event) {
+    if ($(event.target).hasClass('catalog__sort-menu')) {
+        $(this).find('.catalog__sort').removeClass('--active');
+
+        setTimeout(() => {
+            $('body').removeClass('locked')
+        }, 0)
     }
 });

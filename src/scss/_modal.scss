@@ -252,7 +252,7 @@
 #select-color-modal {
     .modal {
         max-width: 120rem;
-        height: calc(100vh - 5rem);
+        height: calc(100dvh - 5rem);
         padding: 6rem 0 6rem 6rem;
 
         @include small-tablet{
@@ -469,6 +469,17 @@
                 width: 100%;
                 height: 8rem;
                 border-radius: 50%;
+                border: .1rem solid transparent;
+                transition: .3s border-color ease-out;
+                cursor: pointer;
+
+                &.--selected{
+                    border-color: $black;
+                }
+
+                &:hover{
+                    border-color: $accent;
+                }
 
                 @include small-tablet{
                     max-width: 13rem;

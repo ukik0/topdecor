@@ -11583,7 +11583,7 @@ section {
 
 #select-color-modal .modal {
   max-width: 120rem;
-  height: calc(100vh - 5rem);
+  height: calc(100dvh - 5rem);
   padding: 6rem 0 6rem 6rem;
 }
 
@@ -11747,6 +11747,18 @@ section {
   width: 100%;
   height: 8rem;
   border-radius: 50%;
+  border: 0.1rem solid transparent;
+  -webkit-transition: 0.3s border-color ease-out;
+  transition: 0.3s border-color ease-out;
+  cursor: pointer;
+}
+
+#select-color-modal .modal__body-color-background.--selected {
+  border-color: #555760;
+}
+
+#select-color-modal .modal__body-color-background:hover {
+  border-color: #586CBE;
 }
 
 #select-color-modal .modal__body-color-article {
