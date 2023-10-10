@@ -535,9 +535,11 @@ $('.catalog__filters-hide').on('click', function () {
 });
 
 function closeSelectAfterChange(classname, parent, callback = () => null) {
-        $(classname).on('change', function (event) {
-            $(this).closest(parent).toggleClass('--active');
-            callback(event.target.id);
+        $(classname).on('click', function (event) {
+            setTimeout(() => {
+                $(this).closest(parent).removeClass('--active');
+                callback(event.target.id);
+            }, 0)
         });
 }
 
