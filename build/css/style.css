@@ -4677,7 +4677,7 @@
   max-width: 4rem;
   width: 100%;
   height: 4rem;
-  padding: 0;
+  padding: 0 !important;
 }
 
 .services-banner__card-icon svg {
@@ -11171,14 +11171,9 @@ section {
   -moz-appearance: none;
        appearance: none;
   background-color: #fff;
-  margin: 0;
-  font: inherit;
-  color: currentColor;
   width: 2.4rem;
   height: 2.4rem;
   border-radius: 0.8rem;
-  display: grid;
-  place-content: center;
   position: relative;
   -webkit-transition: 0.15s all ease-in-out;
   transition: 0.15s all ease-in-out;
@@ -11648,6 +11643,7 @@ section {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  z-index: 2;
 }
 
 #select-color-modal .modal__body-heading-select-list.--active {
@@ -11751,10 +11747,34 @@ section {
   -webkit-transition: 0.3s border-color ease-out;
   transition: 0.3s border-color ease-out;
   cursor: pointer;
+  position: relative;
+}
+
+#select-color-modal .modal__body-color-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1rem solid transparent;
+  -webkit-transition: 0.3s border-color ease-out, 0.3s -webkit-transform ease-out;
+  transition: 0.3s border-color ease-out, 0.3s -webkit-transform ease-out;
+  transition: 0.3s transform ease-out, 0.3s border-color ease-out;
+  transition: 0.3s transform ease-out, 0.3s border-color ease-out, 0.3s -webkit-transform ease-out;
+  -webkit-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+          transform: scale(0.5);
 }
 
 #select-color-modal .modal__body-color-background.--selected {
   border-color: #555760;
+  padding: 1rem;
+}
+
+#select-color-modal .modal__body-color-background.--selected::after {
+  border-color: #fff;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
 }
 
 #select-color-modal .modal__body-color-background:hover {
@@ -15431,12 +15451,13 @@ section {
 
   .catalog-banner__content .chandelier-2 {
     top: auto;
-    right: 22.68rem;
-    bottom: 8rem;
+    right: 1.68rem;
+    bottom: 20rem;
   }
 
   .catalog-banner__content .chandelier-3 {
-    top: 28.5rem;
+    max-width: 14.5rem;
+    top: 28rem;
     right: 2.6rem;
   }
 

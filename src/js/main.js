@@ -207,7 +207,7 @@ const swiperFeedbackImages = new Swiper('.feedback-list__swiper', {
         disableOnInteraction: true
     },
     thumbs: {
-        feedbackSlider
+        swiper: feedbackSlider
     },
     navigation: {
         nextEl: `.feedback-next`,

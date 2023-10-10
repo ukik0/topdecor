@@ -48,8 +48,8 @@
 
             @include small-tablet{
                 top: auto;
-                right: 22.68rem;
-                bottom: 8rem;
+                right: 1.68rem;
+                bottom: 20rem;
             }
         }
 
@@ -63,7 +63,8 @@
             animation: scale 2s infinite alternate;
 
             @include small-tablet{
-                top: 28.5rem;
+                max-width: 14.5rem;
+                top: 28rem;
                 right: 2.6rem;
             }
         }
