@@ -122,6 +122,7 @@ new Swiper('.leaders__swiper', {
     slidesPerView: 1,
     grabCursor: true,
     speed: 700,
+    spaceBetween: rem(3),
     ...swiperSettings('leaders')
 });
 
@@ -129,6 +130,7 @@ new Swiper('.novelties__swiper', {
     slidesPerView: 1,
     grabCursor: true,
     speed: 700,
+    spaceBetween: rem(3),
     ...swiperSettings('novelties')
 });
 

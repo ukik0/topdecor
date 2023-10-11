@@ -1,15 +1,79 @@
-@import "vars";
-@import "mixins";
-
+@import 'vars';
+@import 'mixins';
 
 .banner {
     &__content {
         position: relative;
         padding: 9rem 8rem;
 
-        @include small-tablet{
+        @include small-tablet {
             padding: 3rem 2.1rem;
             height: 85rem;
+        }
+
+        .paints-1,
+        .paints-2,
+        .paints-3,
+        .paints-4 {
+            position: absolute;
+            width: 100%;
+        }
+
+        .paints-1 {
+            bottom: 1.5rem;
+            right: 52.9rem;
+            max-width: 12.4rem;
+            height: 12.4rem;
+
+            @include small-tablet{
+                max-width: 12.6rem;
+                height: 12rem;
+                bottom: 20.6rem;
+                left: 11rem;
+            }
+        }
+
+        .paints-2 {
+            top: 3.4rem;
+            right: 54.7rem;
+            max-width: 10.6rem;
+            height: 15.8rem;
+
+            @include small-tablet{
+                top: auto;
+                bottom: 8rem;
+                right: 23.8rem;
+                max-width: 10.6rem;
+                height: 15.8rem;
+            }
+        }
+
+        .paints-3 {
+            max-width: 16.2rem;
+            height: 16.2rem;
+            bottom: 0;
+            right: 8.38rem;
+
+            @include small-tablet{
+                max-width: 16rem;
+                height: 16.2rem;
+                right: 1.4rem;
+                bottom: 19.2rem;
+            }
+        }
+
+        .paints-4{
+            max-width: 14.5rem;
+            height: 14.5rem;
+            top: 4.1rem;
+            right: 9.1rem;
+
+            @include small-tablet{
+                top: 26.4rem;
+                right: 2rem;
+                max-width: 14.6rem;
+                height: 14.4rem;
+            }
         }
     }
 
@@ -24,7 +88,7 @@
         max-width: 51rem;
         width: 100%;
 
-        @include small-tablet{
+        @include small-tablet {
             font-size: 4.8rem;
             line-height: 5.8rem;
             margin-bottom: 2rem;
@@ -41,7 +105,7 @@
         max-width: 32.3rem;
         width: 100%;
 
-        @include small-tablet{
+        @include small-tablet {
             font-size: 3.4rem;
             line-height: 4.8rem;
             margin-bottom: 4rem;
@@ -52,7 +116,7 @@
     &__button {
         padding: 1.75rem 2.6rem;
 
-        @include small-tablet{
+        @include small-tablet {
             padding: 1.9rem 4rem;
         }
     }
