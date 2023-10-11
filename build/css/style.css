@@ -11712,7 +11712,7 @@ section {
   gap: 2rem;
   margin-bottom: 3rem;
   margin-right: 2.4rem;
-  max-height: calc(100vh - 45rem);
+  max-height: calc(100dvh - 45rem);
   height: 100%;
   overflow-y: auto;
   padding-right: 2.4rem;
