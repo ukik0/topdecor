@@ -642,7 +642,7 @@
             }
 
             &-scroll {
-                max-height: 90rem;
+                max-height: calc(100dvh - 25rem);;
                 overflow: auto;
                 padding-right: 2.3rem;
                 overscroll-behavior: contain;
