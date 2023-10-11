@@ -253,8 +253,9 @@
         &-button {
             display: flex;
             align-items: center;
-            gap: $gap-xs;
+            justify-content: space-between;
             padding: 1.25rem 2.6rem;
+
 
             @include small-tablet{
                 max-width: 100%;
