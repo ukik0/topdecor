@@ -1701,6 +1701,14 @@
   width: 90%;
 }
 
+.brands__swiper-mobile {
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  visibility: hidden;
+  height: 0;
+}
+
 .brands__swiper-decor-line {
   background: #cabdf1;
   height: 0.1rem;
@@ -4631,11 +4639,9 @@
   position: absolute;
   max-width: 20rem;
   height: 20rem;
-  top: 2.6rem;
+  top: 3.6rem;
   right: 28.4rem;
   width: 100%;
-  -webkit-animation: slide-vertical-left 2s infinite alternate;
-          animation: slide-vertical-left 2s infinite alternate;
   background: linear-gradient(131deg, #c9b8ff 0%, rgba(201, 184, 255, 0.89) 13.17%, rgba(201, 184, 255, 0.75) 33.82%, rgba(201, 184, 255, 0.57) 53.76%, rgba(201, 184, 255, 0.42) 66.34%, rgba(255, 255, 255, 0) 93.1%);
   border-radius: 2.4rem;
   padding: 1.9rem 2.7rem 2.51rem 2.3rem;
@@ -4667,10 +4673,8 @@
   max-width: 13.6788rem;
   width: 100%;
   height: 13.6788rem;
-  top: 27.3rem;
-  right: 32.8rem;
-  -webkit-animation: slide-vertical-left 2.5s infinite alternate;
-          animation: slide-vertical-left 2.5s infinite alternate;
+  top: 30.3rem;
+  right: 34.8rem;
   background: linear-gradient(140deg, #b7e5ff 4.46%, rgba(212, 238, 253, 0.2) 89.15%);
   padding: 1.55rem 1.46rem 1.46rem 1.55rem;
   border-radius: 50%;
@@ -5913,6 +5917,9 @@
   display: -ms-inline-flexbox;
   display: inline-flex;
   margin-top: 4.1rem;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .basket__content {
@@ -5943,6 +5950,7 @@
   font-weight: 600;
   line-height: 2.88rem;
   margin-top: -4rem;
+  margin-right: auto;
 }
 
 .basket__settings {
@@ -8181,15 +8189,10 @@
 .catalog-banner__content .chandelier-1 {
   position: absolute;
   top: 10rem;
-  left: 45.5%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  left: 71rem;
   max-width: 12rem;
   width: 100%;
   height: 12rem;
-  -webkit-animation: scale 1.5s infinite alternate;
-          animation: scale 1.5s infinite alternate;
 }
 
 .catalog-banner__content .chandelier-2 {
@@ -8199,8 +8202,6 @@
   max-width: 14.4987rem;
   width: 100%;
   height: 14.4987rem;
-  -webkit-animation: scale 3s infinite alternate;
-          animation: scale 3s infinite alternate;
 }
 
 .catalog-banner__content .chandelier-3 {
@@ -8210,8 +8211,6 @@
   max-width: 14.5rem;
   width: 100%;
   height: 14.5rem;
-  -webkit-animation: scale 2s infinite alternate;
-          animation: scale 2s infinite alternate;
 }
 
 .catalog-banner__title {
@@ -10986,7 +10985,7 @@ section {
 }
 
 .input {
-  color: #A8A7CA;
+  color: #555760;
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 2.464rem;
@@ -11838,7 +11837,8 @@ section {
 }
 
 #select-color-modal .modal__close {
-  display: none;
+  right: 4.6rem;
+  top: 4.6rem;
 }
 
 @media (min-width: 48rem) {
@@ -12479,6 +12479,14 @@ section {
 
   .brands__heading {
     margin-bottom: 4rem;
+  }
+
+  .brands__swiper-mobile {
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    visibility: visible;
+    height: initial;
   }
 
   .brands__swiper {
@@ -13706,8 +13714,8 @@ section {
   }
 
   .services-banner .card-1 {
-    top: 33.4rem;
-    left: 29.2rem;
+    top: 35.4rem;
+    left: 27.2rem;
     max-width: 19rem;
     height: 19rem;
   }
@@ -16282,10 +16290,6 @@ section {
     max-width: 26.8rem;
     padding: 2.1rem 4rem;
     margin-right: auto;
-  }
-
-  #select-color-modal .modal__close {
-    display: block;
   }
 }
 

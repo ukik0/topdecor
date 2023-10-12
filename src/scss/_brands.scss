@@ -18,6 +18,18 @@
         position: relative;
         width: 90%;
 
+        &-mobile {
+            transform: scale(0);
+            visibility: hidden;
+            height: 0;
+
+            @include small-tablet{
+                transform: scale(1);
+                visibility: visible;
+                height: initial;
+            }
+        }
+
         @include small-tablet {
             width: 97%;
         }

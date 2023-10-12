@@ -6,6 +6,7 @@
         margin-bottom: 4rem;
         display: inline-flex;
         margin-top: 4.1rem;
+        justify-content: flex-start;
 
         @include small-tablet {
             margin-top: 5.4rem;
@@ -35,6 +36,7 @@
             font-weight: 600;
             line-height: 2.88rem;
             margin-top: -4rem;
+            margin-right: auto;
 
             @include small-tablet {
                 font-size: 3.4rem;

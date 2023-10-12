@@ -546,10 +546,7 @@
     }
 
     .modal__close {
-        display: none;
-
-        @include small-tablet{
-            display: block;
-        }
+        right: 4.6rem;
+        top: 4.6rem;
     }
 }
