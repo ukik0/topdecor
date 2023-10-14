@@ -435,3 +435,15 @@ $('.catalog__sort-menu').on('click', function (event) {
         }, 0)
     }
 });
+
+function setPhoneMask() {
+    const phoneInputs = document.querySelectorAll('input[type="tel"]');
+
+    phoneInputs.forEach((phoneInput) => {
+        const im = new Inputmask('+ 7 (999) 999-99-99');
+        im.mask(phoneInput);
+    });
+}
+
+setPhoneMask();
+

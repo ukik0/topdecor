@@ -35,12 +35,6 @@ const swiperSettings = (init, ...payload) => ({
     ...payload
 });
 
-$('input[type="tel"]').inputmask({
-    "mask": "+7 (999) 999 99-99",
-    "placeholder": "+7 (999) 999 99-99",
-    "clearMaskOnLostFocus": false
-});
-
 new Swiper('.hero__swiper', {
     grabCursor: true,
     slidesPerView: 1,
@@ -257,3 +251,4 @@ const productSliderThumb = new Swiper('.product__slider__swiper', {
         swiper: productSlider
     }
 });
+

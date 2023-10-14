@@ -11047,6 +11047,7 @@ section {
           align-items: flex-start;
   gap: 0.6rem;
   width: 100%;
+  cursor: pointer;
 }
 
 .label > span,
